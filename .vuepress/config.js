@@ -8,8 +8,8 @@ module.exports = {
   ],
   themeConfig: {
     nav: [
-      { text: 'AI', link: '/ai' },
-      { text: 'CI', link: '/ci' },
+      { text: 'AI', link: '/' },
+      { text: 'CI', link: 'https://ricwtk.github.io/ci-labs' },
     ],
     sidebarDepth: 2,
     sidebar: [
@@ -24,8 +24,7 @@ module.exports = {
           '/lab4',
           '/lab5',
           '/lab6',
-          '/lab7',
-          '/lab8'
+          '/lab7'
         ]
       }
     ],

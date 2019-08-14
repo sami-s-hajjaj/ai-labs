@@ -1,1 +1,1 @@
-# Lab 5: Search
+# Lab 5: ML
