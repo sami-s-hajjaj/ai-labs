@@ -2,7 +2,7 @@
 circleradius: 10
 ---
 
-# Lab 2: Uninformed Search
+# Lab 2: Breadth-First Search
 
 ## Objective
 
@@ -61,7 +61,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 <path d="M 760 120 L 625 60" stroke="black" />
 <text :x="(760+625)/2+5" :y="(120+60)/2-5" text-anchor="start">87</text>
 
-<circle cx="75" cy="125" :r="$page.frontmatter.circleradius" fill="gray" />
+<circle cx="75" cy="125" :r="$page.frontmatter.circleradius" fill="green" />
 <text x="60" y="130" text-anchor="end">Arad</text>
 <circle cx="100" cy="75" :r="$page.frontmatter.circleradius" fill="gray" />
 <text x="85" y="75" text-anchor="end">Zerind</text>
@@ -85,7 +85,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 <text x="170" y="345" text-anchor="end">Lugoj</text>
 <circle cx="85" cy="280" :r="$page.frontmatter.circleradius" fill="gray" />
 <text x="70" y="285" text-anchor="end">Timisoara</text>
-<circle cx="640" cy="390" :r="$page.frontmatter.circleradius" fill="gray" />
+<circle cx="640" cy="390" :r="$page.frontmatter.circleradius" fill="red" />
 <text x="625" y="400" text-anchor="end">Bucharest</text>
 <circle cx="575" cy="485" :r="$page.frontmatter.circleradius" fill="gray" />
 <text x="560" y="490" text-anchor="end">Giurgiu</text>
@@ -226,3 +226,242 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
             # add child to the frontiers
             frontier.append(child)
     ```
+
+## Oops, something is not right
+1. Now, if you are following, you may notice that we have a way to end the algorithm but we have failed to store our solution. 
+    
+2. One way to store the solution while generating the search tree is to store the frontier as the paths from the initial state to the leaf nodes instead of just the leaf nodes. Therefore we would be able to retain the memory of the explored section of the search tree.
+    
+3. First we need to modify the `expandAndReturnChildren` function.
+
+    ```python
+    def expandAndReturnChildren(state_space, path_to_leaf_node):
+      children = []
+      for [m,n,c] in state_space:
+        if m == path_to_leaf_node[-1]:
+          children.append(path_to_leaf_node + [n])
+        elif n == path_to_leaf_node[-1]:
+          children.append(path_to_leaf_node + [m])
+      return children
+    ```
+4. The `bfs` function is also modified to accommodate to this change.
+    
+    ```python
+    def bfs(state_space, initial_state, goal_state):
+      frontier = []
+      explored = []
+      found_goal = False
+      solution = []
+      frontier.append([initial_state])
+
+      while not found_goal:
+        # expand the first in the frontier
+        children = expandAndReturnChildren(state_space, frontier[0])
+        # copy the node to the explored set
+        explored.append(frontier[0][-1])
+        # remove the expanded frontier
+        del frontier[0]
+        # loop through the children
+        for child in children:
+          # check if a node was expanded or generated previously
+          if not (child[-1] in explored) and not (child[-1] in [f[-1] for f in frontier]):
+            # goal test
+            if child[-1] == goal_state:
+              found_goal = True
+              solution = child
+            # add children to the frontier
+            frontier.append(child)
+        print("Explored: ")
+        print(explored)
+        print("Frontier:")
+        for f in frontier:
+          print(f)
+        print("Children: ")
+        print(children)
+        print("")
+
+      return solution
+    ```
+    
+5. Noted that in line `12` we are only saving the leaf node that has just been expanded to the explored set since the information of the path is unnecessary to be stored in the explored set.
+    
+6. In line `18`, `[f[-1] for f in frontier]` is used to obtain a list of the leaf nodes in the frontier. This is the pythonic way of extracting from a list to form another list. The one-liner is equivalent to
+
+    ```python
+    leaf_nodes = []
+    for f in frontier:
+      leaf_nodes.append(f[-1])
+    ```
+      
+    `f[-1]` is used since currently we are saving the path from initial state to the respective leaf node in the frontier.
+
+## Running the algorithm
+1. Now we have two functions `expandAndReturnChildren` and `bfs`, alongside with the variables `state_space`, `initial_state`, and `goal_state`.
+    
+2. To run a script to execute the \verb|bfs| function, we can have the script file structured as such:
+
+    ```python
+    def expandAndReturnChildren(...):
+      ...
+      
+    def bfs(...):
+      ...
+      
+    state_space = [
+      ...
+    ]
+
+    initial_state = 'Arad'
+    goal_state = 'Bucharest'
+
+    print('Solution: ' + str(bfs(state_space, initial_state, goal_state)))
+    ```
+    
+3. Beware that in Python, a `.py` file can also be used to define a Python library/module. To prevent the commands outside the function to be executed when the file is used as a library instead of a script, we can implement an extra condition check.
+
+    ```python
+    def expandAndReturnChildren(...):
+    ...
+
+    def bfs(...):
+    ...
+
+    if __name__ == '__main_':
+      state_space = [
+      ...
+      ]
+      
+      initial_state = 'Arad'
+      goal_state = 'Bucharest'
+      
+      print('Solution: ' + str(bfs(state_space, initial_state, goal_state)))
+    ```
+    
+4. `__name__` is a special variable in Python that evaluates to the name of the current module. This variable has the value of `'__main__'` if it's called as the main program rather than a module or library.
+    
+5. This part is essentially the `main` function in other programming languages like C++ and Java.
+    
+6. Compile the program and resolve any error.
+
+## Redundant storing of states?
+
+1. When you run the script from previous section, you may wonder, if there is a more efficient way of memory usage instead of saving the path to each leaf node in the frontier. Currently there is a lot of redundant states being stored in the variable `frontier`.
+
+## Using a class
+1. The alternative and more space-efficient way would be to declare each node in the search tree to be an object that stores its name, parent, and children. To do so, we need to first define a class.
+    ```python
+    class Node:
+      def __init__(self, state=None, parent=None):
+        self.state = state
+        self.parent = parent
+        self.children = []
+
+      def addChildren(self, children):
+        self.children.extend(children)
+    ```
+    
+    In Python, to define a class, the class needs to have the function `__init__` with at least one input `self`. This function is called when an object is initiated with this class. The internal variable `self` defines the properties of the object. The input arguments apart from `self` for the function `__init__` are the parameters to be passed when initiating a new object.
+    
+    In a class, additional functions can also be defined, and these will be the methods for the object of this class. 
+    
+2. An example of initiating a new object for this class and use the function is:
+    
+    ```python
+    a_distinct_node = Node('state name', 'parent of this node')
+    a_distinct_node.addChildren(['child 1', 'child 2'])
+    ```
+    
+3. With the new class, we can update the function \verb|expandAndReturnChildren| to return the children as a list of \verb|Node| objects.
+    ```python
+    def expandAndReturnChildren(state_space, node):
+      children = []
+      for [m,n,c] in state_space:
+        if m == node.state:
+          children.append(Node(n, node.state))
+        elif n == node.state:
+          children.append(Node(m, node.state))
+      return children
+    ```
+    
+4. With the availability of the `Node` class, we can save the nodes as `Node` objects in the frontier instead of paths to the leaf nodes. When the goal state is found, the goal node is used to trace back to its predecessor (a.k.a. parent, which will be now in the explored set) which is accessible using the property `.parent` of the goal node. Then  the predecessor to the parent of the goal node can be traced similarly. This process is thus repeated until the initial state (with no parent) to obtain the solution and its cost.
+    ```python
+    def bfs(state_space, initial_state, goal_state):
+      frontier = []
+      explored = []
+      found_goal = False
+      goalie = Node()
+      solution = []
+      # add initial state to frontier
+      frontier.append(Node(initial_state, None))
+      
+      while not found_goal:
+        # expand the first in the frontier
+        children = expandAndReturnChildren(state_space, frontier[0])
+        # add children list to the expanded node
+        frontier[0].addChildren(children)
+        # add to the explored list
+        explored.append(frontier[0])
+        # remove the expanded frontier
+        del frontier[0]
+        # add children to the frontier
+        for child in children:
+          # check if a node was expanded or generated previously
+          if not (child.state in [e.state for e in explored]) and not (child.state in [f.state for f in frontier]):
+            # goal test
+            if child.state == goal_state:
+              found_goal = True
+              goalie = child
+            frontier.append(child)
+        print("Explored:", [e.state for e in explored])
+        print("Frontier:", [f.state for f in frontier])
+        print("Children:", [c.state for c in children])
+        print("")
+      
+      solution = [goalie.state]
+      path_cost = 0
+      while goalie.parent is not None:
+        solution.insert(0, goalie.parent)
+        for e in explored:
+          if e.state == goalie.parent:
+            path_cost += getCost(state_space, e.state, goalie.state)
+            goalie = e
+            break
+      return solution, path_cost
+      
+    def getCost(state_space, state0, state1):
+      for [m,n,c] in state_space:
+        if [state0,state1] == [m,n] or [state1,state0] == [m,n]:
+          return c
+    ```
+    
+5. The compiled program will be structured as such. Compile and run the program.
+    ```python
+    class Node:
+      ...
+      
+    def expandAndReturnChildren(...):
+      ...
+      
+    def bfs(...):
+      ...
+      
+    def getCost(...):
+      ...
+      
+    if __name__ == '__main__':
+      state_space = [
+        ...
+      ]
+      
+      initial_state = 'Arad'
+      goal_state = 'Bucharest'
+      
+      [solution, cost] = bfs(state_space, initial_state, goal_state)
+      print("Solution:", solution)
+      print("Path Cost:", cost)
+    ```
+
+## Challenges
+1. Will you be able to create a program to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.?
+
+2. Can you do the same for the vacuum world problem?
