@@ -16,16 +16,38 @@ The following image represents one of the possible states of a two-square vacuum
 
 <circle cx="165" cy="165" r="15" stroke="black" fill='transparent'/>
 <circle cx="165" cy="165" r="30" stroke="black" fill='transparent'/>
-<path d="M 142.5 187.5 h -30 v -60 q 127.5 0 127.5 60 h -52.5" stroke="black" fill='transparent'/>
-<path d="M 202.5 140.5 v -17.5 h -37.5 v 7.5" stroke="black" fill='transparent'/>
-<path d="M 183.75 123 q 0 -100 40 -100 q 40 0 40 30" stroke="black" fill='transparent'/>
+<path d="M 142.5 187.5 h -30 v -60 q 127.5 -10 127.5 60 h -52.5" stroke="black" fill='transparent'/>
+<path d="M 202.5 135.5 v -12.5 h -37.5 v 3.5" stroke="black" fill='transparent'/>
+<path d="M 183.75 123 c 0 -100 65 -100 80 -70" stroke="black" fill='transparent'/>
 <path d="M 263.75 53 h 5 v 120 q 30 0 30 22 h -44 q 0 -22 2 -22 q 2 0 2 -5 v -115 h 5" stroke="black" fill='transparent'/>
-<!-- \draw (0,0) circle (.2);
-      \draw[thick] (0,0) circle (.4);
-      \draw[thick] (-.3,-.3) -- (-.7,-.3) -- (-.7,.5) .. controls (1,.5) .. (1,-.3) -- (.3,-.3);
-      \draw[thick] (.5,.5) -- ++(0,.1) -- ++(-.5,0) -- ++(0,-.1);
-      \draw[thick] (.25,.6) -- ++(0,1) arc (180:0:.55);
-      \draw[thick,rounded corners=1pt] (1.35,1.6) -- ++(.1,0) -- ++(0,-1.6) .. controls +(.3,0) .. ++(.4,-.3) -- ++(-.75,0) -- ++(0,.3) -- ++(.15,0) -- ++(0,1.6) -- ++(.1,0); -->
 
+<!-- left dirt -->
+<path d="M 150 250 a 20 10 0 1 0 5 0"/>
+<path d="M 200 250 a 20 10 50 1 0 0 5"/>
+<path d="M 240 250 a 20 10 -30 1 0 0 5"/>
+<path d="M 140 300 a 20 10 70 1 0 0 5"/>
+<path d="M 190 280 a 20 10 -10 1 0 0 5"/>
+<path d="M 250 280 a 20 10 0 1 0 0 5"/>
+<path d="M 230 300 a 20 10 -50 1 0 0 5"/>
+<path d="M 190 310 a 20 10 0 1 0 0 5"/>
 
+<!-- right dirt -->
+<path d="M 550 250 a 20 10 0 1 0 5 0"/>
+<path d="M 600 250 a 20 10 50 1 0 0 5"/>
+<path d="M 640 250 a 20 10 -30 1 0 0 5"/>
+<path d="M 540 300 a 20 10 70 1 0 0 5"/>
+<path d="M 590 280 a 20 10 -10 1 0 0 5"/>
+<path d="M 650 280 a 20 10 0 1 0 0 5"/>
+<path d="M 630 300 a 20 10 -50 1 0 0 5"/>
+<path d="M 590 310 a 20 10 0 1 0 0 5"/>
 </svg>
+
+The aim of this section is to create a code to search for solution for the vacuum world given an initial state. Consider the actions <kbd>left</kbd>, <kbd>right</kbd>, <kbd>suck</kbd>, and every action contributes the same cost.
+
+1. How could we represent the state?
+
+2. Do we need to define the whole state space statically?
+
+3. How do we define the transition model? The transition model should be a function that takes the `state` and `action` as inputs and returns the result `state`.
+
+Create the code to solve a vacuum world problem using the breadth-first search. Execute it and investigate if it's working correctly.
