@@ -245,7 +245,7 @@ joint_arr
 
     ```python
     x = 0
-    while x == 10: 
+    while x != 10: 
       x += 1
       print(x)
     print('while loop is completed')
@@ -350,7 +350,7 @@ joint_arr
       return filtered
     ```
 
-    This function will filter the student based on the input arguments provided. The function will ignore the input argument if it has empty string, i.e. `""`. If the any of the input arguments is provided, the function will find the students whose detail(s) matches the input.
+    This function will filter the student based on the input arguments provided. The function will ignore the input argument if it has empty string, i.e. `""`. If any of the input arguments is provided, the function will find the students whose detail(s) matches the input.
 
     For example, 
     
