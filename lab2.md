@@ -298,7 +298,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 ## Running the algorithm
 1. Now we have two functions `expandAndReturnChildren` and `bfs`, alongside with the variables `state_space`, `initial_state`, and `goal_state`.
     
-2. To run a script to execute the \verb|bfs| function, we can have the script file structured as such:
+2. To run a script to execute the `bfs` function, we can have the script file structured as such:
 
     ```python
     def expandAndReturnChildren(...):
@@ -461,7 +461,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
       print("Path Cost:", cost)
     ```
 
-## Challenges
-1. Will you be able to create a program to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.?
+## Exercise
+1. Fully understand the code as you will have to modify the code for other problem/search algorithms in next labs.
 
-2. Can you do the same for the vacuum world problem?
+2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it and you will work on that in [Lab 3](/lab3).
