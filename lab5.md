@@ -59,57 +59,57 @@ For all sections in this lab other than the last section, use the IPython consol
 
     - try the following code to understand the getting and setting of a series with default indexing.
 
-    ```python
-    s = pd.Series(np.random.randn(5))
-    s[0]
-    s[0] = 1.5
-    s
-    ```
+      ```python
+      s = pd.Series(np.random.randn(5))
+      s[0]
+      s[0] = 1.5
+      s
+      ```
 
     - if the labels for the indices are specified,
 
-    ```python
-    s = pd.Series(np.random.randn(5), index=['a', 'b', 'c', 'd', 'e'])
-    s['a']
-    s[0]
-    s['b'] = 1.8
-    s
-    s[2] = 2
-    s
-    ```
+      ```python
+      s = pd.Series(np.random.randn(5), index=['a', 'b', 'c', 'd', 'e'])
+      s['a']
+      s[0]
+      s['b'] = 1.8
+      s
+      s[2] = 2
+      s
+      ```
 
 ## DataFrame
 
 1. Creation
     - from NumPy array
 
-    ```python
-    df = pd.DataFrame(np.random.randn(6,4))
-    ```
+      ```python
+      df = pd.DataFrame(np.random.randn(6,4))
+      ```
     
-    Indices and column names can be provided at creation.
+      Indices and column names can be provided at creation.
 
-    ```python
-    df = pd.DataFrame(np.random.randn(6,4), index=list('abcdef'), columns=list('ABCD'))
-    ```
+      ```python
+      df = pd.DataFrame(np.random.randn(6,4), index=list('abcdef'), columns=list('ABCD'))
+      ```
 
-    - from a dict
+      - from a dict
 
-    run the following code and understand the functions used.
+      run the following code and understand the functions used.
 
-    ```python
-    df2 = pd.DataFrame({
-      'A': 1,
-      'B': pd.Timestamp('20190930'),
-      'C': pd.date_range('20190930', periods=4),
-      'D': pd.Series(1, index=list(range(4)), dtype='float32'),
-      'E': np.array([3]*4, dtype='int32'),
-      'F': pd.Categorical(['test', 'train', 'test', 'train']),
-      'G': 'foo'
-    })
-    ```
+      ```python
+      df2 = pd.DataFrame({
+        'A': 1,
+        'B': pd.Timestamp('20190930'),
+        'C': pd.date_range('20190930', periods=4),
+        'D': pd.Series(1, index=list(range(4)), dtype='float32'),
+        'E': np.array([3]*4, dtype='int32'),
+        'F': pd.Categorical(['test', 'train', 'test', 'train']),
+        'G': 'foo'
+      })
+      ```
 
-    `dtypes` of a `DataFrame` can be viewed using `df2.dtypes`. In IPython, tab completion is enabled for column names and public attributes.
+      `dtypes` of a `DataFrame` can be viewed using `df2.dtypes`. In IPython, tab completion is enabled for column names and public attributes.
 
 2. Data display
     - What do `df.head(0)` and `df.tail()` do? What happens if I use `df.head(3)` and `df.tail(2)`?
@@ -122,25 +122,25 @@ For all sections in this lab other than the last section, use the IPython consol
 
 3. Direct indexing
     - to get a column,
-    ```python
-    df['A']
-    df.A
-    ```
+      ```python
+      df['A']
+      df.A
+      ```
 
-    `df[0]` would not work.
+      `df[0]` would not work.
 
     - to select multiple columns,
-    ```python
-    df[['A', 'B']]
-    ```
+      ```python
+      df[['A', 'B']]
+      ```
 
     - to get a slice of rows
-    ```python
-    df[0:4]
-    df['a':'d']
-    ```
+      ```python
+      df[0:4]
+      df['a':'d']
+      ```
 
-    Is the indexing inclusive or exclusive?
+      Is the indexing inclusive or exclusive?
 
 4. Selection by label
     With the following lines, identify how the function `.loc[...]` works
