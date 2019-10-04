@@ -37,7 +37,7 @@ For all sections in this lab other than the last section, use the IPython consol
 
       ```python
       s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
-      s2 = pd.Series([1, 3, 5, np.nan, 6, 8], index=[1, 2, 3, 4, 5, 'f']])
+      s2 = pd.Series([1, 3, 5, np.nan, 6, 8], index=[1, 2, 3, 4, 5, 'f'])
       ```
 
       What is the difference between `s1` and `s2`?
