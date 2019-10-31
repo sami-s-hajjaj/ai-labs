@@ -1,4 +1,4 @@
-# Lab 6: ML
+# Lab 6: Linear Regression
 
 ## Objectives
 
@@ -115,8 +115,6 @@ print(diabetes.DESCR)
     plt.scatter(X_train['bmi'], y_train['target'], color='red')
     plt.title('Training data')
     plt.xlabel('BMI')
-    plt.ion()
-    plt.show()
     line = None
     ```
   	
@@ -152,9 +150,6 @@ print(diabetes.DESCR)
              X_test['bmi'].apply(lambda x: model(x, m[-1], c[-1])), \
              '-', color='green')
     plt.title('Testing data')
-
-    plt.ioff()
-    plt.show()
     ```
 
 ## Learning on linear regression model using scikit-learn
