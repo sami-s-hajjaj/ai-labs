@@ -4,6 +4,24 @@
 
 To understand basic syntax of Python programming language.
 
+## Launch the Spyder Python IDE
+
+<div style="text-align: center"><img src="https://spyder-ide.org/static/images/spyder-logo.svg" alt="Spyder" height="150px"></div>
+
+1. Launch `Spyder` from Anaconda `base` environment.
+
+2. The Spyder IDE consists of three parts: the editor, the variable explorer, and the IPython Console.
+
+3. The editor is where you write your codes.
+
+4. The variable explorer shows the value of the variable after running the code.
+
+5. The IPython console allows you to execute commands, interact with the running code, and display visualisation.
+
+6. After the code is written in the editor, you can execute the code using <kbd>F5</kbd> to run file.
+
+7. Then the variables and their values can be found in variable explorer.
+
 ## Declare a variable
 
 > Python is strongly and dynamically typed.
@@ -318,29 +336,24 @@ joint_arr
 
 ## Exercise
 
-1. Create a new file in Spyder. Define a variable named `friends` such that it is a nested array in which contains the name, home country, and home state/province of 10 of your friends (real or virtual). For example,
+1. Create a new file in Spyder. Define a variable named `students` such that it is a nested array in which contains the name, home country, and home state/province of the students in this class. For example,
 
     ```python
-    friends = [["James", "Malaysia", "Malacca"], ["Goh", "Australia", "Brisbane"], ["Don", "Malaysia", "Pahang"]]
+    students = [["James", "Malaysia", "Malacca"], ["Goh", "Australia", "Brisbane"], ["Don", "Malaysia", "Pahang"]]
     ```
 
-2. Create a function in the same file with three (3) optional input arguments, `name`, `home_country`, `home_state`.
+2. Create a function with three (3) optional input arguments, `name`, `home_country`, `home_state`.
 
     ```python
-    def filterFriend(name="", home_country="", home_state=""):
+    def filterStudent(name="", home_country="", home_state=""):
       ...
       return filtered
     ```
 
-    This function will filter `friends` based on the input arguments provided. The function will ignore the input argument if it has empty string, i.e. `""`. If any of the input arguments is provided, the function will find the friends whose detail(s) matches the input.
+    This function will filter the student based on the input arguments provided. The function will ignore the input argument if it has empty string, i.e. `""`. If any of the input arguments is provided, the function will find the students whose detail(s) matches the input.
 
     For example, 
     
-    `filterFriend(name="James")` will return `[["James", "Malaysia", "Malacca"]]`
+    `filterStudent(name="James")` will return `[["James", "Malaysia", "Malacca"]]`
     
-    `filterFriend(home_country="Malaysia")` will return `[["James", "Malaysia", "Malacca"], ["Don", "Malaysia", "Pahang"]]`.
-
-
-## Submission
-
-Save the file you created in [Exercise](#Exercise) using your student id as the file name, for example, `12345678.py`. Submit this file on MS Teams.
+    `filterStudent(home_country="Malaysia")` will return `[["James", "Malaysia", "Malacca"], ["Don", "Malaysia", "Pahang"]]`.

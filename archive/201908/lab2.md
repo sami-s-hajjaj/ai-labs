@@ -348,7 +348,6 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 1. When you run the script from previous section, you may wonder, if there is a more efficient way of memory usage instead of saving the path to each leaf node in the frontier. Currently there is a lot of redundant states being stored in the variable `frontier`.
 
 ## Using a class
-
 1. The alternative and more space-efficient way would be to declare each node in the search tree to be an object that stores its name, parent, and children. To do so, we need to first define a class.
     ```python
     class Node:
@@ -372,7 +371,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
     a_distinct_node.addChildren(['child 1', 'child 2'])
     ```
     
-3. With the new class, we can update the function `expandAndReturnChildren` to return the children as a list of `Node` objects.
+3. With the new class, we can update the function \verb|expandAndReturnChildren| to return the children as a list of \verb|Node| objects.
     ```python
     def expandAndReturnChildren(state_space, node):
       children = []
@@ -465,8 +464,4 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 ## Exercise
 1. Fully understand the code as you will have to modify the code for other problem/search algorithms in next labs.
 
-2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it before you work on that in [Lab 3](/lab3).
-
-## Submission
-
-1. Submit the final working code using the `Node` class to MS Teams.
+2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it and you will work on that in [Lab 3](/lab3).
