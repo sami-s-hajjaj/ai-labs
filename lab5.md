@@ -180,7 +180,7 @@ For all sections in this lab other than the last section, use the IPython consol
     ```python
     df2 = df.copy()
     df2['E'] = ['one', 'one', 'two', 'three', 'four', 'three']
-    df2[df2['E'].isini(['two', 'four'])]
+    df2[df2['E'].isin(['two', 'four'])]
     ```
 
 ## Data manipulation
