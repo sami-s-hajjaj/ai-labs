@@ -24,7 +24,7 @@ module.exports = {
           '/lab3',
           '/lab4',
           '/lab5',
-          // '/lab6',
+          '/lab6',
           // '/lab7',
           // '/lab8',
           // '/lab9'
@@ -58,7 +58,7 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
-    'latex',
+    'mathjax',
     'tabs'
   ],
 }
