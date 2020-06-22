@@ -1,4 +1,4 @@
-call vuepress build
+call .\node_modules\.bin\vuepress build
 
 call cd .vuepress\dist
 
