@@ -69,7 +69,7 @@ This section explains the method to visualise a decision tree on a graph. To do 
   
 1. Instantiate the classifier without defining the maximum depth and train the model.
     ```python
-    dtc = DecisiontTreeClassifier()
+    dtc = DecisionTreeClassifier()
     input_cols = iris['train']['attributes'].columns[:2].tolist()
     dtc.fit(iris['train']['attributes'][input_cols], iris['train']['target'].species)
     ```
