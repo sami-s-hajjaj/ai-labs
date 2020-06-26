@@ -6,7 +6,7 @@
 
 
 ## Datasets
-The same iris and diabetes datasets used in Lab 6a are used here. Load the datasets and split them into 80-20 train-test proportion.
+The same iris and diabetes datasets used in Lab 7 are used here. Load the datasets and split them into 80-20 train-test proportion.
   
 ## Decision tree
   
