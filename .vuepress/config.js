@@ -27,7 +27,7 @@ module.exports = {
           '/lab6',
           '/lab7',
           '/lab8',
-          // '/lab9'
+          '/lab9'
         ]
       },
       {
