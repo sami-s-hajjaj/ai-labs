@@ -15,19 +15,11 @@ module.exports = {
     sidebar: [
       '/',
       {
-        title: '2020 March',
+        title: '2020 August',
         collapsable: false,
         children: [
           '/get-start',
-          '/lab1',
-          '/lab2',
-          '/lab3',
-          '/lab4',
-          '/lab5',
-          '/lab6',
-          '/lab7',
-          '/lab8',
-          '/lab9'
+          '/lab1'
         ]
       },
       {
@@ -47,6 +39,22 @@ module.exports = {
               '/archive/201908/lab7',
               '/archive/201908/lab8',
               '/archive/201908/lab9'
+            ]
+          },
+          {
+            title: '2020 March',
+            collapsable: true,
+            children: [
+              '/archive/202003/get-start',
+              '/archive/202003/lab1',
+              '/archive/202003/lab2',
+              '/archive/202003/lab3',
+              '/archive/202003/lab4',
+              '/archive/202003/lab5',
+              '/archive/202003/lab6',
+              '/archive/202003/lab7',
+              '/archive/202003/lab8',
+              '/archive/202003/lab9'
             ]
           },
         ]
