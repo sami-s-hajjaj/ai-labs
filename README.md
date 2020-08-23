@@ -11,11 +11,11 @@ timelineItem: [
   }, { 
     title: 'Lab 4', link: './lab4', date: 'Week 5' 
   }, { 
-    title: 'Lab 5', link: './lab5', date: 'Week 6-8' 
+    title: 'Lab 5', link: './lab5', date: 'Week 6' 
   }, { 
-    title: 'Lab 6', link: './lab6', date: 'Week 9' 
+    title: 'Lab 6', link: './lab6', date: 'Week 7' 
   }, { 
-    title: 'Lab 7', link: './lab7', date: 'Week 10' 
+    title: 'Lab 7', link: './lab7', date: 'Week 9' 
   }, { 
     title: 'Lab 8', link: './lab8', date: 'Week 11' 
   }, { 
