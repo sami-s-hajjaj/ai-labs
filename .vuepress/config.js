@@ -19,7 +19,8 @@ module.exports = {
         collapsable: false,
         children: [
           '/get-start',
-          '/lab1'
+          '/lab1',
+          '/lab2'
         ]
       },
       {
