@@ -15,19 +15,19 @@ module.exports = {
     sidebar: [
       '/',
       {
-        title: '2020 August',
+        title: '2021 April',
         collapsable: false,
         children: [
           '/get-start',
-          '/lab1',
-          '/lab2',
-          '/lab3',
-          '/lab4',
-          '/lab5',
-          '/lab6',
-          '/lab7',
-          '/lab8',
-          '/lab9'
+          // '/lab1',
+          // '/lab2',
+          // '/lab3',
+          // '/lab4',
+          // '/lab5',
+          // '/lab6',
+          // '/lab7',
+          // '/lab8',
+          // '/lab9'
         ]
       },
       {
@@ -35,18 +35,19 @@ module.exports = {
         collapsible: true,
         children: [
           {
-            title: '2019 August',
+            title: '2020 August',
             collapsable: true,
             children: [
-              '/archive/201908/lab1',
-              '/archive/201908/lab2',
-              '/archive/201908/lab3',
-              '/archive/201908/lab4',
-              '/archive/201908/lab5',
-              '/archive/201908/lab6',
-              '/archive/201908/lab7',
-              '/archive/201908/lab8',
-              '/archive/201908/lab9'
+              '/archive/202008/get-start',
+              '/archive/202008/lab1',
+              '/archive/202008/lab2',
+              '/archive/202008/lab3',
+              '/archive/202008/lab4',
+              '/archive/202008/lab5',
+              '/archive/202008/lab6',
+              '/archive/202008/lab7',
+              '/archive/202008/lab8',
+              '/archive/202008/lab9'
             ]
           },
           {
@@ -63,6 +64,21 @@ module.exports = {
               '/archive/202003/lab7',
               '/archive/202003/lab8',
               '/archive/202003/lab9'
+            ]
+          },
+          {
+            title: '2019 August',
+            collapsable: true,
+            children: [
+              '/archive/201908/lab1',
+              '/archive/201908/lab2',
+              '/archive/201908/lab3',
+              '/archive/201908/lab4',
+              '/archive/201908/lab5',
+              '/archive/201908/lab6',
+              '/archive/201908/lab7',
+              '/archive/201908/lab8',
+              '/archive/201908/lab9'
             ]
           },
         ]
