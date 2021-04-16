@@ -259,7 +259,7 @@ joint_arr
     |Operator|Definition   |Example (symbolic)|Example (text)  |
     |:------:|:-----------:|:----------------:|:--------------:|
     |`is`    |Equivalence  |`a == 1`          |`a is 1`        |
-    |`!=`    |Inequivalence|`a != 1`          |`a is not 1` <br> or `not (a is 1)` <br> or `not a is 1` <br> or `not(a == 1)`|
+    |`not`    |Inequivalence|`a != 1`          |`a is not 1` <br> or `not (a is 1)` <br> or `not a is 1` <br> or `not(a == 1)`|
 
 3. Combining two conditions can also be done with text operators `and` and `or`.
     
