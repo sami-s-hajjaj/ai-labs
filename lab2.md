@@ -326,7 +326,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
     def bfs(...):
     ...
 
-    if __name__ == '__main_':
+    if __name__ == '__main__':
       state_space = [
       ...
       ]
