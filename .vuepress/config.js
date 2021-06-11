@@ -5,6 +5,7 @@ module.exports = {
     ["link", { rel: "stylesheet", href: "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" }],
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesignicons.min.css" }],
     ["link", { rel: "stylesheet", href: "https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" }],
+    ["script", { id: "MathJax-script", async: true, src: "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" }]
   ],
   themeConfig: {
     nav: [
@@ -24,7 +25,7 @@ module.exports = {
           '/lab3',
           '/lab4',
           '/lab5',
-          // '/lab6',
+          '/lab6',
           // '/lab7',
           // '/lab8',
           // '/lab9'
@@ -90,6 +91,13 @@ module.exports = {
     lineNumbers: true
   },
   plugins: [
-    'mathjax'
+    [
+      'mathjax',
+      {
+        target: 'chtml',
+        showError: true,
+        macros: {},
+      },
+    ],
   ],
 }
