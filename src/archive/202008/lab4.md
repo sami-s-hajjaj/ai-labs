@@ -10,7 +10,8 @@
 
 The following image represents one of the possible states of a two-square vacuum world.
 
-<svg viewBox="0 0 800 400">
+<div>
+<svg viewBox="0 0 805 400">
 <path d="M 0 0 h 400 v 400 h -400 v -400" fill='transparent' stroke='black'/>
 <path d="M 400 0 h 400 v 400 h -400" fill='transparent' stroke='black'/>
 
@@ -41,6 +42,7 @@ The following image represents one of the possible states of a two-square vacuum
 <path d="M 630 300 a 20 10 -50 1 0 0 5"/>
 <path d="M 590 310 a 20 10 0 1 0 0 5"/>
 </svg>
+</div>
 
 The aim of this section is to create a code to search for solution for the vacuum world given an initial state. Consider the actions <kbd>left</kbd>, <kbd>right</kbd>, <kbd>suck</kbd>, and every action contributes the same cost.
 
