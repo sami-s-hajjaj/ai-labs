@@ -1,0 +1,1507 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="icon" href="../../../img/favicon.ico">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.2">
+    
+    
+      
+        <title>Lab 1: Basic Python - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1118c9be.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ba0d045b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#009485">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <script>function __prefix(e){return new URL("../../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lab-1-basic-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lab 1: Basic Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        Current
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../202103/get-start/" class="md-tabs__link md-tabs__link--active">
+        Archive
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  <img src="../../../img/favicon.ico" alt="logo">
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      <label class="md-nav__link" for="__nav_1">
+        Current
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Current" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Current
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      <label class="md-nav__link" for="__nav_2">
+        Archive
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Archive" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Archive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      <label class="md-nav__link" for="__nav_2_1">
+        202103
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="202103" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          202103
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202103/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        202008
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="202008" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          202008
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202008/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      <label class="md-nav__link" for="__nav_2_3">
+        202003
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="202003" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          202003
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../202003/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      
+      <label class="md-nav__link" for="__nav_2_4">
+        201908
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="201908" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          201908
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Lab 1: Basic Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Lab 1: Basic Python
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-the-spyder-python-ide" class="md-nav__link">
+    Launch the Spyder Python IDE
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#declare-a-variable" class="md-nav__link">
+    Declare a variable
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-manipulation" class="md-nav__link">
+    Array manipulation
+  </a>
+  
+    <nav class="md-nav" aria-label="Array manipulation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#add-an-element-to-the-end-of-an-array" class="md-nav__link">
+    Add an element to the end of an array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#add-multiple-elements-to-the-end-of-an-array" class="md-nav__link">
+    Add multiple elements to the end of an array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assign-a-value-to-a-specific-index" class="md-nav__link">
+    Assign a value to a specific index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#insert-an-element-at-a-specific-index" class="md-nav__link">
+    Insert an element at a specific index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#remove-an-element-at-a-specific-index" class="md-nav__link">
+    Remove an element at a specific index
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combining-arrays" class="md-nav__link">
+    Combining arrays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loops" class="md-nav__link">
+    Loops
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions" class="md-nav__link">
+    Conditions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-defined-functions" class="md-nav__link">
+    User-defined functions
+  </a>
+  
+    <nav class="md-nav" aria-label="User-defined functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-functions-with-input-arguments" class="md-nav__link">
+    User-defined functions with input arguments
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-defined-functions-with-optional-input-arguments" class="md-nav__link">
+    User-defined functions with optional input arguments
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    Exercise
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="lab-1-basic-python">Lab 1: Basic Python</h1>
+<h2 id="objective">Objective</h2>
+<p>To understand basic syntax of Python programming language.</p>
+<h2 id="launch-the-spyder-python-ide">Launch the Spyder Python IDE</h2>
+<div style="text-align: center"><img src="https://spyder-ide.org/static/images/spyder-logo.svg" alt="Spyder" height="150px"></div>
+
+<ol>
+<li>
+<p>Launch <code>Spyder</code> from Anaconda <code>base</code> environment.</p>
+</li>
+<li>
+<p>The Spyder IDE consists of three parts: the editor, the variable explorer, and the IPython Console.</p>
+</li>
+<li>
+<p>The editor is where you write your codes.</p>
+</li>
+<li>
+<p>The variable explorer shows the value of the variable after running the code.</p>
+</li>
+<li>
+<p>The IPython console allows you to execute commands, interact with the running code, and display visualisation.</p>
+</li>
+<li>
+<p>After the code is written in the editor, you can execute the code using <kbd>F5</kbd> to run file.</p>
+</li>
+<li>
+<p>Then the variables and their values can be found in variable explorer.</p>
+</li>
+</ol>
+<h2 id="declare-a-variable">Declare a variable</h2>
+<blockquote>
+<p>Python is strongly and dynamically typed.</p>
+</blockquote>
+<p><strong>Strongly typed</strong> means the type of a variable does not change unexpectedly. When a variable is defined as a string with only numerical digits, it stays string, it doesn’t become an integer or number.</p>
+<p><strong>Dynamically typed</strong> means the type of a variable can change when a value of a different type is assigned to the variable.</p>
+<p>As Python is dynamically typed, we do not need to specify a type when we declare a variable. We just assign a value to the variable.</p>
+<ol>
+<li>
+<p>Define a variable named <code>val</code> and assign the value <code>'a'</code> to the variable.</p>
+<div class="highlight"><pre><span></span><code><span class="n">val</span> <span class="o">=</span> <span class="s1">&#39;a&#39;</span>
+</code></pre></div>
+<p>The type of the variable can be viewed in the variable explorer.</p>
+</li>
+<li>
+<p>Continue from the previous code block, assign the value <code>1</code> to the same variable. The variable will now be of type <code>int</code> instead of type <code>str</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">val</span> <span class="o">=</span> <span class="mi">1</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="array-manipulation">Array manipulation</h2>
+<ol>
+<li>
+<p>Array in Python can be declared using a set of square brackets (<code>[...]</code>).</p>
+</li>
+<li>
+<p>To assign a variable with an empty array,</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+</li>
+<li>
+<p>To define an array with a series of numbers,</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>To define an array with a series of alphabets,</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>An array can also be defined with values of mixed types.</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Python arrays (or more commonly known as lists) are zero indexed arrays; it means to access the first element in the array <code>arr</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># gives the output of 1</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># gives the output of &#39;a&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Python arrays also support negative indexing; this means to get the last element in the array <code>arr</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># gives the output of &#39;c&#39;</span>
+</code></pre></div>
+</li>
+<li>
+<p>Colon (<code>:</code>) can be used to extract multiple elements from an array. Maximum two (2) colons can be used for indexing/slicing an array. <code>arr[0:5:2]</code> The value before the first colon is the starting index, the value after the first colon is the ending index (exclusive), the value after the second colon is the number of steps. </p>
+<p>If the first value is empty, it is assumed as <code>0</code>.</p>
+<p>If the second value is empty, it is assumed as the length of the array, i.e. up till the last element in the array.</p>
+<p>If the third value is empty, it is assumed as <code>1</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span>
+<span class="c1"># [1, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">]</span>
+<span class="c1"># [&#39;a&#39;, 2, &#39;b&#39;, 3]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">5</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># [&#39;a&#39;, &#39;b&#39;]</span>
+<span class="n">arr</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+<span class="c1"># [1, &#39;a&#39;, 2]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">:]</span>
+<span class="c1"># [3, &#39;c&#39;]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span>
+<span class="c1"># [2, &#39;b&#39;]</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># []</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># [3, &#39;b&#39;, 2] --&gt; slice in the reverse order</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="add-an-element-to-the-end-of-an-array">Add an element to the end of an array</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">arr</span>
+<span class="c1"># [1, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;, 4]</span>
+</code></pre></div>
+<h3 id="add-multiple-elements-to-the-end-of-an-array">Add multiple elements to the end of an array</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;e&#39;</span><span class="p">])</span>
+<span class="n">arr</span>
+<span class="c1"># [1, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;, 4, &#39;d&#39;, 5, &#39;e&#39;]</span>
+</code></pre></div>
+<h3 id="assign-a-value-to-a-specific-index">Assign a value to a specific index</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">arr</span>
+<span class="c1"># [0, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;, 4, &#39;d&#39;, 5, &#39;e&#39;]</span>
+</code></pre></div>
+<h3 id="insert-an-element-at-a-specific-index">Insert an element at a specific index</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">arr</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">arr</span>
+<span class="c1"># [0, 1, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;, 4, &#39;d&#39;, 5, &#39;e&#39;]</span>
+</code></pre></div>
+<h3 id="remove-an-element-at-a-specific-index">Remove an element at a specific index</h3>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="k">del</span> <span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">arr</span>
+<span class="c1"># [1, &#39;a&#39;, 2, &#39;b&#39;, 3, &#39;c&#39;, 4, &#39;d&#39;, 5, &#39;e&#39;]</span>
+</code></pre></div>
+<h3 id="combining-arrays">Combining arrays</h3>
+<p><code>zip</code> can be used to combine two or more arrays.</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># in editor</span>
+<span class="n">joint_arr</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">]))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="c1"># in IPython console</span>
+<span class="n">joint_arr</span>
+<span class="c1"># [(1,&#39;a&#39;),(2,&#39;b&#39;),(3,&#39;c&#39;)]</span>
+</code></pre></div>
+<h2 id="loops">Loops</h2>
+<ol>
+<li>
+<p>Python supports <code>for</code> and <code>while</code> loops.</p>
+</li>
+<li>
+<p>To loop through every element in the array <code>arr</code> and print them to the console,</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1"># 1</span>
+<span class="c1"># a</span>
+<span class="c1"># 2</span>
+<span class="c1"># ...</span>
+</code></pre></div>
+<p><code>for a in arr</code>: loops through all elements in <code>arr</code> and in each loop, an element in <code>arr</code> is assigned to the variable <code>a</code>.</p>
+</li>
+<li>
+<p>Note that in most other programming languages, code blocks are separated with delimiters such as the curly brackets (<code>{}</code>). This is not the case in Python. Code blocks in Python are defined by their indentation and normally initiated with a colon(<code>:</code>). </p>
+<p>For example,</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div>
+<p><code>print(a)</code> is the command to be executed in each loop.</p>
+<p><code>print(arr)</code> is only executed after the <code>for</code> loop is completed.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</code></pre></div>
+<p>In this case, <code>print(arr)</code> is executed in each loop.</p>
+</li>
+<li>
+<p>Using <code>zip</code> we can loop through two arrays at once.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">],[</span><span class="s1">&#39;artificial&#39;</span><span class="p">,</span><span class="s1">&#39;breadth&#39;</span><span class="p">,</span><span class="s1">&#39;cost&#39;</span><span class="p">,</span><span class="s1">&#39;depth&#39;</span><span class="p">]):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39; for &#39;</span> <span class="o">+</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>enumerate</code> is useful in obtaining the index of the element in the array.</p>
+<div class="highlight"><pre><span></span><code><span class="k">for</span> <span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">item</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="s1">&#39;d&#39;</span><span class="p">]):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Index of &#39;</span> <span class="o">+</span> <span class="n">item</span> <span class="o">+</span> <span class="s1">&#39; is: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">))</span>
+</code></pre></div>
+</li>
+<li>
+<p>Looping through a dictionary (<code>dict</code>) can also be done easily.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x_dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;d&#39;</span><span class="p">:</span> <span class="s1">&#39;depth&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;e&#39;</span><span class="p">:</span> <span class="s1">&#39;estimation&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;f&#39;</span><span class="p">:</span> <span class="s1">&#39;frontier&#39;</span>
+<span class="p">}</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">x_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">key</span> <span class="o">+</span> <span class="s1">&#39; for &#39;</span> <span class="o">+</span> <span class="n">value</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>while</code> loops can be defined similarly.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">10</span><span class="p">:</span> 
+  <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+  <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;while loop is completed&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>The following example introduces nested array and multiple assignments.</p>
+<div class="highlight"><pre><span></span><code><span class="n">arr</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="s1">&#39;b&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="s1">&#39;c&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="s1">&#39;d&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="s1">&#39;e&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">],[</span><span class="s1">&#39;f&#39;</span><span class="p">,</span><span class="mi">6</span><span class="p">]]</span>
+<span class="k">for</span> <span class="p">[</span><span class="n">a</span><span class="p">,</span><span class="n">n</span><span class="p">]</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+  <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; is &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="conditions">Conditions</h2>
+<ol>
+<li>
+<p>The following operators can be used for conditional testing:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>==</code></td>
+<td align="center">Equivalence</td>
+</tr>
+<tr>
+<td align="center"><code>!=</code></td>
+<td align="center">Inequivalence</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;</code></td>
+<td align="center">Less than</td>
+</tr>
+<tr>
+<td align="center"><code>&lt;=</code></td>
+<td align="center">Less than or equal to</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;</code></td>
+<td align="center">Greater than</td>
+</tr>
+<tr>
+<td align="center"><code>&gt;=</code></td>
+<td align="center">Greater than or equal to</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Python also supports text operator for conditional testing:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Operator</th>
+<th align="center">Definition</th>
+<th align="center">Example (symbolic)</th>
+<th align="center">Example (text)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>is</code></td>
+<td align="center">Equivalence</td>
+<td align="center"><code>a == 1</code></td>
+<td align="center"><code>a is 1</code></td>
+</tr>
+<tr>
+<td align="center"><code>!=</code></td>
+<td align="center">Inequivalence</td>
+<td align="center"><code>a != 1</code></td>
+<td align="center"><code>a is not 1</code> <br> or <code>not (a is 1)</code> <br> or <code>not a is 1</code> <br> or <code>not(a == 1)</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Combining two conditions can also be done with text operators <code>and</code> and <code>or</code>.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Symbolic operator</th>
+<th align="center">Text operator</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>&amp;</code></td>
+<td align="center"><code>and</code></td>
+</tr>
+<tr>
+<td align="center"><code>|</code></td>
+<td align="center"><code>or</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<h2 id="user-defined-functions">User-defined functions</h2>
+<ol>
+<li>
+<p>To define a custom function with the name of <code>custom_fcn</code>,</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">custom_fcn</span><span class="p">():</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a custom function to display custom message&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>To call the function,</p>
+<div class="highlight"><pre><span></span><code><span class="n">custom_fcn</span><span class="p">()</span>
+<span class="c1"># This is a custom function to display custom message</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="user-defined-functions-with-input-arguments">User-defined functions with input arguments</h3>
+<ol>
+<li>
+<p>To define a custom function with input arguments,</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">custom_fcn</span><span class="p">(</span><span class="n">msg</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a custom function to display &#39;</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>The function can be called by</p>
+<div class="highlight"><pre><span></span><code><span class="n">custom_fcn</span><span class="p">(</span><span class="s1">&#39;new message&#39;</span><span class="p">)</span>
+<span class="c1"># This is a custom function to display new message</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="user-defined-functions-with-optional-input-arguments">User-defined functions with optional input arguments</h3>
+<ol>
+<li>
+<p>To define a custom function with optional input arguments, we just need to provide the default value to the optional input arguments.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">custom_fcn</span><span class="p">(</span><span class="n">msg</span> <span class="o">=</span> <span class="s1">&#39;default message&#39;</span><span class="p">):</span>
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;This is a custom function to display &#39;</span> <span class="o">+</span> <span class="n">msg</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>The input arguments can also be specified as named inputs.</p>
+<div class="highlight"><pre><span></span><code><span class="n">custom_fcn</span><span class="p">(</span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;new message&#39;</span><span class="p">)</span>
+<span class="c1"># This is a custom function to display new message</span>
+</code></pre></div>
+</li>
+</ol>
+<h2 id="exercise">Exercise</h2>
+<ol>
+<li>
+<p>Create a new file in Spyder. Define a variable named <code>students</code> such that it is a nested array in which contains the name, home country, and home state/province of the students in this class. For example,</p>
+<div class="highlight"><pre><span></span><code><span class="n">students</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">&quot;James&quot;</span><span class="p">,</span> <span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Malacca&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Goh&quot;</span><span class="p">,</span> <span class="s2">&quot;Australia&quot;</span><span class="p">,</span> <span class="s2">&quot;Brisbane&quot;</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;Don&quot;</span><span class="p">,</span> <span class="s2">&quot;Malaysia&quot;</span><span class="p">,</span> <span class="s2">&quot;Pahang&quot;</span><span class="p">]]</span>
+</code></pre></div>
+</li>
+<li>
+<p>Create a function with three (3) optional input arguments, <code>name</code>, <code>home_country</code>, <code>home_state</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">filterStudent</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">home_country</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">home_state</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
+  <span class="o">...</span>
+  <span class="k">return</span> <span class="n">filtered</span>
+</code></pre></div>
+<p>This function will filter the student based on the input arguments provided. The function will ignore the input argument if it has empty string, i.e. <code>""</code>. If any of the input arguments is provided, the function will find the students whose detail(s) matches the input.</p>
+<p>For example, </p>
+<p><code>filterStudent(name="James")</code> will return <code>[["James", "Malaysia", "Malacca"]]</code></p>
+<p><code>filterStudent(home_country="Malaysia")</code> will return <code>[["James", "Malaysia", "Malacca"], ["Don", "Malaysia", "Pahang"]]</code>.</p>
+</li>
+</ol>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../202003/lab9/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 9: Clustering" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Lab 9: Clustering
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../lab2/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 2: Breadth-First Search" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lab 2: Breadth-First Search
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.2b46852b.min.js"></script>
+      
+        <script src="../../../javascripts/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
