@@ -1,4 +1,5 @@
-site_name: My Docs
+site_name: CSC3206 AI Labs
+site_url: https://ricwtk.github.io/ai-labs
 docs_dir: src
 site_dir: docs
 theme:
