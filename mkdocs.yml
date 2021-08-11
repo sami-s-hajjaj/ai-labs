@@ -9,8 +9,8 @@ theme:
   logo: img/favicon.ico
   palette:
     scheme: default
-    primary: teal
-    accent: teal
+    primary: indigo
+    accent: indigo
   features:
     - toc.integrate
     - navigation.tabs
