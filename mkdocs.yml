@@ -1,0 +1,15 @@
+site_name: My Docs
+docs_dir: src
+site_dir: docs
+theme:
+  name: material
+  custom_dir: "custom"
+  favicon: img/favicon.ico
+  logo: img/favicon.ico
+  palette:
+    scheme: default
+    primary: teal
+    accent: teal
+  features:
+    - toc.integrate
+    - navigation.tabs
