@@ -97,6 +97,7 @@ KNN algorithms are provided by the `scikit-learn` Python library as the class `s
         import matplotlib.pyplot as plt
         from matplotlib import cm
         from matplotlib.colors import ListedColormap
+        ```
 
     2. Prepare the colormaps.
         ```python
