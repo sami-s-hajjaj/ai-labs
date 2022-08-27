@@ -36,15 +36,18 @@ nav:
     - Overview: index.md
     - get-start.md
     - lab1.md
-    - lab2.md
-    - lab3.md
-    - lab4.md
-    - lab5.md
-    - lab6.md
-    - lab7.md
-    - lab8.md
-    - lab9.md
   - Archive:
+    - 202203:
+      - archive/202203/get-start.md
+      - archive/202203/lab1.md
+      - archive/202203/lab2.md
+      - archive/202203/lab3.md
+      - archive/202203/lab4.md
+      - archive/202203/lab5.md
+      - archive/202203/lab6.md
+      - archive/202203/lab7.md
+      - archive/202203/lab8.md
+      - archive/202203/lab9.md
     - 202103:
       - archive/202103/get-start.md
       - archive/202103/lab1.md
