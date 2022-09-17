@@ -2,7 +2,7 @@
 
 ## Objective
 
-To create Python script to execute breadth first search algorithm.
+To create Python script to execute uniform cost search algorithm.
 
 ## Problem to be solved
 
