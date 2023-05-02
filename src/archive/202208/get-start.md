@@ -4,7 +4,7 @@ The lab for CSC3206 Artificial Intelligence will be using Python as the programm
 
 ## Installation
 
-1. Download the Anaconda installer with Python 3 for your system from [https://www.anaconda.com/download](https://www.anaconda.com/download).
+1. Download the Anaconda installer with Python 3.7 for your system from [https://www.anaconda.com/distribution/](https://www.anaconda.com/distribution/).
 
 2. Use the graphical installer to install Anaconda.
 
