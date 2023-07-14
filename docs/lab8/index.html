@@ -1795,7 +1795,7 @@
 <ol>
 <li>
 <p>Instantiate the classifier without defining the maximum depth and train the model.
-    <div class="highlight"><pre><span></span><code><span class="n">dtr</span> <span class="o">=</span> <span class="n">DecisiontTreeRegressor</span><span class="p">()</span>
+    <div class="highlight"><pre><span></span><code><span class="n">dtr</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 <span class="n">input_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
 <span class="n">dtr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">],</span> 
         <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">)</span>

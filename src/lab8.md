@@ -205,7 +205,7 @@ This section explains the method to visualise a decision tree on a graph. To do 
   
 1. Instantiate the classifier without defining the maximum depth and train the model.
     ```python
-    dtr = DecisiontTreeRegressor()
+    dtr = DecisionTreeRegressor()
     input_cols = ['age', 'bmi']
     dtr.fit(diabetes['train']['attributes'][input_cols], 
             diabetes['train']['target'].diseaseProgression)
