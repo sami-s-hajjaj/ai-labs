@@ -339,8 +339,3 @@ joint_arr
     `filterFriend(name="James")` will return `[["James", "Malaysia", "Malacca"]]`
     
     `filterFriend(home_country="Malaysia")` will return `[["James", "Malaysia", "Malacca"], ["Don", "Malaysia", "Pahang"]]`.
-
-
-## Submission
-
-Save the file you created in [Exercise](#Exercise) using your student id as the file name, for example, `12345678.py`. Submit this file on MS Teams.
