@@ -467,7 +467,7 @@ The search problem we will focus on during this lab is Nick’s route-finding pr
 ## Exercise
 1. Fully understand the code as you will have to modify the code for other problem/search algorithms in next labs.
 
-2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it before you work on that in [Lab 3](/lab3) next week.
+2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it before you work on that in [Lab 3](lab3.md) next week.
 
 ## Submission
 

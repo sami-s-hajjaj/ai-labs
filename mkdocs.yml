@@ -35,6 +35,7 @@ nav:
   - Current:
     - Overview: index.md
     - get-start.md
+    - lab1.md
   - Archive:
     - 202304: 
       - archive/202304/get-start.md
