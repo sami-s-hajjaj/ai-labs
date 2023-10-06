@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://ricwtk.github.io/ai-labs/archive/202003/lab9/">
+        <link rel="canonical" href="https://ricwtk.github.io/ai-labs/lab4/">
       
-      <link rel="icon" href="../../../img/favicon.ico">
+      <link rel="icon" href="../img/favicon.ico">
       <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
-        <title>Lab 9: Clustering - CSC3206 AI Labs</title>
+        <title>Lab 4: State representation - CSC3206 AI Labs</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.e8d9bf0c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.e8d9bf0c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.e6a45f82.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
         
           
           
@@ -40,9 +40,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -66,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-9-clustering" class="md-skip">
+        <a href="#lab-4-state-representation" class="md-skip">
           Skip to content
         </a>
       
@@ -80,9 +80,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="CSC3206 AI Labs" class="md-header__button md-logo" aria-label="CSC3206 AI Labs" data-md-component="logo">
+    <a href=".." title="CSC3206 AI Labs" class="md-header__button md-logo" aria-label="CSC3206 AI Labs" data-md-component="logo">
       
-  <img src="../../../img/favicon.ico" alt="logo">
+  <img src="../img/favicon.ico" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -98,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 9: Clustering
+              Lab 4: State representation
             
           </span>
         </div>
@@ -158,13 +158,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href=".." class="md-tabs__link md-tabs__link--active">
         Current
       </a>
     </li>
@@ -174,8 +176,6 @@
         
   
   
-    
-  
 
 
   
@@ -187,7 +187,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../202304/get-start/" class="md-tabs__link md-tabs__link--active">
+      <a href="../archive/202304/get-start/" class="md-tabs__link">
         Archive
       </a>
     </li>
@@ -219,9 +219,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="CSC3206 AI Labs" class="md-nav__button md-logo" aria-label="CSC3206 AI Labs" data-md-component="logo">
+    <a href=".." title="CSC3206 AI Labs" class="md-nav__button md-logo" aria-label="CSC3206 AI Labs" data-md-component="logo">
       
-  <img src="../../../img/favicon.ico" alt="logo">
+  <img src="../img/favicon.ico" alt="logo">
 
     </a>
     CSC3206 AI Labs
@@ -235,12 +235,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
       
       
       
@@ -263,1012 +265,13 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Overview
       </a>
     </li>
   
 
             
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2">
-          Archive
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="Archive" data-md-level="1">
-        <label class="md-nav__title" for="__nav_2">
-          <span class="md-nav__icon md-icon"></span>
-          Archive
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_1">
-          202304
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202304" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_1">
-          <span class="md-nav__icon md-icon"></span>
-          202304
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202304/lab9/" class="md-nav__link">
-        Lab 9: Clustering
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_2">
-          202208
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202208" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_2">
-          <span class="md-nav__icon md-icon"></span>
-          202208
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202208/lab9/" class="md-nav__link">
-        Lab 9: Clustering
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_3">
-          202203
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202203" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_3">
-          <span class="md-nav__icon md-icon"></span>
-          202203
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202203/lab9/" class="md-nav__link">
-        Lab 9: Clustering
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_4">
-          202103
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202103" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
-          <span class="md-nav__icon md-icon"></span>
-          202103
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202103/lab9/" class="md-nav__link">
-        Lab 9: Clustering
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_5">
-          202008
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202008" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
-          <span class="md-nav__icon md-icon"></span>
-          202008
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/get-start/" class="md-nav__link">
-        Getting started
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab1/" class="md-nav__link">
-        Lab 1: Basic Python
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab2/" class="md-nav__link">
-        Lab 2: Breadth-First Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab3/" class="md-nav__link">
-        Lab 3: Uniform-Cost Search
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../202008/lab9/" class="md-nav__link">
-        Lab 9: Clustering
-      </a>
-    </li>
-  
-
-            
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-    
-  
-  
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" checked>
-      
-      
-      
-      
-        <label class="md-nav__link" for="__nav_2_6">
-          202003
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <nav class="md-nav" aria-label="202003" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
-          <span class="md-nav__icon md-icon"></span>
-          202003
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
           
             
               
@@ -1330,76 +333,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../lab4/" class="md-nav__link">
-        Lab 4: State representation
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab5/" class="md-nav__link">
-        Lab 5: pandas
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab6/" class="md-nav__link">
-        Lab 6: Linear Regression
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab7/" class="md-nav__link">
-        Lab 7: *k* Nearest Neighbours (KNN)
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../lab8/" class="md-nav__link">
-        Lab 8: Decision Tree
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -1412,12 +345,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Lab 9: Clustering
+          Lab 4: State representation
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Lab 9: Clustering
+        Lab 4: State representation
       </a>
       
         
@@ -1443,112 +376,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#note" class="md-nav__link">
-    Note
+  <a href="#problem" class="md-nav__link">
+    Problem
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-means-clustering-using-basic-python" class="md-nav__link">
-    k-means clustering using basic Python
-  </a>
-  
-    <nav class="md-nav" aria-label="k-means clustering using basic Python">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataset" class="md-nav__link">
-    Dataset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#initialisation" class="md-nav__link">
-    Initialisation
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-the-points" class="md-nav__link">
-    Cluster the points
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#update-the-centroids" class="md-nav__link">
-    Update the centroids
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#termination-condition" class="md-nav__link">
-    Termination condition
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visualisation" class="md-nav__link">
-    Visualisation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#k-means-clustering-using-scikit-learn-python-library" class="md-nav__link">
-    k-means clustering using scikit-learn Python library
-  </a>
-  
-    <nav class="md-nav" aria-label="k-means clustering using scikit-learn Python library">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#dataset_1" class="md-nav__link">
-    Dataset
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#k-means-model" class="md-nav__link">
-    k-means model
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#training" class="md-nav__link">
-    Training
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cluster-the-points_1" class="md-nav__link">
-    Cluster the points
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#visualisation_1" class="md-nav__link">
-    Visualisation
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1556,6 +386,1071 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Archive
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Archive" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Archive
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          202304
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202304" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          202304
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202304/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          202208
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202208" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          202208
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202208/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          202203
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202203" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          202203
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202203/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          202103
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202103" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          202103
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202103/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          202008
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202008" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          202008
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202008/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          202003
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="202003" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          202003
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/get-start/" class="md-nav__link">
+        Getting started
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab1/" class="md-nav__link">
+        Lab 1: Basic Python
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab2/" class="md-nav__link">
+        Lab 2: Breadth-First Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab3/" class="md-nav__link">
+        Lab 3: Uniform-Cost Search
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab4/" class="md-nav__link">
+        Lab 4: State representation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab5/" class="md-nav__link">
+        Lab 5: pandas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab6/" class="md-nav__link">
+        Lab 6: Linear Regression
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab7/" class="md-nav__link">
+        Lab 7: *k* Nearest Neighbours (KNN)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab8/" class="md-nav__link">
+        Lab 8: Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../archive/202003/lab9/" class="md-nav__link">
+        Lab 9: Clustering
+      </a>
     </li>
   
 
@@ -1600,7 +1495,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab1/" class="md-nav__link">
+      <a href="../archive/201908/lab1/" class="md-nav__link">
         Lab 1: Basic Python
       </a>
     </li>
@@ -1614,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab2/" class="md-nav__link">
+      <a href="../archive/201908/lab2/" class="md-nav__link">
         Lab 2: Breadth-First Search
       </a>
     </li>
@@ -1628,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab3/" class="md-nav__link">
+      <a href="../archive/201908/lab3/" class="md-nav__link">
         Lab 3: Uniform-Cost Search
       </a>
     </li>
@@ -1642,7 +1537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab4/" class="md-nav__link">
+      <a href="../archive/201908/lab4/" class="md-nav__link">
         Lab 4: State representation
       </a>
     </li>
@@ -1656,7 +1551,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab5/" class="md-nav__link">
+      <a href="../archive/201908/lab5/" class="md-nav__link">
         Lab 5: pandas
       </a>
     </li>
@@ -1670,7 +1565,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab6/" class="md-nav__link">
+      <a href="../archive/201908/lab6/" class="md-nav__link">
         Lab 6: Linear Regression
       </a>
     </li>
@@ -1684,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab7/" class="md-nav__link">
+      <a href="../archive/201908/lab7/" class="md-nav__link">
         Lab 7: *k* Nearest Neighbours (KNN)
       </a>
     </li>
@@ -1698,7 +1593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab8/" class="md-nav__link">
+      <a href="../archive/201908/lab8/" class="md-nav__link">
         Lab 8: Decision Tree
       </a>
     </li>
@@ -1712,7 +1607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../201908/lab9/" class="md-nav__link">
+      <a href="../archive/201908/lab9/" class="md-nav__link">
         Lab 9: Clustering
       </a>
     </li>
@@ -1747,236 +1642,65 @@
                 
 
 
-<h1 id="lab-9-clustering">Lab 9: Clustering</h1>
+<h1 id="lab-4-state-representation">Lab 4: State representation</h1>
 <h2 id="objective">Objective</h2>
 <ol>
 <li>
-<p>To implement <em>k</em>-means clustering algorithm using basic Python.</p>
+<p>To represent the state of a vacuum world.</p>
 </li>
 <li>
-<p>To perform <em>k</em>-means clustering algorithm with <code>scikit-learn</code> Python library.</p>
+<p>To solve the vacuum world problem using breadth-first search.</p>
 </li>
 </ol>
-<h2 id="note">Note</h2>
-<ol>
-<li>Suggestion: use <code>numpy</code> library to simplify the operation.</li>
-</ol>
-<h2 id="k-means-clustering-using-basic-python"><em>k</em>-means clustering using basic Python</h2>
-<ol>
-<li>
-<p>The following code structure will be used for this section:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
-<span class="o">...</span>
+<h2 id="problem">Problem</h2>
+<p>The following image represents one of the possible states of a two-square vacuum world.</p>
+<div>
+<svg viewBox="0 0 805 400">
+<path d="M 0 0 h 400 v 400 h -400 v -400" fill='transparent' stroke='black'/>
+<path d="M 400 0 h 400 v 400 h -400" fill='transparent' stroke='black'/>
 
-<span class="c1"># functions</span>
-<span class="c1">## function to take input of data and number of clusters, return centroids and other data</span>
-<span class="k">def</span> <span class="nf">get_random_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">n_centroids</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
-  <span class="k">pass</span>
+<circle cx="165" cy="165" r="15" stroke="black" fill='transparent'/>
+<circle cx="165" cy="165" r="30" stroke="black" fill='transparent'/>
+<path d="M 142.5 187.5 h -30 v -60 q 127.5 -10 127.5 60 h -52.5" stroke="black" fill='transparent'/>
+<path d="M 202.5 135.5 v -12.5 h -37.5 v 3.5" stroke="black" fill='transparent'/>
+<path d="M 183.75 123 c 0 -100 65 -100 80 -70" stroke="black" fill='transparent'/>
+<path d="M 263.75 53 h 5 v 120 q 30 0 30 22 h -44 q 0 -22 2 -22 q 2 0 2 -5 v -115 h 5" stroke="black" fill='transparent'/>
 
-<span class="c1">## function to group data according to centroids</span>
-<span class="k">def</span> <span class="nf">group_to_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">centroids</span><span class="p">):</span>
-  <span class="k">pass</span>
+<!-- left dirt -->
+<path d="M 150 250 a 20 10 0 1 0 5 0"/>
+<path d="M 200 250 a 20 10 50 1 0 0 5"/>
+<path d="M 240 250 a 20 10 -30 1 0 0 5"/>
+<path d="M 140 300 a 20 10 70 1 0 0 5"/>
+<path d="M 190 280 a 20 10 -10 1 0 0 5"/>
+<path d="M 250 280 a 20 10 0 1 0 0 5"/>
+<path d="M 230 300 a 20 10 -50 1 0 0 5"/>
+<path d="M 190 310 a 20 10 0 1 0 0 5"/>
 
-<span class="c1">## function to calculate centroids from grouped data</span>
-<span class="k">def</span> <span class="nf">find_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
-  <span class="k">pass</span>
+<!-- right dirt -->
+<path d="M 550 250 a 20 10 0 1 0 5 0"/>
+<path d="M 600 250 a 20 10 50 1 0 0 5"/>
+<path d="M 640 250 a 20 10 -30 1 0 0 5"/>
+<path d="M 540 300 a 20 10 70 1 0 0 5"/>
+<path d="M 590 280 a 20 10 -10 1 0 0 5"/>
+<path d="M 650 280 a 20 10 0 1 0 0 5"/>
+<path d="M 630 300 a 20 10 -50 1 0 0 5"/>
+<path d="M 590 310 a 20 10 0 1 0 0 5"/>
+</svg>
+</div>
 
-<span class="c1"># generate dataset</span>
-<span class="o">...</span>
-
-<span class="c1"># identify initial centroids</span>
-<span class="o">...</span>
-
-<span class="c1"># repeat until centroids stabilise</span>
-<span class="k">while</span> <span class="o">...</span><span class="p">:</span>
-  <span class="c1">## group data to centroids</span>
-  <span class="o">...</span>
-  <span class="c1">## update centroids</span>
-  <span class="o">...</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;terminated&#39;</span><span class="p">)</span>
-</code></pre></div>
-</li>
-</ol>
-<h3 id="dataset">Dataset</h3>
+<p>The aim of this section is to create a code to search for solution for the vacuum world given an initial state. Consider the actions <kbd>left</kbd>, <kbd>right</kbd>, <kbd>suck</kbd>, and every action contributes the same cost.</p>
 <ol>
 <li>
-<p>The code in this subsection will populate
-    <div class="highlight"><pre><span></span><code><span class="c1"># generate dataset</span>
-<span class="o">...</span>
-</code></pre></div></p>
+<p>How could we represent the state?</p>
 </li>
 <li>
-<p>We will create a dataset of 200 with 2 input features and 4 clusters.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
-</code></pre></div>
+<p>Do we need to define the whole state space statically?</p>
 </li>
 <li>
-<p><code>data</code> is an array of two elements. First element contains the data points, and second element contains the index of the cluster.</p>
-<div class="highlight"><pre><span></span><code><span class="n">points</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div>
-</li>
-<li>
-<p>Plot the data on a scatter graph with colour representing the cluster of the points.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</code></pre></div>
+<p>How do we define the transition model? The transition model should be a function that takes the <code>state</code> and <code>action</code> as inputs and returns the result <code>state</code>.</p>
 </li>
 </ol>
-<h3 id="initialisation">Initialisation</h3>
-<ol>
-<li>
-<p>The initialisation for <em>k</em>-means clustering algorithm involves the identification of <em>k</em> random points from the dataset.</p>
-</li>
-<li>
-<p>In the <code>get_random_centroids</code> function, pass the dataset and the number of centroids to be identified as the input arguments. </p>
-</li>
-<li>
-<p>In the body of the function, randomly identify the centroids from the dataset.</p>
-</li>
-<li>
-<p>The function should return two outputs, the randomly identified centroids and the dataset without the centroids.</p>
-</li>
-<li>
-<p>Update your code with the following snippet:
-    <div class="highlight"><pre><span></span><code><span class="c1"># identify initial centroids</span>
-<span class="n">centroids</span><span class="p">,</span> <span class="n">others</span> <span class="o">=</span> <span class="n">get_random_centroids</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="cluster-the-points">Cluster the points</h3>
-<ol>
-<li>
-<p>The <code>group_to_centroids</code> function takes two inputs, the data points to be clustered and the centroids to cluster to.</p>
-</li>
-<li>
-<p>In the <code>group_to_centroids</code> function, calculate the distance of every point from each centroid.</p>
-</li>
-<li>
-<p>Then identify the centroid each point should be clustered to.</p>
-</li>
-<li>
-<p>The function should return the index of the centroid each point is clustered to. </p>
-</li>
-<li>
-<p>Update your code with the following snippet:
-    <div class="highlight"><pre><span></span><code><span class="c1">## group data to centroids</span>
-<span class="n">groups</span> <span class="o">=</span> <span class="n">group_to_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">centroids</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="update-the-centroids">Update the centroids</h3>
-<ol>
-<li>
-<p>The <code>find_centroids</code> function takes two inputs, the data points and the index of the centroid each point is clustered to (i.e. output of <code>group_to_centroids</code>)</p>
-</li>
-<li>
-<p>The <code>find_centroids</code> function calculates and returns the new set of centroids based on the clustered data points.</p>
-</li>
-<li>
-<p>Update your code with the following snippet:
-    <div class="highlight"><pre><span></span><code><span class="c1">## update centroids</span>
-<span class="n">centroids</span> <span class="o">=</span> <span class="n">find_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="termination-condition">Termination condition</h3>
-<ol>
-<li>The clustering algorithm should terminate when the centroids stabilise, i.e. do not change much.</li>
-</ol>
-<h3 id="visualisation">Visualisation</h3>
-<ol>
-<li>
-<p>Update your code according to the following sample to visualise the centroids and clusters at every iteration.
-    <div class="highlight"><pre><span></span><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
-<span class="c1"># repeat until centroids stabilise</span>
-<span class="k">while</span> <span class="o">...</span><span class="p">:</span>
-  <span class="c1">## group data to centroids</span>
-  <span class="n">groups</span> <span class="o">=</span> <span class="n">group_to_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">centroids</span><span class="p">)</span>
-
-  <span class="c1">## update centroids</span>
-  <span class="n">centroids</span> <span class="o">=</span> <span class="n">find_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
-
-  <span class="c1">## visualise current clusters and centroids</span>
-  <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
-  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">others</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">others</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">groups</span><span class="p">)</span>
-  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centroids</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-
-  <span class="c1">## pause for one second</span>
-  <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Are Figure 1 (originally generated clusters) and Figure 2 (calculated clusters) identical?</p>
-</li>
-</ol>
-<h2 id="k-means-clustering-using-scikit-learn-python-library"><em>k</em>-means clustering using <code>scikit-learn</code> Python library</h2>
-<ol>
-<li>
-<p>The following code structure will be used for this section:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
-<span class="o">...</span>
-
-<span class="c1"># generate dataset</span>
-<span class="o">...</span>
-
-<span class="c1"># initialise the k-means model</span>
-<span class="o">...</span>
-
-<span class="c1"># train the k-means model</span>
-<span class="o">...</span>
-
-<span class="c1"># identify the cluster of each point</span>
-<span class="o">...</span>
-
-<span class="c1"># visualise the result</span>
-<span class="o">...</span>
-</code></pre></div>
-</li>
-</ol>
-<h3 id="dataset_1">Dataset</h3>
-<ol>
-<li>We will use the exact same data generation as the previous section.</li>
-</ol>
-<h3 id="k-means-model">k-means model</h3>
-<ol>
-<li>
-<p>The <em>k</em>-means model is provided by <code>sklearn.cluster.KMeans</code>.
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Initialise the <em>k</em>-means model with 4 clusters using <code>KMeans</code>. (Check the documentation to identify the usage of <code>KMeans</code>)</p>
-</li>
-</ol>
-<h3 id="training">Training</h3>
-<ol>
-<li>
-<p>The <em>k</em>-means model initialised need to be trained with the data.</p>
-</li>
-<li>
-<p>The training is executed using <code>sklearn.cluster.KMeans.fit</code>. (Identify the input argument(s))
-    <div class="highlight"><pre><span></span><code><span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-</ol>
-<h3 id="cluster-the-points_1">Cluster the points</h3>
-<ol>
-<li>The trained model can be used to cluster the points to their respective cluster using <code>sklearn.cluster.KMeans.fit_predict</code>. (Identify the input argument(s))
-    <div class="highlight"><pre><span></span><code><span class="n">y_km</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
-</code></pre></div></li>
-</ol>
-<h3 id="visualisation_1">Visualisation</h3>
-<ol>
-<li>The visualisation of the result can be achieved with the following code:
-    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_km</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-</code></pre></div></li>
-</ol>
-<p><strong>Task</strong>: Compare the results of the two methods, are they similar?</p>
+<p>Create the code to solve a vacuum world problem using the breadth-first search. Execute it and investigate if it's working correctly.</p>
 
               
             </article>
@@ -1990,7 +1714,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer">
       
         
-        <a href="../lab8/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 8: Decision Tree" rel="prev">
+        <a href="../lab3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lab 3: Uniform-Cost Search" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -1999,20 +1723,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Lab 8: Decision Tree
+              Lab 3: Uniform-Cost Search
             </div>
           </div>
         </a>
       
       
         
-        <a href="../../201908/lab1/" class="md-footer__link md-footer__link--next" aria-label="Next: Lab 1: Basic Python" rel="next">
+        <a href="../archive/202304/get-start/" class="md-footer__link md-footer__link--next" aria-label="Next: Getting started" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Lab 1: Basic Python
+              Getting started
             </div>
           </div>
           <div class="md-footer__button md-icon">
@@ -2042,12 +1766,12 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["toc.integrate", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.8aa65030.min.js"></script>
+      <script src="../assets/javascripts/bundle.8aa65030.min.js"></script>
       
-        <script src="../../../javascripts/config.js"></script>
+        <script src="../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
