@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://ricwtk.github.io/ai-labs/lab3/">
+        <link rel="canonical" href="https://ricwtk.github.io/ai-labs/lab7/">
       
       
-        <link rel="prev" href="../lab2/">
+        <link rel="prev" href="../lab6/">
       
       
-        <link rel="next" href="../lab4/">
+        <link rel="next" href="../archive/202409/get-start/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Lab 3: Uniform-Cost Search - CSC3206 AI Labs</title>
+        <title>Lab 7: k Nearest Neighbours (KNN) - CSC3206 AI Labs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-3-uniform-cost-search" class="md-skip">
+        <a href="#lab-7-k-nearest-neighbours-knn" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 3: Uniform-Cost Search
+              Lab 7: k Nearest Neighbours (KNN)
             
           </span>
         </div>
@@ -372,29 +372,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lab 3: Uniform-Cost Search
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -403,40 +383,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    Objective
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#problem-to-be-solved" class="md-nav__link">
-    Problem to be solved
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -506,9 +452,29 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../lab7/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lab 7: k Nearest Neighbours (KNN)
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -517,6 +483,67 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    Datasets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    KNN
+  </a>
+  
+    <nav class="md-nav" aria-label="KNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    Classification
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    Regression
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2501,125 +2528,240 @@
                   
 
 
-<h1 id="lab-3-uniform-cost-search">Lab 3: Uniform-Cost Search</h1>
+<h1 id="lab-7-k-nearest-neighbours-knn">Lab 7: <em>k</em> Nearest Neighbours (KNN)</h1>
 <h2 id="objective">Objective</h2>
-<p>To create Python script to execute uniform cost search algorithm.</p>
-<h2 id="problem-to-be-solved">Problem to be solved</h2>
-<p>We will revisit Nick’s route-finding problem in Romania, starting in Arad to reach Bucharest, and implement uniform-cost search to solve the problem.</p>
-<div>
-<div id="romania">
-<svg viewBox="0 0 950 500">
-
-<path d="M 75 125 L 100 75" stroke="black" />
-<text :x="(75+100)/2" :y="(125+75)/2" text-anchor="end">75</text>
-<path d="M 100 75 L 125 25" stroke="black" />
-<text :x="(100+125)/2" :y="(75+25)/2" text-anchor="end">71</text>
-<path d="M 125 25 L 265 175" stroke="black" />
-<text :x="(125+265)/2" :y="(25+175)/2-10" text-anchor="start">151</text>
-<path d="M 265 175 L 75 125" stroke="black" />
-<text :x="(265+75)/2" :y="(175+125)/2+15" text-anchor="end">140</text>
-<path d="M 75 125 L 85 280" stroke="black" />
-<text :x="(75+85)/2-5" :y="(125+280)/2" text-anchor="end">118</text>
-<path d="M 85 280 L 185 335" stroke="black" />
-<text :x="(85+185)/2+5" :y="(280+335)/2-5" text-anchor="start">111</text>
-<path d="M 185 335 L 190 390" stroke="black" />
-<text :x="(185+190)/2+10" :y="(335+390)/2" text-anchor="start">70</text>
-<path d="M 190 390 L 185 450" stroke="black" />
-<text :x="(190+185)/2+10" :y="(390+450)/2" text-anchor="start">75</text>
-<path d="M 185 450 L 350 465" stroke="black" />
-<text :x="(185+350)/2" :y="(450+465)/2-10" text-anchor="end">120</text>
-<path d="M 350 465 L 320 230" stroke="black" />
-<text :x="(350+320)/2-10" :y="(465+230)/2" text-anchor="end">146</text>
-<path d="M 320 230 L 265 175" stroke="black" />
-<text :x="(320+265)/2+5" :y="(230+175)/2" text-anchor="start">80</text>
-<path d="M 265 175 L 425 175" stroke="black" />
-<text :x="(265+425)/2" :y="(175+175)/2-5" text-anchor="middle">99</text>
-<path d="M 320 230 L 475 310" stroke="black" />
-<text :x="(320+475)/2" :y="(230+310)/2-5" text-anchor="start">97</text>
-<path d="M 475 310 L 350 465" stroke="black" />
-<text :x="(475+350)/2-5" :y="(310+465)/2-5" text-anchor="end">138</text>
-<path d="M 475 310 L 640 390" stroke="black" />
-<text :x="(475+640)/2-10" :y="(310+390)/2+10" text-anchor="end">101</text>
-<path d="M 425 175 L 640 390" stroke="black" />
-<text :x="(425+640)/2+5" :y="(175+390)/2-5" text-anchor="start">211</text>
-<path d="M 640 390 L 575 485" stroke="black" />
-<text :x="(640+575)/2-5" :y="(390+485)/2" text-anchor="end">90</text>
-<path d="M 640 390 L 745 340 " stroke="black" />
-<text :x="(640+745)/2-5" :y="(390+340)/2" text-anchor="end">85</text>
-<path d="M 745 340 L 875 340" stroke="black" />
-<text :x="(745+875)/2" :y="(340+340)/2+15" text-anchor="middle">98</text>
-<path d="M 875 340 L 935 440" stroke="black" />
-<text :x="(875+935)/2-10" :y="(340+440)/2+5" text-anchor="end">86</text>
-<path d="M 745 340 L 850 225" stroke="black" />
-<text :x="(745+850)/2-5" :y="(340+225)/2-5" text-anchor="end">142</text>
-<path d="M 850 225 L 760 120" stroke="black" />
-<text :x="(850+760)/2+5" :y="(225+120)/2" text-anchor="start">92</text>
-<path d="M 760 120 L 625 60" stroke="black" />
-<text :x="(760+625)/2+5" :y="(120+60)/2-5" text-anchor="start">87</text>
-
-<circle cx="75" cy="125" :r="circleradius" fill="green" />
-<text x="60" y="130" text-anchor="end">Arad</text>
-<circle cx="100" cy="75" :r="circleradius" fill="gray" />
-<text x="85" y="75" text-anchor="end">Zerind</text>
-<circle cx="125" cy="25" :r="circleradius" fill="gray" />
-<text x="110" y="20" text-anchor="end">Oradea</text>
-<circle cx="265" cy="175" :r="circleradius" fill="gray" />
-<text x="265" y="160" text-anchor="start">Sibiu</text>
-<circle cx="425" cy="175" :r="circleradius" fill="gray" />
-<text x="440" y="180" text-anchor="start">Fagaras</text>
-<circle cx="320" cy="230" :r="circleradius" fill="gray" />
-<text x="305" y="235" text-anchor="end">Rimnicu Vilcea</text>
-<circle cx="475" cy="310" :r="circleradius" fill="gray" />
-<text x="460" y="320" text-anchor="end">Pitesti</text>
-<circle cx="350" cy="465" :r="circleradius" fill="gray" />
-<text x="340" y="480" text-anchor="end">Craiova</text>
-<circle cx="185" cy="450" :r="circleradius" fill="gray" />
-<text x="170" y="455" text-anchor="end">Drobeta</text>
-<circle cx="190" cy="390" :r="circleradius" fill="gray" />
-<text x="175" y="395" text-anchor="end">Mehadia</text>
-<circle cx="185" cy="335" :r="circleradius" fill="gray" />
-<text x="170" y="345" text-anchor="end">Lugoj</text>
-<circle cx="85" cy="280" :r="circleradius" fill="gray" />
-<text x="70" y="285" text-anchor="end">Timisoara</text>
-<circle cx="640" cy="390" :r="circleradius" fill="red" />
-<text x="625" y="400" text-anchor="end">Bucharest</text>
-<circle cx="575" cy="485" :r="circleradius" fill="gray" />
-<text x="560" y="490" text-anchor="end">Giurgiu</text>
-<circle cx="745" cy="340" :r="circleradius" fill="gray" />
-<text x="730" y="335" text-anchor="end">Urziceni</text>
-<circle cx="875" cy="340" :r="circleradius" fill="gray" />
-<text x="875" y="325" text-anchor="end">Hirsova</text>
-<circle cx="935" cy="440" :r="circleradius" fill="gray" />
-<text x="920" y="445" text-anchor="end">Eforie</text>
-<circle cx="850" cy="225" :r="circleradius" fill="gray" />
-<text x="835" y="230" text-anchor="end">Vaslui</text>
-<circle cx="760" cy="120" :r="circleradius" fill="gray" />
-<text x="745" y="135" text-anchor="end">Iasi</text>
-<circle cx="625" cy="60" :r="circleradius" fill="gray" />
-<text x="610" y="65" text-anchor="end">Neamt</text>
-
-</svg>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
-</div>
-
-<p>Uniform cost search changes the sorting of the frontier by ordering it with its path cost up to the leaf node and expanding the leaf node with the lowest cost.</p>
+<ol>
+<li>To perform <em>k</em> nearest neighbours algorithm with <code>scikit-learn</code> Python library for classification and regression.</li>
+</ol>
+<h2 id="datasets">Datasets</h2>
 <ol>
 <li>
-<p>Based on the code from previous lab, add the code to sort the frontier following the path cost up to the leaf node.</p>
+<p>The iris dataset will be used for classification, and the diabetes dataset for regression.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]),</span>
+  <span class="s1">&#39;targetNames&#39;</span><span class="p">:</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+<span class="p">}</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diseaseProgression&#39;</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre></div>
 </li>
 <li>
-<p>If a latter-found node has the same state as a previous node and the previous node has been expanded, what should be done?</p>
-</li>
-<li>
-<p>What happens when a latter-found node has the same state as a previous node and have a shorter path cost? How do we implement this in our code?</p>
-</li>
-<li>
-<p>Note also, the goal test should be applied during expansion, not generation.</p>
+<p>Split the datasets into 80-20 for train-test proportion.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="p">[</span><span class="n">iris</span><span class="p">,</span> <span class="n">diabetes</span><span class="p">]:</span>
+  <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dt</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span> <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_train</span><span class="p">,</span>
+    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_train</span>
+  <span class="p">}</span>
+  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_test</span><span class="p">,</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_test</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p><em>Note</em>: Be reminded that <code>random_state</code> is used to reproduce the same "random" split of the data whenever the function is called. To produce randomly splitted data every time the function is called, remove the <code>random_state</code> argument.</p>
 </li>
 </ol>
-<p>Execute the program and investigate if the program is working correctly.</p>
+<p><strong>Task</strong>: How do we access the training input data for the iris dataset?</p>
+<h2 id="knn">KNN</h2>
+<p>KNN algorithms are provided by the <code>scikit-learn</code> Python library as the class <code>sklearn.neighbors.KNeighborsClassifier</code> for classification, and <code>sklearn.neighbors.KNeighborsRegressor</code> for regression.</p>
+<h3 id="classification">Classification</h3>
+<ol>
+<li>
+<p>Import the class for KNN classifier.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</code></pre></div>
+</li>
+<li>
+<p>Instantiate an object of <code>KNeighborsClassifier</code> class with k = 5.</p>
+<div class="highlight"><pre><span></span><code><span class="n">knc</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Train the classifier with the training data. We will use the <code>sepal length (cm)</code> and <code>sepal width (cm)</code> (the first and second columns) as the attributes for now.</p>
+<div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
+<span class="n">knc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>.predict</code> function is used to predict the species of the testing data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Comparing the predicted value and the target value of the test data.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div>
+</li>
+<li>
+<p>Calculate the accuracy of the predicted value.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Visualisation</p>
+<ol>
+<li>
+<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span> <span class="nn">matplotlib.colors</span> <span class="kn">import</span> <span class="n">ListedColormap</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span>
+<span class="n">cm_dark</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">cm_light</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the decision boundaries.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision boundary.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_light</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
+<h3 id="regression">Regression</h3>
+<ol>
+<li>
+<p>Import the class for KNN regressor.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Instantiate an object of <code>KNeighborsRegressor</code> class with k = 5.
+    <div class="highlight"><pre><span></span><code><span class="n">knr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Train the regressor with the training data. We will use the <code>age</code> and <code>bmi</code> as the attributes for now.
+    <div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
+<span class="n">knr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><code>.predict</code> function is used to predict the disease progression of the testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Comparing the predicted value and the target value of the test data.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the accuracy of the predicted value.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Visualisation</p>
+<ol>
+<li>
+<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="n">dia_cm</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the decision boundaries.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision boundary.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ol>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
 
 
 
