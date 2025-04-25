@@ -1,7 +1,6 @@
 # Getting started
 
-this is my update, while I am in Shangrila Hotel 2025 The lab for CSC3206 Artificial Intelligence will be using Python as the programming language. The Anaconda distribution of Python is recommended, however, if you are familiar and comfortable with the vanilla distribution of Python. For those who have not installed Python in their machine, proceed to [next session](#installation). This page only covers the installation of the Anaconda platform as, in my opinion, it is more beginner friendly in terms of installing packages and encapsulating environments.
-
+For the Lab and Practical work of CSC3206 Artificial Intelligence, we will be using Python as the programming language. The Anaconda distribution of Python is recommended, however, if you are familiar and comfortable with the vanilla distribution of Python. For those who have not installed Python in their machine, proceed to [next session](#installation). This page only covers the installation of the Anaconda platform as, in our opinion, it is more beginner friendly in terms of installing packages and encapsulating environments.
 ## Installation
 
 1. Download the Anaconda installer with Python 3 for your system from [https://www.anaconda.com/download](https://www.anaconda.com/download).

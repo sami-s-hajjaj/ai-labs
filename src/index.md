@@ -5,7 +5,10 @@ title: Overview
 
 <h1 style="text-align: center">CSC3206 Artificial Intelligence</h1>
 
-**This site hosts the lab sheets for the module of CSC3206 Artificial Intelligence in the Department of Computing and Information Systems (DCIS) in Sunway University.**
+<div style="text-align: center;">
+This site hosts the lab sheets for: <strong> CSC3206 Artificial Intelligence </strong> <br>
+School of Computing and Artificial Intelligence (SCAI), Faculty of Engineering and Technology (FET), Sunway University.
+</div>
 
 ## Aim
 
