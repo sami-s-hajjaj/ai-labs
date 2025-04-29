@@ -1,4 +1,4 @@
-# Lab 1: Basic Python
+# Lab 1 Python Refresher (Bonus: MATLAB Onramp)
 
 ## Objective
 
