@@ -24,13 +24,14 @@ The labs are designed to follow the schedule of the lectures, therefore you will
 
 <div class="timeline">
     <div class="container right">
-        <div class="date">Week 2</div>
+        <div class="date">Week 1</div>
         <div class="content"><a href="./get-start">Getting started</a></div>
     </div>
     <div class="container right">
         <div class="date">Week 2</div>
         <div class="content"><a href="./lab1">Lab 1 Basic Python</a></div>
     </div>
+<!--
     <div class="container right">
         <div class="date">Week 3</div>
         <div class="content"><a href="./lab2">Lab 2 Search</a></div>
@@ -67,4 +68,5 @@ The labs are designed to follow the schedule of the lectures, therefore you will
         <div class="date">Week 14</div>
         <div class="content"><a>Lab Test</a></div>
     </div>
+-->    
 </div>

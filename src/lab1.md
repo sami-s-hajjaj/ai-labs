@@ -339,3 +339,24 @@ joint_arr
     `filterFriend(name="James")` will return `[["James", "Malaysia", "Malacca"]]`
     
     `filterFriend(home_country="Malaysia")` will return `[["James", "Malaysia", "Malacca"], ["Don", "Malaysia", "Pahang"]]`.
+    
+    
+# Bonus Opportunity: MATLAB Onramp Certificate
+
+As part of enhancing your professional skills, you are encouraged to complete the **MATLAB Onramp** course provided by MathWorks.
+
+- **Estimated Time:** ~2 hours
+- **Platform:** Online (browser-based)
+- **Outcome:** Digital Certificate of Completion from MathWorks
+
+**Action Steps:**
+1. Access the course here: [MATLAB Onramp - MathWorks Academy](https://matlabacademy.mathworks.com/)
+2. Complete all activities and quizzes.
+3. Download your Certificate of Completion.
+4. Upload your certificate along with your Lab 1 submission on LMS.
+
+**Bonus Recognition:**
+- Students who complete and submit the certificate will receive a special recognition later in the semester (details to be explained in class).
+- This is entirely **optional** and will not affect your Lab 1 grade.
+
+---
