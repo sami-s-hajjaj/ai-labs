@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://sami-s-hajjaj.github.io/ai-labs/lab3/">
       
       
+        <link rel="prev" href="../lab2/">
+      
+      
+        <link rel="next" href="../lab4/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lab 3: Uniform-Cost Search - CSC3206 AI Labs</title>
+        <title>Lab 3: Search Algorithms (Machine Learning Onramp) - CSC3206 AI Labs</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-3-uniform-cost-search" class="md-skip">
+        <a href="#lab-3-search-algorithms-machine-learning-onramp" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 3: Uniform-Cost Search
+              Lab 3: Search Algorithms (Machine Learning Onramp)
             
           </span>
         </div>
@@ -174,10 +178,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -228,24 +234,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -258,7 +269,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -323,7 +334,155 @@
   
   
   <span class="md-ellipsis">
-    Lab 1 Python Refresher (Bonus: MATLAB Onramp)
+    Lab 1 Python Refresher (MATLAB Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 2: Lab 2: Python - Data Handling (Statistics Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 3: Search Algorithms (Machine Learning Onramp)
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
     
   </span>
   
@@ -357,7 +516,335 @@
 
 
 
-<h1 id="lab-3-uniform-cost-search">Lab 3: Uniform-Cost Search</h1>
+<h1 id="lab-3-search-algorithms-machine-learning-onramp">Lab 3: Search Algorithms (Machine Learning Onramp)</h1>
+<h1 id="part-i-breadth-first-search-bfs-algorithm">PART I - Breadth-First Search (BFS) algorithm</h1>
+<h2 id="lab-learning-outcomes">Lab learning outcomes</h2>
+<p>After completing this lab, you will be able to  </p>
+<ul>
+<li>create Python script to execute breadth-first search algorithm to solve a search problem.</li>
+</ul>
+<h2 id="nicks-route-finding-problem-in-romania">Nick's route-finding problem in Romania</h2>
+<p>The first search problem we are focusing on is Nick’s route-finding problem in Romania, starting in Arad to reach Bucharest. The road map of Romania, which is the state space of the problem is given as follows:</p>
+<div>
+<div id="romania">
+<svg viewBox="0 0 950 500">
+
+<path d="M 75 125 L 100 75" stroke="black" />
+<text :x="(75+100)/2" :y="(125+75)/2" text-anchor="end">75</text>
+<path d="M 100 75 L 125 25" stroke="black" />
+<text :x="(100+125)/2" :y="(75+25)/2" text-anchor="end">71</text>
+<path d="M 125 25 L 265 175" stroke="black" />
+<text :x="(125+265)/2" :y="(25+175)/2-10" text-anchor="start">151</text>
+<path d="M 265 175 L 75 125" stroke="black" />
+<text :x="(265+75)/2" :y="(175+125)/2+15" text-anchor="end">140</text>
+<path d="M 75 125 L 85 280" stroke="black" />
+<text :x="(75+85)/2-5" :y="(125+280)/2" text-anchor="end">118</text>
+<path d="M 85 280 L 185 335" stroke="black" />
+<text :x="(85+185)/2+5" :y="(280+335)/2-5" text-anchor="start">111</text>
+<path d="M 185 335 L 190 390" stroke="black" />
+<text :x="(185+190)/2+10" :y="(335+390)/2" text-anchor="start">70</text>
+<path d="M 190 390 L 185 450" stroke="black" />
+<text :x="(190+185)/2+10" :y="(390+450)/2" text-anchor="start">75</text>
+<path d="M 185 450 L 350 465" stroke="black" />
+<text :x="(185+350)/2" :y="(450+465)/2-10" text-anchor="end">120</text>
+<path d="M 350 465 L 320 230" stroke="black" />
+<text :x="(350+320)/2-10" :y="(465+230)/2" text-anchor="end">146</text>
+<path d="M 320 230 L 265 175" stroke="black" />
+<text :x="(320+265)/2+5" :y="(230+175)/2" text-anchor="start">80</text>
+<path d="M 265 175 L 425 175" stroke="black" />
+<text :x="(265+425)/2" :y="(175+175)/2-5" text-anchor="middle">99</text>
+<path d="M 320 230 L 475 310" stroke="black" />
+<text :x="(320+475)/2" :y="(230+310)/2-5" text-anchor="start">97</text>
+<path d="M 475 310 L 350 465" stroke="black" />
+<text :x="(475+350)/2-5" :y="(310+465)/2-5" text-anchor="end">138</text>
+<path d="M 475 310 L 640 390" stroke="black" />
+<text :x="(475+640)/2-10" :y="(310+390)/2+10" text-anchor="end">101</text>
+<path d="M 425 175 L 640 390" stroke="black" />
+<text :x="(425+640)/2+5" :y="(175+390)/2-5" text-anchor="start">211</text>
+<path d="M 640 390 L 575 485" stroke="black" />
+<text :x="(640+575)/2-5" :y="(390+485)/2" text-anchor="end">90</text>
+<path d="M 640 390 L 745 340 " stroke="black" />
+<text :x="(640+745)/2-5" :y="(390+340)/2" text-anchor="end">85</text>
+<path d="M 745 340 L 875 340" stroke="black" />
+<text :x="(745+875)/2" :y="(340+340)/2+15" text-anchor="middle">98</text>
+<path d="M 875 340 L 935 440" stroke="black" />
+<text :x="(875+935)/2-10" :y="(340+440)/2+5" text-anchor="end">86</text>
+<path d="M 745 340 L 850 225" stroke="black" />
+<text :x="(745+850)/2-5" :y="(340+225)/2-5" text-anchor="end">142</text>
+<path d="M 850 225 L 760 120" stroke="black" />
+<text :x="(850+760)/2+5" :y="(225+120)/2" text-anchor="start">92</text>
+<path d="M 760 120 L 625 60" stroke="black" />
+<text :x="(760+625)/2+5" :y="(120+60)/2-5" text-anchor="start">87</text>
+
+<circle cx="75" cy="125" :r="circleradius" fill="green" />
+<text x="60" y="130" text-anchor="end">Arad</text>
+<circle cx="100" cy="75" :r="circleradius" fill="gray" />
+<text x="85" y="75" text-anchor="end">Zerind</text>
+<circle cx="125" cy="25" :r="circleradius" fill="gray" />
+<text x="110" y="20" text-anchor="end">Oradea</text>
+<circle cx="265" cy="175" :r="circleradius" fill="gray" />
+<text x="265" y="160" text-anchor="start">Sibiu</text>
+<circle cx="425" cy="175" :r="circleradius" fill="gray" />
+<text x="440" y="180" text-anchor="start">Fagaras</text>
+<circle cx="320" cy="230" :r="circleradius" fill="gray" />
+<text x="305" y="235" text-anchor="end">Rimnicu Vilcea</text>
+<circle cx="475" cy="310" :r="circleradius" fill="gray" />
+<text x="460" y="320" text-anchor="end">Pitesti</text>
+<circle cx="350" cy="465" :r="circleradius" fill="gray" />
+<text x="340" y="480" text-anchor="end">Craiova</text>
+<circle cx="185" cy="450" :r="circleradius" fill="gray" />
+<text x="170" y="455" text-anchor="end">Drobeta</text>
+<circle cx="190" cy="390" :r="circleradius" fill="gray" />
+<text x="175" y="395" text-anchor="end">Mehadia</text>
+<circle cx="185" cy="335" :r="circleradius" fill="gray" />
+<text x="170" y="345" text-anchor="end">Lugoj</text>
+<circle cx="85" cy="280" :r="circleradius" fill="gray" />
+<text x="70" y="285" text-anchor="end">Timisoara</text>
+<circle cx="640" cy="390" :r="circleradius" fill="red" />
+<text x="625" y="400" text-anchor="end">Bucharest</text>
+<circle cx="575" cy="485" :r="circleradius" fill="gray" />
+<text x="560" y="490" text-anchor="end">Giurgiu</text>
+<circle cx="745" cy="340" :r="circleradius" fill="gray" />
+<text x="730" y="335" text-anchor="end">Urziceni</text>
+<circle cx="875" cy="340" :r="circleradius" fill="gray" />
+<text x="875" y="325" text-anchor="end">Hirsova</text>
+<circle cx="935" cy="440" :r="circleradius" fill="gray" />
+<text x="920" y="445" text-anchor="end">Eforie</text>
+<circle cx="850" cy="225" :r="circleradius" fill="gray" />
+<text x="835" y="230" text-anchor="end">Vaslui</text>
+<circle cx="760" cy="120" :r="circleradius" fill="gray" />
+<text x="745" y="135" text-anchor="end">Iasi</text>
+<circle cx="625" cy="60" :r="circleradius" fill="gray" />
+<text x="610" y="65" text-anchor="end">Neamt</text>
+
+</svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
+</div>
+
+<p>To solve the problem, we need to define the representation of the state, determine the transition model, and the execution of the search algorithm.</p>
+<h3 id="state-representation">State representation</h3>
+<p>In this problem the only state we need to consider is the location of Nick. Therefore we can use the names of the cities as the state.</p>
+<p>Since Nick is starting in Arad, going to Bucharest, we can define the initial state and goal state as</p>
+<div class="highlight"><pre><span></span><code><span class="n">initial_state</span> <span class="o">=</span> <span class="s2">&quot;Arad&quot;</span>
+<span class="n">goal_state</span> <span class="o">=</span> <span class="s2">&quot;Bucharest&quot;</span>
+</code></pre></div>
+<h3 id="transition-model-and-state-space">Transition model and state space</h3>
+<p>The transition model provides the way to identify the child of a node in a search tree given a specific action. In this problem, we need to translate the whole state space from the geographical network into the program together with the step costs between the connected states.</p>
+<p>The important information from the state space is the connections between states and the step costs between connected states. Notice that in this problem the connections are reversible. Therefore in our state space the connection from Arad to Zerind and the connection from Zerind to Arad are identical, hence only one instance of that connection is needed.</p>
+<p>The most straightforward way of defining the state space is by using a nested array, in which each inner array consists of the two connected states and its cost. </p>
+<p>Define a variable <code>state_space</code> to store the state space. The following code shows the first three elements in the nested array. Complete the definition of the variable by referring to the state space provided.</p>
+<div class="highlight"><pre><span></span><code><span class="n">state_space</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="mi">118</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="s1">&#39;Lugoj&#39;</span><span class="p">,</span> <span class="mi">111</span><span class="p">],</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+</code></pre></div>
+<p>In this problem, the actions are to travel to connected cities from the current city Nick is in. The transition model is directly defined by the action. Therefore, create a function to search through the state space to find the children of a node, which would suffice as actions and transition model.</p>
+<p>This function loops through the <code>state_space</code> variable to check for connections linked to the current node. The state on the connection becomes the child of the node in the search tree. We define a new function called <code>expandAndReturnChildren</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+  <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="ow">in</span> <span class="n">state_space</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="n">node</span><span class="p">:</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="n">node</span><span class="p">:</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">children</span>
+</code></pre></div>
+<p>The function will provide a list of the children of the <code>node</code>.</p>
+<h3 id="node-in-the-search-tree">Node in the search tree</h3>
+<p>We can use a class to represent each node in the search tree. The important information for each node includes the state and the parent of the node.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">state</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Class in Python</p>
+<p>In Python, to define a class, the class needs to have the function <code>__init__</code> with at least one input <code>self</code>. This function is called when an object is initiated with this class. The internal variable <code>self</code> defines the properties of the object. The input arguments apart from <code>self</code> for the function <code>__init__</code> are the parameters to be passed when initiating a new object.</p>
+<p>In a class, additional functions can also be defined, and these will be the methods for the object of this class. </p>
+</div>
+<p>With this implementation of node as a class, the <code>expandAndReturnChildren</code> function is updated to be</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+  <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="ow">in</span> <span class="n">state_space</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="n">node</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+      <span class="n">childnode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">childnode</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="n">node</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+      <span class="n">childnode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">childnode</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">children</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Quick check</p>
+<p>Your current code should look like</p>
+<div class="highlight"><pre><span></span><code><span class="n">initial_state</span> <span class="o">=</span> <span class="s2">&quot;Arad&quot;</span>
+<span class="n">goal_state</span> <span class="o">=</span> <span class="s2">&quot;Bucharest&quot;</span>
+
+<span class="n">state_space</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Zerind&#39;</span><span class="p">,</span> <span class="mi">75</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Arad&#39;</span><span class="p">,</span> <span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="mi">118</span><span class="p">],</span>
+  <span class="p">[</span><span class="s1">&#39;Timisoara&#39;</span><span class="p">,</span> <span class="s1">&#39;Lugoj&#39;</span><span class="p">,</span> <span class="mi">111</span><span class="p">],</span>
+  <span class="o">...</span>
+<span class="p">]</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+  <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">state</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">parent</span> <span class="o">=</span> <span class="n">parent</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
+  <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="k">for</span> <span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="ow">in</span> <span class="n">state_space</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">m</span> <span class="o">==</span> <span class="n">node</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+      <span class="n">childnode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">childnode</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">n</span> <span class="o">==</span> <span class="n">node</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+      <span class="n">childnode</span> <span class="o">=</span> <span class="n">Node</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">node</span><span class="p">)</span>
+      <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">childnode</span><span class="p">)</span>
+  <span class="k">return</span> <span class="n">children</span>
+</code></pre></div>
+</div>
+<h3 id="breadth-first-search-algorithm">Breadth-first search algorithm</h3>
+<p>Next we will create a function to execute the search algorithm. The first algorithm we will use is the breadth-first search (BFS).</p>
+<p>We will separate the problem definition from the algorithm definition, the algorithm function will have the inputs of the state space, initial state and goal state. </p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Separation of definitions for problem and algorithm</p>
+<p>The separation of problem definition and the algorithm definition allows us to re-use the algorithm easily for other problems and also re-use the problem definition with other algorithms</p>
+</div>
+<p>In this function, we need two empty arrays to store the frontier and the explored states.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
+  <span class="n">frontier</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">explored</span> <span class="o">=</span> <span class="p">[]</span>
+</code></pre></div>
+<p>In BFS, we will use the initial state as our root node.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
+  <span class="n">frontier</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">explored</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">initial_state</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title"><code>Node(initial_state, None)</code></p>
+<p>As the root node has no parent, we use <code>None</code> as the value of the parent of root node.</p>
+</div>
+<p>When we are generating the search tree, we will continually expanding the first node (FIFO) in the frontier until we generate a node with goal state. Therefore we need to have a loop to repeatedly expanding the first node in the frontier until the goal node is generated.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
+  <span class="n">frontier</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">explored</span> <span class="o">=</span> <span class="p">[]</span>
+  <span class="n">found_goal</span> <span class="o">=</span> <span class="kc">False</span>
+  <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Node</span><span class="p">(</span><span class="n">initial_state</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+
+  <span class="k">while</span> <span class="ow">not</span> <span class="n">found_goal</span><span class="p">:</span>
+    <span class="o">...</span>
+</code></pre></div>
+<p>In the loop we will first expand the first node in the frontier to obtain the children, and move the expanded node from frontier to the explored set.</p>
+<div class="highlight"><pre><span></span><code>  <span class="k">while</span> <span class="ow">not</span> <span class="n">found_goal</span><span class="p">:</span>
+    <span class="c1"># expand the first in the frontier</span>
+    <span class="n">children</span> <span class="o">=</span> <span class="n">expandAndReturnChildren</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">frontier</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># copy the node to the explored set</span>
+    <span class="n">explored</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">frontier</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="c1"># remove the expanded node from the frontier</span>
+    <span class="k">del</span> <span class="n">frontier</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
+<p>Check if the children generated should be added to the frontier or discarded. If any child is expanded previously, i.e. in the explored set, or if it is generated previously but not expanded yet, i.e. in the frontier, then it should be discarded. Else, it should be added to the frontier.</p>
+<div class="highlight"><pre><span></span><code>    <span class="k">del</span> <span class="n">frontier</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="c1"># loop through the children</span>
+    <span class="k">for</span> <span class="n">child</span> <span class="ow">in</span> <span class="n">children</span><span class="p">:</span>
+      <span class="c1"># check if a node was expanded or generated previously</span>
+      <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">state</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">explored</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">state</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">frontier</span><span class="p">]):</span>
+        <span class="c1"># add child to the frontier</span>
+        <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">List comprehension</p>
+<p><code>[e.state for e in explored]</code> is using the syntax of list comprehension. List comprehension provides a shorter syntax to create a new list. </p>
+<p>This example loops through the variable <code>explored</code> and create a list with the values of <code>.state</code> for each element (node) in the <code>explored</code> list.</p>
+<p>This one-liner is equivalent to</p>
+<div class="highlight"><pre><span></span><code><span class="n">explored_nodes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">explored</span><span class="p">:</span>
+  <span class="n">explored_nodes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">e</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<p>Before a child is added to the frontier, it should be tested for goal. If it has the goal state, the BFS algorithm should be terminated.</p>
+<div class="highlight"><pre><span></span><code>      <span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">e</span><span class="o">.</span><span class="n">state</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">explored</span><span class="p">])</span> <span class="ow">and</span> <span class="ow">not</span> <span class="p">(</span><span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="ow">in</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">state</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">frontier</span><span class="p">]):</span>
+        <span class="c1"># goal test</span>
+        <span class="k">if</span> <span class="n">child</span><span class="o">.</span><span class="n">state</span> <span class="o">==</span> <span class="n">goal_state</span><span class="p">:</span>
+          <span class="n">found_goal</span> <span class="o">=</span> <span class="kc">True</span>
+          <span class="n">goal_node</span> <span class="o">=</span> <span class="n">child</span>
+          <span class="k">break</span>
+        <span class="c1"># add child to the frontiers</span>
+        <span class="n">frontier</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">child</span><span class="p">)</span>
+</code></pre></div>
+<p>Now that the algorithm has identified the goal_node, we can trace the solution through the parent of the goal node all the way back to the root node (node with no parent). Then the function should return the solution of BFS.</p>
+<div class="highlight"><pre><span></span><code>  <span class="n">solution</span> <span class="o">=</span> <span class="p">[</span><span class="n">goal_node</span><span class="o">.</span><span class="n">state</span><span class="p">]</span>
+  <span class="n">trace_node</span> <span class="o">=</span> <span class="n">goal_node</span>
+  <span class="k">while</span> <span class="n">trace_node</span><span class="o">.</span><span class="n">parent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="n">solution</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">trace_node</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">state</span><span class="p">)</span>
+    <span class="n">trace_node</span> <span class="o">=</span> <span class="n">trace_node</span><span class="o">.</span><span class="n">parent</span>
+  <span class="k">return</span> <span class="n">solution</span>
+</code></pre></div>
+<h3 id="running-the-algorithm">Running the algorithm</h3>
+<p>Now we have two functions <code>expandAndReturnChildren</code> and <code>bfs</code>, alongside with the variables <code>state_space</code>, <code>initial_state</code>, and <code>goal_state</code>.</p>
+<p>To run a script to execute the <code>bfs</code> function, we can have the script file structured as such:</p>
+<div class="highlight"><pre><span></span><code>```python
+initial_state = &#39;Arad&#39;
+goal_state = &#39;Bucharest&#39;
+
+state_space = [
+  ...
+]
+
+class Node:
+  ...
+
+def expandAndReturnChildren(...):
+  ...
+
+def bfs(...):
+  ...
+
+print(&#39;Solution: &#39; + str(bfs(state_space, initial_state, goal_state)))
+```
+</code></pre></div>
+<p>Beware that in Python, a <code>.py</code> file can also be used to define a Python library/module. To prevent the commands outside the function to be executed when the file is used as a library instead of a script, we can implement an extra condition check.</p>
+<div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+  <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+  <span class="o">...</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+  <span class="o">...</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+  <span class="n">state_space</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="o">...</span>
+  <span class="p">]</span>
+
+  <span class="n">initial_state</span> <span class="o">=</span> <span class="s1">&#39;Arad&#39;</span>
+  <span class="n">goal_state</span> <span class="o">=</span> <span class="s1">&#39;Bucharest&#39;</span>
+
+  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Solution: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">)))</span>
+</code></pre></div>
+<p><code>__name__</code> is a special variable in Python that evaluates to the name of the current module. This variable has the value of <code>'__main__'</code> if it's called as the main program rather than a module or library.</p>
+<p>This part is essentially the <code>main</code> function in other programming languages like C++ and Java.</p>
+<p>Execute the script and resolve any error.</p>
+<h2 id="preparation-for-next-week">Preparation for next week</h2>
+<ol>
+<li>
+<p>Fully understand the code as you will have to modify the code for other problem/search algorithms in future labs.</p>
+</li>
+<li>
+<p>How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it before you work on that in next part of this lab</p>
+</li>
+</ol>
+<hr />
+<h1 id="part-ii-uniform-cost-uc-search-algorithm">PART II - Uniform-Cost (UC) Search Algorithm</h1>
 <h2 id="objective">Objective</h2>
 <p>To create Python script to execute uniform cost search algorithm.</p>
 <h2 id="problem-to-be-solved">Problem to be solved</h2>
@@ -463,7 +950,7 @@
 <p>Uniform cost search changes the sorting of the frontier by ordering it with its path cost up to the leaf node and expanding the leaf node with the lowest cost.</p>
 <ol>
 <li>
-<p>Based on the code from previous lab, add the code to sort the frontier following the path cost up to the leaf node.</p>
+<p>Based on the code from Part I, add the code to sort the frontier following the path cost up to the leaf node.</p>
 </li>
 <li>
 <p>If a latter-found node has the same state as a previous node and the previous node has been expanded, what should be done?</p>
@@ -476,6 +963,23 @@
 </li>
 </ol>
 <p>Execute the program and investigate if the program is working correctly.</p>
+<hr />
+<h1 id="bonus-opportunity-machine-learning-onramp-certificate">Bonus Opportunity: Machine Learning Onramp Certificate</h1>
+<p>To complement your learning in this lab and explore applied machine learning techniques, you are encouraged to complete the <strong>Machine Learning Onramp</strong> course by MathWorks.</p>
+<ul>
+<li><strong>Estimated Time:</strong> ~2 hours  </li>
+<li><strong>Platform:</strong> Online (browser-based)  </li>
+<li><strong>Outcome:</strong> Digital Certificate of Completion from MathWorks</li>
+</ul>
+<p><strong>Action Steps:</strong>
+1. Access the course here: <a href="https://matlabacademy.mathworks.com/details/machine-learning-onramp/machinelearning">Machine Learning Onramp – MathWorks Academy</a>
+2. Go through all the lessons and complete the interactive activities.
+3. Download your Certificate of Completion.
+4. Upload your certificate along with your Lab X submission on LMS.</p>
+<p><strong>Bonus Recognition:</strong>
+- Students who complete and submit this certificate will be acknowledged later in the semester.
+- This is <strong>optional</strong> and will <strong>not</strong> impact your Lab X grade.</p>
+<hr />
 
 
 

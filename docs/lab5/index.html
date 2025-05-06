@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://sami-s-hajjaj.github.io/ai-labs/lab5/">
       
       
+        <link rel="prev" href="../lab4/">
+      
+      
+        <link rel="next" href="../lab6/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lab 5: pandas - CSC3206 AI Labs</title>
+        <title>Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML) - CSC3206 AI Labs</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-5-pandas" class="md-skip">
+        <a href="#lab-5-k-nearest-neighbours-knn-classification-methods-with-ml" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 5: pandas
+              Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
             
           </span>
         </div>
@@ -174,10 +178,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -228,24 +234,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -258,7 +269,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -323,7 +334,238 @@
   
   
   <span class="md-ellipsis">
-    Lab 1 Python Refresher (Bonus: MATLAB Onramp)
+    Lab 1 Python Refresher (MATLAB Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 2: Lab 2: Python - Data Handling (Statistics Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 3: Search Algorithms (Machine Learning Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#knn" class="md-nav__link">
+    <span class="md-ellipsis">
+      KNN
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="KNN">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
     
   </span>
   
@@ -357,236 +599,257 @@
 
 
 
-<h1 id="lab-5-pandas">Lab 5: pandas</h1>
+<h1 id="lab-5-k-nearest-neighbours-knn-classification-methods-with-ml">Lab 5: <em>k</em> Nearest Neighbours (KNN) (Classification Methods with ML)</h1>
 <h2 id="objective">Objective</h2>
 <ol>
-<li>To learn the basic of the pandas Python library.</li>
+<li>To perform <em>k</em> nearest neighbours algorithm with <code>scikit-learn</code> Python library for classification and regression.</li>
 </ol>
-<h2 id="data-structures">Data structures</h2>
-<p>In pandas, there are two types of data structures:</p>
-<table>
-<thead>
-<tr>
-<th>Structure</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>Series</em></td>
-<td>1D labeled homogeneously-typed array</td>
-</tr>
-<tr>
-<td><em>DataFrame</em></td>
-<td>General 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed column</td>
-</tr>
-</tbody>
-</table>
-<h2 id="instruction">Instruction</h2>
-<p>For all sections in this lab other than the last section, use the IPython console (located normally at the right bottom corner) to run the codes.</p>
-<h2 id="imports">Imports</h2>
+<h2 id="datasets">Datasets</h2>
 <ol>
 <li>
-<p>To import the <code>pandas</code> library,
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<p>The iris dataset will be used for classification, and the diabetes dataset for regression.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">iris</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]),</span>
+  <span class="s1">&#39;targetNames&#39;</span><span class="p">:</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
+<span class="p">}</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diseaseProgression&#39;</span><span class="p">])</span>
+<span class="p">}</span>
+</code></pre></div>
+</li>
+<li>
+<p>Split the datasets into 80-20 for train-test proportion.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="p">[</span><span class="n">iris</span><span class="p">,</span> <span class="n">diabetes</span><span class="p">]:</span>
+  <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dt</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span> <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_train</span><span class="p">,</span>
+    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_train</span>
+  <span class="p">}</span>
+  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_test</span><span class="p">,</span>
+  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_test</span>
+  <span class="p">}</span>
+</code></pre></div>
+<p><em>Note</em>: Be reminded that <code>random_state</code> is used to reproduce the same "random" split of the data whenever the function is called. To produce randomly splitted data every time the function is called, remove the <code>random_state</code> argument.</p>
+</li>
+</ol>
+<p><strong>Task</strong>: How do we access the training input data for the iris dataset?</p>
+<h2 id="knn">KNN</h2>
+<p>KNN algorithms are provided by the <code>scikit-learn</code> Python library as the class <code>sklearn.neighbors.KNeighborsClassifier</code> for classification, and <code>sklearn.neighbors.KNeighborsRegressor</code> for regression.</p>
+<h3 id="classification">Classification</h3>
+<ol>
+<li>
+<p>Import the class for KNN classifier.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+</code></pre></div>
+</li>
+<li>
+<p>Instantiate an object of <code>KNeighborsClassifier</code> class with k = 5.</p>
+<div class="highlight"><pre><span></span><code><span class="n">knc</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Train the classifier with the training data. We will use the <code>sepal length (cm)</code> and <code>sepal width (cm)</code> (the first and second columns) as the attributes for now.</p>
+<div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
+<span class="n">knc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>.predict</code> function is used to predict the species of the testing data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Comparing the predicted value and the target value of the test data.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div>
+</li>
+<li>
+<p>Calculate the accuracy of the predicted value.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Visualisation</p>
+<ol>
+<li>
+<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListedColormap</span>
 </code></pre></div></p>
 </li>
 <li>
-<p><code>NumPy</code> is a dependency of <code>pandas</code> and also a powerful Python library for scientific data processing. We may need to use <code>NumPy</code> from time to time. To import <code>Numpy</code>,
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span>
+<span class="n">cm_dark</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">cm_light</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the decision boundaries.
     <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>It's common practice to import <code>pandas</code> as <code>pd</code> and <code>numpy</code> as <code>np</code>. You would see this a lot if you tried to search for tutorials or solutions online. However, it's just a convention, it is fine to use other names.</p>
+<p>Plot the decision boundary.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_light</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</code></pre></div></p>
 </li>
 </ol>
-<h2 id="series">Series</h2>
+</li>
+</ol>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
+<h3 id="regression">Regression</h3>
 <ol>
 <li>
-<p>Creation </p>
-<ul>
-<li>from list,</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
-<span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;f&#39;</span><span class="p">])</span>
-</code></pre></div>
-<p>What is the difference between <code>s1</code> and <code>s2</code>?</p>
-<ul>
-<li>from dict,</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
-<span class="n">s3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</code></pre></div>
-<ul>
-<li>from scalar value,</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">s4</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
-</code></pre></div>
+<p>Import the class for KNN regressor.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>Indexing of <code>Series</code></p>
-<ul>
-<li>try the following code to understand the getting and setting of a series with default indexing.</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.5</span>
-<span class="n">s</span>
-</code></pre></div>
-<ul>
-<li>if the labels for the indices are specified,</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">])</span>
-<span class="n">s</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">s</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mf">1.8</span>
-<span class="n">s</span>
-<span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">s</span>
-</code></pre></div>
+<p>Instantiate an object of <code>KNeighborsRegressor</code> class with k = 5.
+    <div class="highlight"><pre><span></span><code><span class="n">knr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
-</ol>
-<h2 id="dataframe">DataFrame</h2>
+<li>
+<p>Train the regressor with the training data. We will use the <code>age</code> and <code>bmi</code> as the attributes for now.
+    <div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
+<span class="n">x_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
+<span class="n">knr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><code>.predict</code> function is used to predict the disease progression of the testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
+<span class="n">y_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
+<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Comparing the predicted value and the target value of the test data.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the accuracy of the predicted value.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Visualisation</p>
 <ol>
 <li>
-<p>Creation</p>
-<ul>
-<li>from NumPy array</li>
-</ul>
-<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-</code></pre></div>
-<p>Indices and column names can be provided at creation.</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;abcdef&#39;</span><span class="p">),</span> <span class="n">columns</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="s1">&#39;ABCD&#39;</span><span class="p">))</span>
-</code></pre></div>
-<ul>
-<li>from a dict</li>
-</ul>
-<p>run the following code and understand the functions used.</p>
-<div class="highlight"><pre><span></span><code><span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-  <span class="s1">&#39;A&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-  <span class="s1">&#39;B&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Timestamp</span><span class="p">(</span><span class="s1">&#39;20190930&#39;</span><span class="p">),</span>
-  <span class="s1">&#39;C&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">date_range</span><span class="p">(</span><span class="s1">&#39;20190930&#39;</span><span class="p">,</span> <span class="n">periods</span><span class="o">=</span><span class="mi">4</span><span class="p">),</span>
-  <span class="s1">&#39;D&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">4</span><span class="p">)),</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;float32&#39;</span><span class="p">),</span>
-  <span class="s1">&#39;E&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">4</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;int32&#39;</span><span class="p">),</span>
-  <span class="s1">&#39;F&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">Categorical</span><span class="p">([</span><span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;train&#39;</span><span class="p">,</span> <span class="s1">&#39;test&#39;</span><span class="p">,</span> <span class="s1">&#39;train&#39;</span><span class="p">]),</span>
-  <span class="s1">&#39;G&#39;</span><span class="p">:</span> <span class="s1">&#39;foo&#39;</span>
-<span class="p">})</span>
-</code></pre></div>
-<p><code>dtypes</code> of a <code>DataFrame</code> can be viewed using <code>df2.dtypes</code>. In IPython, tab completion is enabled for column names and public attributes.</p>
-</li>
-<li>
-<p>Data display</p>
-<ul>
-<li>
-<p>What do <code>df.head(0)</code> and <code>df.tail()</code> do? What happens if I use <code>df.head(3)</code> and <code>df.tail(2)</code>?</p>
-</li>
-<li>
-<p><code>df.index</code> displays the indices of a data frame.</p>
-</li>
-<li>
-<p><code>df.columns</code> displays the columns of a data frame.</p>
-</li>
-<li>
-<p><code>df.describe()</code> shows a quick statistical summary of each column of the data.</p>
-</li>
-</ul>
-</li>
-<li>
-<p>Direct indexing</p>
-<ul>
-<li>to get a column,
-  <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">A</span>
-</code></pre></div></li>
-</ul>
-<p><code>df[0]</code> would not work.</p>
-<ul>
-<li>
-<p>to select multiple columns,
-  <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span>
+<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>to get a slice of rows
-  <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="n">dia_cm</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
-</ul>
-<p>Is the indexing inclusive or exclusive?</p>
-</li>
 <li>
-<p>Selection by label
-    With the following lines, identify how the function <code>.loc[...]</code> works</p>
-<div class="highlight"><pre><span></span><code><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">],</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">:</span><span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">:</span><span class="s1">&#39;C&#39;</span><span class="p">]</span>
-</code></pre></div>
-<p><code>df.at['a','A']</code> is equivalent to <code>df.loc['a','A']</code> (only to get a scalar value)</p>
-<p>The object returned by a <code>.loc</code> is either a series (1-D), data frame (2-D), or scalar (single value).</p>
-</li>
-<li>
-<p>Selection by position
-    <code>.iloc</code> and <code>.iat</code> work similarly as <code>.loc</code> and <code>.at</code>. The only difference is that, instead of the label of the row/column, we will use the position of the row/column.</p>
-<p>Find the equivalent usage of <code>.iloc</code> that provides the same outputs as the previous lines for <code>.loc</code>.</p>
-</li>
-<li>
-<p>Boolean indexing
-    Investigate the differences in the outputs of the following lines:
-    <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span>
+<p>Calculate the decision boundaries.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </code></pre></div></p>
-<p>Filtering of a column can be done with <code>.isin</code>.
-<div class="highlight"><pre><span></span><code><span class="n">df2</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">df2</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;one&#39;</span><span class="p">,</span> <span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">,</span> <span class="s1">&#39;three&#39;</span><span class="p">]</span>
-<span class="n">df2</span><span class="p">[</span><span class="n">df2</span><span class="p">[</span><span class="s1">&#39;E&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s1">&#39;two&#39;</span><span class="p">,</span> <span class="s1">&#39;four&#39;</span><span class="p">])]</span>
+</li>
+<li>
+<p>Plot the decision boundary.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span>
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="data-manipulation">Data manipulation</h2>
-<p><code>pandas</code> library provides a lot of functions to manipulate data.</p>
-<p>Go to <a href="https://archive.ics.uci.edu/ml/datasets/Iris">UCI datasets</a> to download <code>iris.data</code> and <code>iris.names</code> from the <code>Data Folder</code>.</p>
-<ol>
-<li>
-<p>Load <code>iris.data</code> as a data frame (Hint: <code>iris.data</code> is a CSV file)</p>
-</li>
-<li>
-<p>Update the column names based on <code>iris.names</code>.</p>
-</li>
-<li>
-<p>Calculate the mean, min, max, and standard deviation of each column.</p>
-</li>
-<li>
-<p>Create a new column called <code>class value</code> using the following code:
-    <div class="highlight"><pre><span></span><code><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class value&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">factorize</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
-</code></pre></div>
-    Investigate the output of <code>pd.factorize</code>.</p>
-</li>
-<li>
-<p>Group the data according to the class. (Hint: <code>.groupby</code>)</p>
-</li>
-<li>
-<p>Identify the function to extract each group using the name of the class.</p>
-</li>
-<li>
-<p>Calculate the mean, min, max, and standard deviation of each column in each group.</p>
-</li>
-<li>
-<p>Produce a scatter plot for any two columns using <code>matplotlib</code> library.</p>
-</li>
-<li>
-<p>Identify the methods (at least 2) to loop through a data frame row by row.</p>
 </li>
 </ol>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
+<hr />
+<h1 id="bonus-opportunity-classification-methods-with-machine-learning">Bonus Opportunity: Classification Methods with Machine Learning</h1>
+<p>To deepen your understanding of classification tasks in machine learning, you are encouraged to complete the <strong>Classification Methods with Machine Learning</strong> course offered by MathWorks.</p>
+<ul>
+<li><strong>Estimated Time:</strong> ~4 hours  </li>
+<li><strong>Platform:</strong> Online (browser-based)  </li>
+<li><strong>Outcome:</strong> Digital Certificate of Completion from MathWorks</li>
+</ul>
+<p><strong>Action Steps:</strong>
+1. Access the course here: <a href="https://matlabacademy.mathworks.com/details/classification-methods-with-machine-learning/otmlcmml">Classification Methods with Machine Learning – MathWorks Academy</a>
+2. Complete all course modules and activities.
+3. Download your Certificate of Completion.
+4. Submit the certificate along with your Lab X submission on LMS.</p>
+<p><strong>Bonus Recognition:</strong>
+- Completing and submitting this course will earn bonus recognition later in the semester.
+- This activity is <strong>optional</strong> and has <strong>no impact</strong> on your Lab X grade.</p>
+<hr />
 
 
 

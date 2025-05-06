@@ -1,238 +1,225 @@
-# Lab 7: *k* Nearest Neighbours (KNN)
+# Lab 7: Clustering (Cluster Analysis with ML)
 
 ## Objective
 
-1. To perform *k* nearest neighbours algorithm with `scikit-learn` Python library for classification and regression.
+1. To implement *k*-means clustering algorithm using basic Python.
 
-## Datasets
-1. The iris dataset will be used for classification, and the diabetes dataset for regression.
+2. To perform *k*-means clustering algorithm with `scikit-learn` Python library.
 
-    ```python
-    from sklearn import datasets
-    import pandas as pd
-    iris = datasets.load_iris()
-    iris = {
-      'attributes': pd.DataFrame(iris.data, columns=iris.feature_names),
-      'target': pd.DataFrame(iris.target, columns=['species']),
-      'targetNames': iris.target_names
-    }
-    diabetes = datasets.load_diabetes()
-    diabetes = {
-      'attributes': pd.DataFrame(diabetes.data, columns=diabetes.feature_names),
-      'target': pd.DataFrame(diabetes.target, columns=['diseaseProgression'])
-    }
-    ```
-  
-2. Split the datasets into 80-20 for train-test proportion.
+## Note
+1. Suggestion: use `numpy` library to simplify the operation.
+
+## *k*-means clustering using basic Python
+
+1. The following code structure will be used for this section:
 
     ```python
-    from sklearn.model_selection import train_test_split
-    for dt in [iris, diabetes]:
-      x_train, x_test, y_train, y_test = train_test_split(dt['attributes'], dt['target'], test_size=0.2, random_state=1)
-      dt['train'] = {
-        'attributes': x_train,
-        'target': y_train
-      }
-      dt['test'] = {
-      'attributes': x_test,
-      'target': y_test
-      }
+    # import libraries
+    ...
+
+    # functions
+    ## function to take input of data and number of clusters, return centroids and other data
+    def get_random_centroids(data_points, n_centroids=2):
+      pass
+
+    ## function to group data according to centroids
+    def group_to_centroids(data_points, centroids):
+      pass
+
+    ## function to calculate centroids from grouped data
+    def find_centroids(data_points, groups):
+      pass
+
+    # generate dataset
+    ...
+
+    # identify initial centroids
+    ...
+
+    # repeat until centroids stabilise
+    while ...:
+      ## group data to centroids
+      ...
+      ## update centroids
+      ...
+
+    print('terminated')
     ```
-  
-    *Note*: Be reminded that `random_state` is used to reproduce the same "random" split of the data whenever the function is called. To produce randomly splitted data every time the function is called, remove the `random_state` argument.
-  
-**Task**: How do we access the training input data for the iris dataset?
-  
-## KNN
-  
-KNN algorithms are provided by the `scikit-learn` Python library as the class `sklearn.neighbors.KNeighborsClassifier` for classification, and `sklearn.neighbors.KNeighborsRegressor` for regression.
-  
-### Classification
-  
-1. Import the class for KNN classifier.
+
+### Dataset
+1. The code in this subsection will populate
+    ```python
+    # generate dataset
+    ...
+    ```
+
+2. We will create a dataset of 200 with 2 input features and 4 clusters.
 
     ```python
-    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.datasets import make_blobs
+    data = make_blobs(n_samples=200, n_features=2, centers=4, cluster_std=1.6, random_state=50)
     ```
 
-2. Instantiate an object of `KNeighborsClassifier` class with k = 5.
+3. `data` is an array of two elements. First element contains the data points, and second element contains the index of the cluster.
 
     ```python
-    knc = KNeighborsClassifier(5)
+    points = data[0]
     ```
 
-3. Train the classifier with the training data. We will use the `sepal length (cm)` and `sepal width (cm)` (the first and second columns) as the attributes for now.
+4. Plot the data on a scatter graph with colour representing the cluster of the points.
 
     ```python
-    input_columns = iris['attributes'].columns[:2].tolist()
-    x_train = iris['train']['attributes'][input_columns]
-    y_train = iris['train']['target'].species
-    knc.fit(x_train, y_train)
+    import matplotlib.pyplot as plt
+    plt.scatter(data[0][:,0], data[0][:,1], c=data[1])
     ```
 
-4. `.predict` function is used to predict the species of the testing data.
+### Initialisation
+1. The initialisation for *k*-means clustering algorithm involves the identification of *k* random points from the dataset.
+
+2. In the `get_random_centroids` function, pass the dataset and the number of centroids to be identified as the input arguments. 
+
+3. In the body of the function, randomly identify the centroids from the dataset.
+
+4. The function should return two outputs, the randomly identified centroids and the dataset without the centroids.
+
+5. Update your code with the following snippet:
+    ```python
+    # identify initial centroids
+    centroids, others = get_random_centroids(points, 4)
+    ```
+
+### Cluster the points
+1. The `group_to_centroids` function takes two inputs, the data points to be clustered and the centroids to cluster to.
+
+2. In the `group_to_centroids` function, calculate the distance of every point from each centroid.
+
+3. Then identify the centroid each point should be clustered to.
+
+4. The function should return the index of the centroid each point is clustered to. 
+
+5. Update your code with the following snippet:
+    ```python
+    ## group data to centroids
+    groups = group_to_centroids(others, centroids)
+    ```
+
+### Update the centroids
+1. The `find_centroids` function takes two inputs, the data points and the index of the centroid each point is clustered to (i.e. output of `group_to_centroids`)
+
+2. The `find_centroids` function calculates and returns the new set of centroids based on the clustered data points.
+
+3. Update your code with the following snippet:
+    ```python
+    ## update centroids
+    centroids = find_centroids(others, groups)
+    ```
+
+### Termination condition
+1. The clustering algorithm should terminate when the centroids stabilise, i.e. do not change much.
+
+### Visualisation
+1. Update your code according to the following sample to visualise the centroids and clusters at every iteration.
+    ```python
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    # repeat until centroids stabilise
+    while ...:
+      ## group data to centroids
+      groups = group_to_centroids(others, centroids)
+
+      ## update centroids
+      centroids = find_centroids(others, groups)
+
+      ## visualise current clusters and centroids
+      ax.clear()
+      ax.scatter(others[:,0], others[:,1], c=groups)
+      ax.scatter(centroids[:,0], centroids[:,1], marker='*', c='k')
+
+      ## pause for one second
+      plt.pause(1)
+    ```
+
+2. Are Figure 1 (originally generated clusters) and Figure 2 (calculated clusters) identical?
+
+## *k*-means clustering using `scikit-learn` Python library
+
+1. The following code structure will be used for this section:
 
     ```python
-    x_test = iris['test']['attributes'][input_columns]
-    y_test = iris['test']['target'].species
-    y_predict = knc.predict(x_test)
+    # import libraries
+    ...
+
+    # generate dataset
+    ...
+
+    # initialise the k-means model
+    ...
+
+    # train the k-means model
+    ...
+
+    # identify the cluster of each point
+    ...
+
+    # visualise the result
+    ...
     ```
 
-5. Comparing the predicted value and the target value of the test data.
+### Dataset
+1. We will use the exact same data generation as the previous section.
 
+### k-means model
+1. The *k*-means model is provided by `sklearn.cluster.KMeans`.
     ```python
-    print(pd.DataFrame(list(zip(y_test,y_predict)), columns=['target', 'predicted']))
+    from sklearn.cluster import KMeans
     ```
 
-6. Calculate the accuracy of the predicted value.
+2. Initialise the *k*-means model with 4 clusters using `KMeans`. (Check the documentation to identify the usage of `KMeans`)
 
+### Training
+1. The *k*-means model initialised need to be trained with the data.
+
+2. The training is executed using `sklearn.cluster.KMeans.fit`. (Identify the input argument(s))
     ```python
-    print(f'Accuracy: {knc.score(x_test,y_test):.4f}')
+    kmeans.fit(...)
     ```
 
-7. Visualisation
-    
-    1. Import the `matplotlib.pyplot` library and the colormaps from the `matplotlib` library.
-        ```python   
-        import matplotlib.pyplot as plt
-        from matplotlib import cm
-        from matplotlib.colors import ListedColormap
-        ```
-
-    2. Prepare the colormaps.
-        ```python
-        colormap = cm.get_cmap('tab20')
-        cm_dark = ListedColormap(colormap.colors[::2])
-        cm_light = ListedColormap(colormap.colors[1::2])
-        ```
-    
-    3. Calculate the decision boundaries.
-        ```python
-        import numpy as np
-        x_min = iris['attributes'][input_columns[0]].min()
-        x_max = iris['attributes'][input_columns[0]].max()
-        x_range = x_max - x_min
-        x_min = x_min - 0.1 * x_range
-        x_max = x_max + 0.1 * x_range
-        y_min = iris['attributes'][input_columns[1]].min()
-        y_max = iris['attributes'][input_columns[1]].max()
-        y_range = y_max - y_min
-        y_min = y_min - 0.1 * y_range
-        y_max = y_max + 0.1 * y_range
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, .01*x_range), 
-                            np.arange(y_min, y_max, .01*y_range))
-        z = knc.predict(list(zip(xx.ravel(), yy.ravel())))
-        z = z.reshape(xx.shape)
-        ```
-    
-    4. Plot the decision boundary.
-        ```python
-        plt.figure(figsize=[12,8])
-        plt.pcolormesh(xx, yy, z, cmap=cm_light)
-        ```
-    
-    5. Plot the training and testing data.
-        ```python
-        plt.scatter(x_train[input_columns[0]], x_train[input_columns[1]], 
-                    c=y_train, label='Training data', cmap=cm_dark, 
-                    edgecolor='black', linewidth=1, s=150)
-        plt.scatter(x_test[input_columns[0]], x_test[input_columns[1]], 
-                    c=y_test, marker='*', label='Testing data', cmap=cm_dark, 
-                    edgecolor='black', linewidth=1, s=150)
-        plt.xlabel(input_columns[0])
-        plt.ylabel(input_columns[1])
-        plt.legend()
-        ```
-  
-**Task**: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.
-  
-### Regression
-  
-1. Import the class for KNN regressor.
+### Cluster the points
+1. The trained model can be used to cluster the points to their respective cluster using `sklearn.cluster.KMeans.fit_predict`. (Identify the input argument(s))
     ```python
-    from sklearn.neighbors import KNeighborsRegressor
+    y_km = kmeans.fit_predict(...)
     ```
 
-2. Instantiate an object of `KNeighborsRegressor` class with k = 5.
+### Visualisation
+1. The visualisation of the result can be achieved with the following code:
     ```python
-    knr = KNeighborsRegressor(5)
+    plt.figure()
+    plt.scatter(points[:,0], points[:,1], c=y_km)
+    plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:,1], c='k')
     ```
 
-3. Train the regressor with the training data. We will use the `age` and `bmi` as the attributes for now.
-    ```python
-    input_columns = ['age', 'bmi']
-    x_train = diabetes['train']['attributes'][input_columns]
-    y_train = diabetes['train']['target'].diseaseProgression
-    knr.fit(x_train, y_train)
-    ```
+**Task**: Compare the results of the two methods, are they similar?
 
-4. `.predict` function is used to predict the disease progression of the testing data.
-    ```python
-    x_test = diabetes['test']['attributes'][input_columns]
-    y_test = diabetes['test']['target'].diseaseProgression
-    y_predict = knr.predict(x_test)
-    ```
-    
-5. Comparing the predicted value and the target value of the test data.
-    ```python
-    print(pd.DataFrame(list(zip(y_test,y_predict)), columns=['target', 'predicted']))
-    ```
+---
 
-6. Calculate the accuracy of the predicted value.
-    ```python
-    print(f'Accuracy: {knr.score(x_test,y_test):.4f}')
-    ```
+# Bonus Opportunity: Cluster Analysis with Machine Learning
 
-7. Visualisation
-    
-    1. Import the `matplotlib.pyplot` library and the colormaps from the `matplotlib` library.
-        ```python
-        import matplotlib.pyplot as plt
-        from matplotlib import cm
-        ```
+To complement your learning of unsupervised techniques, you are encouraged to complete the **Cluster Analysis with Machine Learning** course by MathWorks.
 
-    2. Prepare the colormaps.
-        ```python
-        dia_cm = cm.get_cmap('Reds')
-        ```
+- **Estimated Time:** ~3 hours  
+- **Platform:** Online (browser-based)  
+- **Outcome:** Digital Certificate of Completion from MathWorks
 
-    3. Calculate the decision boundaries.
-        ```python
-        import numpy as np
-        x_min = diabetes['attributes'][input_columns[0]].min()
-        x_max = diabetes['attributes'][input_columns[0]].max()
-        x_range = x_max - x_min
-        x_min = x_min - 0.1 * x_range
-        x_max = x_max + 0.1 * x_range
-        y_min = diabetes['attributes'][input_columns[1]].min()
-        y_max = diabetes['attributes'][input_columns[1]].max()
-        y_range = y_max - y_min
-        y_min = y_min - 0.1 * y_range
-        y_max = y_max + 0.1 * y_range
-        xx, yy = np.meshgrid(np.arange(x_min, x_max, .01*x_range), 
-                            np.arange(y_min, y_max, .01*y_range))
-        z = knr.predict(list(zip(xx.ravel(), yy.ravel())))
-        z = z.reshape(xx.shape)
-        ```
-    
-    4. Plot the decision boundary.
-        ```python
-        plt.figure()
-        plt.pcolormesh(xx, yy, z, cmap=dia_cm)
-        ```
+**Action Steps:**
+1. Access the course here: [Cluster Analysis with Machine Learning – MathWorks Academy](https://matlabacademy.mathworks.com/details/cluster-analysis-with-machine-learning/otmlcaml)
+2. Complete all modules and quizzes.
+3. Download your Certificate of Completion.
+4. Upload your certificate together with your Lab X submission on LMS.
 
-    5. Plot the training and testing data.
-        ```python
-        plt.scatter(x_train[input_columns[0]], x_train[input_columns[1]], 
-                    c=y_train, label='Training data', cmap=dia_cm, 
-                    edgecolor='black', linewidth=1, s=150)
-        plt.scatter(x_test[input_columns[0]], x_test[input_columns[1]], 
-                    c=y_test, marker='*', label='Testing data', cmap=dia_cm,
-                    edgecolor='black', linewidth=1, s=150)
-        plt.xlabel(input_columns[0])
-        plt.ylabel(input_columns[1])
-        plt.legend()
-        plt.colorbar()
-        ```
+**Bonus Recognition:**
+- Students who complete and submit the certificate will receive bonus recognition in class.
+- This activity is **optional** and will **not impact** your Lab X grade.
 
-**Task**: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.
+---
+
+

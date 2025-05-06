@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://sami-s-hajjaj.github.io/ai-labs/lab4/">
       
       
+        <link rel="prev" href="../lab3/">
+      
+      
+        <link rel="next" href="../lab5/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lab 4: State representation - CSC3206 AI Labs</title>
+        <title>Lab 4: Linear Regression (Regression Methods with ML) - CSC3206 AI Labs</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-4-state-representation" class="md-skip">
+        <a href="#lab-4-linear-regression-regression-methods-with-ml" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 4: State representation
+              Lab 4: Linear Regression (Regression Methods with ML)
             
           </span>
         </div>
@@ -174,10 +178,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -228,24 +234,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -258,7 +269,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -323,7 +334,232 @@
   
   
   <span class="md-ellipsis">
-    Lab 1 Python Refresher (Bonus: MATLAB Onramp)
+    Lab 1 Python Refresher (MATLAB Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 2: Lab 2: Python - Data Handling (Statistics Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 3: Search Algorithms (Machine Learning Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gradient-descent-on-linear-regression-model-with-least-squares-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradient descent on linear regression model with least squares method
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-on-linear-regression-model-using-scikit-learn" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning on linear regression model using scikit-learn
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#multivariate-linear-regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Multivariate linear regression
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
     
   </span>
   
@@ -357,65 +593,287 @@
 
 
 
-<h1 id="lab-4-state-representation">Lab 4: State representation</h1>
-<h2 id="objective">Objective</h2>
+<h1 id="lab-4-linear-regression-regression-methods-with-ml">Lab 4: Linear Regression (Regression Methods with ML)</h1>
+<h2 id="objectives">Objectives</h2>
 <ol>
 <li>
-<p>To represent the state of a vacuum world.</p>
+<p>To develop the script to perform gradient descent on linear regression model with least squares method using Python.</p>
 </li>
 <li>
-<p>To solve the vacuum world problem using breadth-first search.</p>
+<p>To train a linear regression model with least squares method using the <code>scikit-learn</code> Python library.</p>
 </li>
 </ol>
-<h2 id="problem">Problem</h2>
-<p>The following image represents one of the possible states of a two-square vacuum world.</p>
-<div>
-<svg viewBox="0 0 805 400">
-<path d="M 0 0 h 400 v 400 h -400 v -400" fill='transparent' stroke='black'/>
-<path d="M 400 0 h 400 v 400 h -400" fill='transparent' stroke='black'/>
-
-<circle cx="165" cy="165" r="15" stroke="black" fill='transparent'/>
-<circle cx="165" cy="165" r="30" stroke="black" fill='transparent'/>
-<path d="M 142.5 187.5 h -30 v -60 q 127.5 -10 127.5 60 h -52.5" stroke="black" fill='transparent'/>
-<path d="M 202.5 135.5 v -12.5 h -37.5 v 3.5" stroke="black" fill='transparent'/>
-<path d="M 183.75 123 c 0 -100 65 -100 80 -70" stroke="black" fill='transparent'/>
-<path d="M 263.75 53 h 5 v 120 q 30 0 30 22 h -44 q 0 -22 2 -22 q 2 0 2 -5 v -115 h 5" stroke="black" fill='transparent'/>
-
-<!-- left dirt -->
-<path d="M 150 250 a 20 10 0 1 0 5 0"/>
-<path d="M 200 250 a 20 10 50 1 0 0 5"/>
-<path d="M 240 250 a 20 10 -30 1 0 0 5"/>
-<path d="M 140 300 a 20 10 70 1 0 0 5"/>
-<path d="M 190 280 a 20 10 -10 1 0 0 5"/>
-<path d="M 250 280 a 20 10 0 1 0 0 5"/>
-<path d="M 230 300 a 20 10 -50 1 0 0 5"/>
-<path d="M 190 310 a 20 10 0 1 0 0 5"/>
-
-<!-- right dirt -->
-<path d="M 550 250 a 20 10 0 1 0 5 0"/>
-<path d="M 600 250 a 20 10 50 1 0 0 5"/>
-<path d="M 640 250 a 20 10 -30 1 0 0 5"/>
-<path d="M 540 300 a 20 10 70 1 0 0 5"/>
-<path d="M 590 280 a 20 10 -10 1 0 0 5"/>
-<path d="M 650 280 a 20 10 0 1 0 0 5"/>
-<path d="M 630 300 a 20 10 -50 1 0 0 5"/>
-<path d="M 590 310 a 20 10 0 1 0 0 5"/>
-</svg>
-</div>
-
-<p>The aim of this section is to create a code to search for solution for the vacuum world given an initial state. Consider the actions <kbd>left</kbd>, <kbd>right</kbd>, <kbd>suck</kbd>, and every action contributes the same cost.</p>
+<h2 id="dataset">Dataset</h2>
+<p>Throughout this lab we will be using the data for 442 diabetes patients. The data can be import from the <code>sklearn</code> library.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+</code></pre></div>
+<p><code>diabetes</code> contains the keys of <code>data</code>, <code>target</code>, <code>DESCR</code>, <code>feature_names</code>, <code>data_filename</code>, and <code>target_filename</code>. The description of the diabetes dataset is given by</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Task</strong>: What are the keys for the input data and the output/target data?</p>
+<h2 id="gradient-descent-on-linear-regression-model-with-least-squares-method">Gradient descent on linear regression model with least squares method</h2>
 <ol>
 <li>
-<p>How could we represent the state?</p>
+<p>Load the dataset as described in the <a href="#dataset">Dataset</a> Section.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
+<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
+</code></pre></div>
 </li>
 <li>
-<p>Do we need to define the whole state space statically?</p>
+<p>Convert the dataset into a pandas DataFrame.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+</code></pre></div>
 </li>
 <li>
-<p>How do we define the transition model? The transition model should be a function that takes the <code>state</code> and <code>action</code> as inputs and returns the result <code>state</code>.</p>
+<p>In machine learning, the common practice is to split the dataset into training data and testing data (some also include the validation data). The testing data is not used during the training phase, but only after training to evaluate the model.</p>
+<p>The split is normally done such that the training data has a larger portion than the testing data. In this case, let's use a 80-20 split for the training data and testing data.</p>
+<p><code>sklearn</code> provides a function to split the train-test data given a percentage.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+</code></pre></div>
+<p><strong>Task</strong>: How do you use <code>train_test_split</code> to split the data and target into 80-20 proportion? (Define the training features as <code>X_train</code>, training target as <code>y_train</code>, testing features as <code>X_test</code>, testing target as <code>y_test</code>.)</p>
+</li>
+<li>
+<p>Before we train the data, a few functions need to be defined. We will start with defining the model of a simple regression line, i.e. <span class="arithmatex">\(y = mx + c\)</span>. Define the function name as <code>model</code> with 3 inputs <code>x</code>, <code>m</code>, and <code>c</code>. The function should return the value of <code>y</code>.</p>
+</li>
+<li>
+<p>The next function to define is the cost function, i.e. </p>
+<div class="arithmatex">\[J = \frac{1}{n}\sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</div>
+<p>Name the function as <code>cost</code> with 2 inputs <code>y</code> as the array of target values and <code>yh</code> as the array of predicted target values. The function returns a scalar value of the cost. Assume the arrays are pandas Series.</p>
+</li>
+<li>
+<p>We also need to define the function to calculate the derivatives of the cost with respect to each parameter. Name the function as <code>derivatives</code> with 3 inputs <code>x</code> as the array of input values, <code>y</code> as the array of of target values, and <code>yh</code> as the array of predicted target values. The function returns a dict object with keys <code>m</code> to hold the value of <span class="arithmatex">\(\frac{\partial J}{\partial m}\)</span> and <code>c</code> the value of <span class="arithmatex">\(\frac{\partial J}{\partial c}\)</span>. Assume the arrays are pandas Series.</p>
+<div class="arithmatex">\[\frac{\partial J}{\partial m} = -\frac{2}{n} \sum_{i=1}^{n} x_i (y_i - \hat{y}_i)\]</div>
+<div class="arithmatex">\[\frac{\partial J}{\partial c} = -\frac{2}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)\]</div>
+</li>
+<li>
+<p>We will use <code>bmi</code> as our input feature. </p>
+</li>
+<li>
+<p>Define the initial values for the parameters.</p>
+<div class="highlight"><pre><span></span><code><span class="n">learningrate</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">J</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">J</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))))</span>
+</code></pre></div>
+</li>
+<li>
+<p>Define the termination conditions.</p>
+<div class="highlight"><pre><span></span><code><span class="n">J_min</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">del_J_min</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">10000</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Variable</th>
+<th style="text-align: left;">Termination condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>J_min</code></td>
+<td style="text-align: left;">The algorithm terminates when the cost is less than this value.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>del_J_min</code></td>
+<td style="text-align: left;">The algorithm terminates when the proportion of change in cost to the current cost is less than this value.</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>max_iter</code></td>
+<td style="text-align: left;">The algorithm terminates when the number of iteration exceeds this value.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p>Now develop the code to perform gradient descent. </p>
+<ol>
+<li>Check termination conditions, if any condition fulfilled, the algorithm is terminated.</li>
+<li>Calculate derivatives.</li>
+<li>Update <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(c\)</span>; append the new values to the arrays <code>m</code> and <code>c</code>.</li>
+<li>Calculate <span class="arithmatex">\(J\)</span>; append the value to the array <code>J</code>. Repeat from the beginning.</li>
+</ol>
+</li>
+<li>
+<p>To provide feedback during each iteration, <code>import sys</code>, and add the following lines as the last lines in the loop.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>To provide visual display for each iteration, <code>import matplotlib.pyplot as plt</code>. Add these lines before the loop.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training data&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+<span class="n">line</span> <span class="o">=</span> <span class="kc">None</span>
+</code></pre></div>
+<p>Add the following lines as the last lines in the loop.</p>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">line</span><span class="p">:</span>
+  <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+<span class="n">line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Outside of the loop, add the following lines to display the results.</p>
+<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Algorithm terminated with&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="si">}</span><span class="s1"> iterations,&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  m </span><span class="si">{</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  c </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  training cost </span><span class="si">{</span><span class="n">J</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">testcost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  testing cost </span><span class="si">{</span><span class="n">testcost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Test the result on the testing data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> \
+         <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> \
+         <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Testing data&#39;</span><span class="p">)</span>
+</code></pre></div>
 </li>
 </ol>
-<p>Create the code to solve a vacuum world problem using the breadth-first search. Execute it and investigate if it's working correctly.</p>
+<h2 id="learning-on-linear-regression-model-using-scikit-learn">Learning on linear regression model using scikit-learn</h2>
+<ol>
+<li>
+<p><code>scikit-learn</code> provides model and functions to perform linear regression easily.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
+</code></pre></div>
+</li>
+<li>
+<p>Create a linear regression model.</p>
+<div class="highlight"><pre><span></span><code><span class="n">regrmodel</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
+</code></pre></div>
+</li>
+<li>
+<p>Train the model with the training data.</p>
+<div class="highlight"><pre><span></span><code><span class="n">regrmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+</code></pre></div>
+</li>
+<li>
+<p><code>regrmodel</code> is now a trained model. To get the predicted <span class="arithmatex">\(y\)</span> given a set of <span class="arithmatex">\(x\)</span> values,</p>
+<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">regrmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]])</span>
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">regrmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]])</span>
+</code></pre></div>
+</li>
+<li>
+<p>As we are using pandas data structures, we need to convert the predicted value to Series and align the indices with the target Series.</p>
+<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">)</span>
+<span class="n">y_train_pred</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">index</span>
+
+<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">)</span>
+<span class="n">y_test_pred</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">index</span>
+</code></pre></div>
+</li>
+<li>
+<p>Display the information of the fitted model.</p>
+<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sklearn&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  m </span><span class="si">{</span><span class="n">regrmodel</span><span class="o">.</span><span class="n">coef_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  c </span><span class="si">{</span><span class="n">regrmodel</span><span class="o">.</span><span class="n">intercept_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">traincost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">)</span>
+<span class="n">testcost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  training cost: </span><span class="si">{</span><span class="n">traincost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  testing cost: </span><span class="si">{</span><span class="n">testcost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+<li>
+<p>Display the result of prediction together with the target values.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training data (sklearn)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Testing data (sklearn)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h2 id="multivariate-linear-regression">Multivariate linear regression</h2>
+<ol>
+<li>
+<p>Linear regression can also be applied with multiple inputs. With <span class="arithmatex">\(k\)</span> inputs, the linear regression equation is given as</p>
+<div class="arithmatex">\[\hat{y} = \beta + m_1x_1 + m_2x_2 + \cdots + m_kx_k\]</div>
+</li>
+<li>
+<p>With one input, the resultant function is a line; with two inputs, the resultant function is a plane; with more inputs, it's a hyperplane.</p>
+</li>
+<li>
+<p>Gradient descent for multivariate linear regression is performed with the same approach. </p>
+<ol>
+<li>Check termination conditions, if any condition fulfilled, the algorithm is terminated.</li>
+<li>Calculate derivatives.</li>
+<li>Update <span class="arithmatex">\(m_1\)</span>, <span class="arithmatex">\(m_2\)</span>, ..., <span class="arithmatex">\(m_k\)</span> and <span class="arithmatex">\(\beta\)</span>.</li>
+<li>Calculate <span class="arithmatex">\(J\)</span>. Repeat from the beginning.</li>
+</ol>
+</li>
+<li>
+<p>For multivariate linear regression, the least squares cost is given by
+    <span class="arithmatex">\(<span class="arithmatex">\(J = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\)</span>\)</span></p>
+<p>The derivative with respect to <span class="arithmatex">\(\beta\)</span> 
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial J}{\partial \beta} = -\frac{2}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)\)</span>\)</span></p>
+<p>The derivatives with respect to <span class="arithmatex">\(m_j\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial J}{\partial m_j} = -\frac{2}{n} \sum_{i=1}^{n} x_{ji}(y_i - \hat{y}_i)\)</span>\)</span></p>
+</li>
+<li>
+<p>Using <code>scikit-learn</code> functions, multivariate linear regression can be achieved by providing the input features to the function.</p>
+</li>
+<li>
+<p>We will now use the <code>bmi</code> and blood pressure <code>bp</code> as the input features to predict the target. Copy the code block from the previous section and change <code>X_...[['bmi']]</code> to <code>X_...[['bmi','bp']]</code> except for the plotting part.</p>
+</li>
+<li>
+<p>For the graphical visualisation (plotting) part, use the following code to plot 3d graphs:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Blood pressure&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Training data (sklearn multivariate)&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Blood pressure&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Testing data (sklearn multivariate)&#39;</span><span class="p">)</span>
+</code></pre></div>
+</li>
+</ol>
+<hr />
+<h1 id="bonus-opportunity-regression-methods-with-machine-learning">Bonus Opportunity: Regression Methods with Machine Learning</h1>
+<p>For those interested in exploring machine learning techniques for predictive modeling, you are invited to complete the <strong>Regression Methods with Machine Learning</strong> course by MathWorks.</p>
+<ul>
+<li><strong>Estimated Time:</strong> ~4 hours  </li>
+<li><strong>Platform:</strong> Online (browser-based)  </li>
+<li><strong>Outcome:</strong> Digital Certificate of Completion from MathWorks</li>
+</ul>
+<p><strong>Action Steps:</strong>
+1. Access the course here: <a href="https://matlabacademy.mathworks.com/details/regression-methods-with-machine-learning/otmlrmml">Regression Methods with Machine Learning – MathWorks Academy</a>
+2. Work through the lessons and complete the assessments.
+3. Download your Certificate of Completion.
+4. Upload your certificate along with your Lab X submission on LMS.</p>
+<p><strong>Bonus Recognition:</strong>
+- Submitting the certificate will earn you bonus recognition later in the semester.
+- Participation is <strong>optional</strong> and will <strong>not</strong> affect your Lab X grade.</p>
+<hr />
 
 
 

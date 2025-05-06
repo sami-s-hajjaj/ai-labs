@@ -11,6 +11,8 @@
         <link rel="canonical" href="https://sami-s-hajjaj.github.io/ai-labs/lab7/">
       
       
+        <link rel="prev" href="../lab6/">
+      
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Lab 7: k Nearest Neighbours (KNN) - CSC3206 AI Labs</title>
+        <title>Lab 7: Clustering (Cluster Analysis with ML) - CSC3206 AI Labs</title>
       
     
     
@@ -70,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-7-k-nearest-neighbours-knn" class="md-skip">
+        <a href="#lab-7-clustering-cluster-analysis-with-ml" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +105,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 7: k Nearest Neighbours (KNN)
+              Lab 7: Clustering (Cluster Analysis with ML)
             
           </span>
         </div>
@@ -174,10 +176,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -228,24 +232,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -258,7 +267,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -323,12 +332,339 @@
   
   
   <span class="md-ellipsis">
-    Lab 1 Python Refresher (Bonus: MATLAB Onramp)
+    Lab 1 Python Refresher (MATLAB Onramp)
     
   </span>
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 2: Lab 2: Python - Data Handling (Statistics Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 3: Search Algorithms (Machine Learning Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#note" class="md-nav__link">
+    <span class="md-ellipsis">
+      Note
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering-using-basic-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-means clustering using basic Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="k-means clustering using basic Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#initialisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Initialisation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-the-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster the points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-the-centroids" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update the centroids
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#termination-condition" class="md-nav__link">
+    <span class="md-ellipsis">
+      Termination condition
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering-using-scikit-learn-python-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-means clustering using scikit-learn Python library
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="k-means clustering using scikit-learn Python library">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dataset_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dataset
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#k-means-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      k-means model
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#training" class="md-nav__link">
+    <span class="md-ellipsis">
+      Training
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cluster-the-points_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster the points
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualisation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -357,240 +693,253 @@
 
 
 
-<h1 id="lab-7-k-nearest-neighbours-knn">Lab 7: <em>k</em> Nearest Neighbours (KNN)</h1>
+<h1 id="lab-7-clustering-cluster-analysis-with-ml">Lab 7: Clustering (Cluster Analysis with ML)</h1>
 <h2 id="objective">Objective</h2>
 <ol>
-<li>To perform <em>k</em> nearest neighbours algorithm with <code>scikit-learn</code> Python library for classification and regression.</li>
-</ol>
-<h2 id="datasets">Datasets</h2>
-<ol>
 <li>
-<p>The iris dataset will be used for classification, and the diabetes dataset for regression.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
-<span class="n">iris</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">iris</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
-  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]),</span>
-  <span class="s1">&#39;targetNames&#39;</span><span class="p">:</span> <span class="n">iris</span><span class="o">.</span><span class="n">target_names</span>
-<span class="p">}</span>
-<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
-<span class="n">diabetes</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span>
-  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;diseaseProgression&#39;</span><span class="p">])</span>
-<span class="p">}</span>
-</code></pre></div>
+<p>To implement <em>k</em>-means clustering algorithm using basic Python.</p>
 </li>
 <li>
-<p>Split the datasets into 80-20 for train-test proportion.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-<span class="k">for</span> <span class="n">dt</span> <span class="ow">in</span> <span class="p">[</span><span class="n">iris</span><span class="p">,</span> <span class="n">diabetes</span><span class="p">]:</span>
-  <span class="n">x_train</span><span class="p">,</span> <span class="n">x_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">dt</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span> <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_train</span><span class="p">,</span>
-    <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_train</span>
-  <span class="p">}</span>
-  <span class="n">dt</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">&#39;attributes&#39;</span><span class="p">:</span> <span class="n">x_test</span><span class="p">,</span>
-  <span class="s1">&#39;target&#39;</span><span class="p">:</span> <span class="n">y_test</span>
-  <span class="p">}</span>
-</code></pre></div>
-<p><em>Note</em>: Be reminded that <code>random_state</code> is used to reproduce the same "random" split of the data whenever the function is called. To produce randomly splitted data every time the function is called, remove the <code>random_state</code> argument.</p>
+<p>To perform <em>k</em>-means clustering algorithm with <code>scikit-learn</code> Python library.</p>
 </li>
 </ol>
-<p><strong>Task</strong>: How do we access the training input data for the iris dataset?</p>
-<h2 id="knn">KNN</h2>
-<p>KNN algorithms are provided by the <code>scikit-learn</code> Python library as the class <code>sklearn.neighbors.KNeighborsClassifier</code> for classification, and <code>sklearn.neighbors.KNeighborsRegressor</code> for regression.</p>
-<h3 id="classification">Classification</h3>
+<h2 id="note">Note</h2>
+<ol>
+<li>Suggestion: use <code>numpy</code> library to simplify the operation.</li>
+</ol>
+<h2 id="k-means-clustering-using-basic-python"><em>k</em>-means clustering using basic Python</h2>
 <ol>
 <li>
-<p>Import the class for KNN classifier.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+<p>The following code structure will be used for this section:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
+<span class="o">...</span>
+
+<span class="c1"># functions</span>
+<span class="c1">## function to take input of data and number of clusters, return centroids and other data</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_random_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">n_centroids</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="c1">## function to group data according to centroids</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">group_to_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">centroids</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="c1">## function to calculate centroids from grouped data</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">find_centroids</span><span class="p">(</span><span class="n">data_points</span><span class="p">,</span> <span class="n">groups</span><span class="p">):</span>
+  <span class="k">pass</span>
+
+<span class="c1"># generate dataset</span>
+<span class="o">...</span>
+
+<span class="c1"># identify initial centroids</span>
+<span class="o">...</span>
+
+<span class="c1"># repeat until centroids stabilise</span>
+<span class="k">while</span> <span class="o">...</span><span class="p">:</span>
+  <span class="c1">## group data to centroids</span>
+  <span class="o">...</span>
+  <span class="c1">## update centroids</span>
+  <span class="o">...</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;terminated&#39;</span><span class="p">)</span>
 </code></pre></div>
 </li>
-<li>
-<p>Instantiate an object of <code>KNeighborsClassifier</code> class with k = 5.</p>
-<div class="highlight"><pre><span></span><code><span class="n">knc</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Train the classifier with the training data. We will use the <code>sepal length (cm)</code> and <code>sepal width (cm)</code> (the first and second columns) as the attributes for now.</p>
-<div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
-<span class="n">x_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
-<span class="n">knc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p><code>.predict</code> function is used to predict the species of the testing data.</p>
-<div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span>
-<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Comparing the predicted value and the target value of the test data.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
-</code></pre></div>
-</li>
-<li>
-<p>Calculate the accuracy of the predicted value.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Visualisation</p>
+</ol>
+<h3 id="dataset">Dataset</h3>
 <ol>
 <li>
-<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListedColormap</span>
+<p>The code in this subsection will populate
+    <div class="highlight"><pre><span></span><code><span class="c1"># generate dataset</span>
+<span class="o">...</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Prepare the colormaps.
-    <div class="highlight"><pre><span></span><code><span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span>
-<span class="n">cm_dark</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">cm_light</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
-</code></pre></div></p>
+<p>We will create a dataset of 200 with 2 input features and 4 clusters.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">make_blobs</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">n_features</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">centers</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">cluster_std</span><span class="o">=</span><span class="mf">1.6</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">50</span><span class="p">)</span>
+</code></pre></div>
 </li>
 <li>
-<p>Calculate the decision boundaries.
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">x_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">x_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
-<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
-<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
-<span class="n">y_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">y_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
-<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
-<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
-<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
-                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">knc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</code></pre></div></p>
+<p><code>data</code> is an array of two elements. First element contains the data points, and second element contains the index of the cluster.</p>
+<div class="highlight"><pre><span></span><code><span class="n">points</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</code></pre></div>
 </li>
 <li>
-<p>Plot the decision boundary.
-    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_light</span><span class="p">)</span>
-</code></pre></div></p>
+<p>Plot the data on a scatter graph with colour representing the cluster of the points.</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">][:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="initialisation">Initialisation</h3>
+<ol>
+<li>
+<p>The initialisation for <em>k</em>-means clustering algorithm involves the identification of <em>k</em> random points from the dataset.</p>
 </li>
 <li>
-<p>Plot the training and testing data.
-    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
-            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
-            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> 
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<p>In the <code>get_random_centroids</code> function, pass the dataset and the number of centroids to be identified as the input arguments. </p>
+</li>
+<li>
+<p>In the body of the function, randomly identify the centroids from the dataset.</p>
+</li>
+<li>
+<p>The function should return two outputs, the randomly identified centroids and the dataset without the centroids.</p>
+</li>
+<li>
+<p>Update your code with the following snippet:
+    <div class="highlight"><pre><span></span><code><span class="c1"># identify initial centroids</span>
+<span class="n">centroids</span><span class="p">,</span> <span class="n">others</span> <span class="o">=</span> <span class="n">get_random_centroids</span><span class="p">(</span><span class="n">points</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 </ol>
+<h3 id="cluster-the-points">Cluster the points</h3>
+<ol>
+<li>
+<p>The <code>group_to_centroids</code> function takes two inputs, the data points to be clustered and the centroids to cluster to.</p>
+</li>
+<li>
+<p>In the <code>group_to_centroids</code> function, calculate the distance of every point from each centroid.</p>
+</li>
+<li>
+<p>Then identify the centroid each point should be clustered to.</p>
+</li>
+<li>
+<p>The function should return the index of the centroid each point is clustered to. </p>
+</li>
+<li>
+<p>Update your code with the following snippet:
+    <div class="highlight"><pre><span></span><code><span class="c1">## group data to centroids</span>
+<span class="n">groups</span> <span class="o">=</span> <span class="n">group_to_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">centroids</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
 </ol>
-<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
-<h3 id="regression">Regression</h3>
+<h3 id="update-the-centroids">Update the centroids</h3>
 <ol>
 <li>
-<p>Import the class for KNN regressor.
-    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.neighbors</span><span class="w"> </span><span class="kn">import</span> <span class="n">KNeighborsRegressor</span>
-</code></pre></div></p>
+<p>The <code>find_centroids</code> function takes two inputs, the data points and the index of the centroid each point is clustered to (i.e. output of <code>group_to_centroids</code>)</p>
 </li>
 <li>
-<p>Instantiate an object of <code>KNeighborsRegressor</code> class with k = 5.
-    <div class="highlight"><pre><span></span><code><span class="n">knr</span> <span class="o">=</span> <span class="n">KNeighborsRegressor</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</code></pre></div></p>
+<p>The <code>find_centroids</code> function calculates and returns the new set of centroids based on the clustered data points.</p>
 </li>
 <li>
-<p>Train the regressor with the training data. We will use the <code>age</code> and <code>bmi</code> as the attributes for now.
-    <div class="highlight"><pre><span></span><code><span class="n">input_columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
-<span class="n">x_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
-<span class="n">y_train</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
-<span class="n">knr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<p>Update your code with the following snippet:
+    <div class="highlight"><pre><span></span><code><span class="c1">## update centroids</span>
+<span class="n">centroids</span> <span class="o">=</span> <span class="n">find_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
-<li>
-<p><code>.predict</code> function is used to predict the disease progression of the testing data.
-    <div class="highlight"><pre><span></span><code><span class="n">x_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">]</span>
-<span class="n">y_test</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span>
-<span class="n">y_predict</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_test</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Comparing the predicted value and the target value of the test data.
-    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span><span class="n">y_predict</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Calculate the accuracy of the predicted value.
-    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">knr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test</span><span class="p">,</span><span class="n">y_test</span><span class="p">)</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Visualisation</p>
+</ol>
+<h3 id="termination-condition">Termination condition</h3>
+<ol>
+<li>The clustering algorithm should terminate when the centroids stabilise, i.e. do not change much.</li>
+</ol>
+<h3 id="visualisation">Visualisation</h3>
 <ol>
 <li>
-<p>Import the <code>matplotlib.pyplot</code> library and the colormaps from the <code>matplotlib</code> library.
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<p>Update your code according to the following sample to visualise the centroids and clusters at every iteration.
+    <div class="highlight"><pre><span></span><code><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">)</span>
+<span class="c1"># repeat until centroids stabilise</span>
+<span class="k">while</span> <span class="o">...</span><span class="p">:</span>
+  <span class="c1">## group data to centroids</span>
+  <span class="n">groups</span> <span class="o">=</span> <span class="n">group_to_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">centroids</span><span class="p">)</span>
+
+  <span class="c1">## update centroids</span>
+  <span class="n">centroids</span> <span class="o">=</span> <span class="n">find_centroids</span><span class="p">(</span><span class="n">others</span><span class="p">,</span> <span class="n">groups</span><span class="p">)</span>
+
+  <span class="c1">## visualise current clusters and centroids</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">others</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">others</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">groups</span><span class="p">)</span>
+  <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">centroids</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">centroids</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+  <span class="c1">## pause for one second</span>
+  <span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Prepare the colormaps.
-    <div class="highlight"><pre><span></span><code><span class="n">dia_cm</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+<p>Are Figure 1 (originally generated clusters) and Figure 2 (calculated clusters) identical?</p>
+</li>
+</ol>
+<h2 id="k-means-clustering-using-scikit-learn-python-library"><em>k</em>-means clustering using <code>scikit-learn</code> Python library</h2>
+<ol>
+<li>
+<p>The following code structure will be used for this section:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># import libraries</span>
+<span class="o">...</span>
+
+<span class="c1"># generate dataset</span>
+<span class="o">...</span>
+
+<span class="c1"># initialise the k-means model</span>
+<span class="o">...</span>
+
+<span class="c1"># train the k-means model</span>
+<span class="o">...</span>
+
+<span class="c1"># identify the cluster of each point</span>
+<span class="o">...</span>
+
+<span class="c1"># visualise the result</span>
+<span class="o">...</span>
+</code></pre></div>
+</li>
+</ol>
+<h3 id="dataset_1">Dataset</h3>
+<ol>
+<li>We will use the exact same data generation as the previous section.</li>
+</ol>
+<h3 id="k-means-model">k-means model</h3>
+<ol>
+<li>
+<p>The <em>k</em>-means model is provided by <code>sklearn.cluster.KMeans</code>.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">KMeans</span>
 </code></pre></div></p>
 </li>
 <li>
-<p>Calculate the decision boundaries.
-    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">x_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">x_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
-<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
-<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
-<span class="n">y_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
-<span class="n">y_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
-<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
-<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
-<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
-<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
-                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">knr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</code></pre></div></p>
+<p>Initialise the <em>k</em>-means model with 4 clusters using <code>KMeans</code>. (Check the documentation to identify the usage of <code>KMeans</code>)</p>
+</li>
+</ol>
+<h3 id="training">Training</h3>
+<ol>
+<li>
+<p>The <em>k</em>-means model initialised need to be trained with the data.</p>
 </li>
 <li>
-<p>Plot the decision boundary.
+<p>The training is executed using <code>sklearn.cluster.KMeans.fit</code>. (Identify the input argument(s))
+    <div class="highlight"><pre><span></span><code><span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h3 id="cluster-the-points_1">Cluster the points</h3>
+<ol>
+<li>The trained model can be used to cluster the points to their respective cluster using <code>sklearn.cluster.KMeans.fit_predict</code>. (Identify the input argument(s))
+    <div class="highlight"><pre><span></span><code><span class="n">y_km</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+</code></pre></div></li>
+</ol>
+<h3 id="visualisation_1">Visualisation</h3>
+<ol>
+<li>The visualisation of the result can be achieved with the following code:
     <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">)</span>
-</code></pre></div></p>
-</li>
-<li>
-<p>Plot the training and testing data.
-    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_train</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
-            <span class="n">c</span><span class="o">=</span><span class="n">y_train</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span> 
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> <span class="n">x_test</span><span class="p">[</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
-            <span class="n">c</span><span class="o">=</span><span class="n">y_test</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span>
-            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_columns</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
-</code></pre></div></p>
-</li>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">points</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">points</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="n">y_km</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+</code></pre></div></li>
 </ol>
-</li>
-</ol>
-<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.</p>
+<p><strong>Task</strong>: Compare the results of the two methods, are they similar?</p>
+<hr />
+<h1 id="bonus-opportunity-cluster-analysis-with-machine-learning">Bonus Opportunity: Cluster Analysis with Machine Learning</h1>
+<p>To complement your learning of unsupervised techniques, you are encouraged to complete the <strong>Cluster Analysis with Machine Learning</strong> course by MathWorks.</p>
+<ul>
+<li><strong>Estimated Time:</strong> ~3 hours  </li>
+<li><strong>Platform:</strong> Online (browser-based)  </li>
+<li><strong>Outcome:</strong> Digital Certificate of Completion from MathWorks</li>
+</ul>
+<p><strong>Action Steps:</strong>
+1. Access the course here: <a href="https://matlabacademy.mathworks.com/details/cluster-analysis-with-machine-learning/otmlcaml">Cluster Analysis with Machine Learning – MathWorks Academy</a>
+2. Complete all modules and quizzes.
+3. Download your Certificate of Completion.
+4. Upload your certificate together with your Lab X submission on LMS.</p>
+<p><strong>Bonus Recognition:</strong>
+- Students who complete and submit the certificate will receive bonus recognition in class.
+- This activity is <strong>optional</strong> and will <strong>not impact</strong> your Lab X grade.</p>
+<hr />
 
 
 

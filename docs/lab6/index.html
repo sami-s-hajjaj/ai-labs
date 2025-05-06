@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://sami-s-hajjaj.github.io/ai-labs/lab6/">
       
       
+        <link rel="prev" href="../lab5/">
+      
+      
+        <link rel="next" href="../lab7/">
       
       
       <link rel="icon" href="../img/favicon.ico">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Lab 6: Linear Regression - CSC3206 AI Labs</title>
+        <title>Lab 6: Decision Tree - CSC3206 AI Labs</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lab-6-linear-regression" class="md-skip">
+        <a href="#lab-6-decision-tree" class="md-skip">
           Skip to content
         </a>
       
@@ -103,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lab 6: Linear Regression
+              Lab 6: Decision Tree
             
           </span>
         </div>
@@ -174,10 +178,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href=".." class="md-tabs__link">
           
   
@@ -228,24 +234,29 @@
       
   
   
+    
   
   
+  
     
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
             
   
   
@@ -258,7 +269,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             Current
@@ -323,7 +334,286 @@
   
   
   <span class="md-ellipsis">
-    Lab 1 Python Refresher (Bonus: MATLAB Onramp)
+    Lab 1 Python Refresher (MATLAB Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 2: Lab 2: Python - Data Handling (Statistics Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 3: Search Algorithms (Machine Learning Onramp)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 4: Linear Regression (Regression Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 5: k Nearest Neighbours (KNN) (Classification Methods with ML)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 6: Decision Tree
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    <span class="md-ellipsis">
+      Objective
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Datasets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-tree" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decision tree
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Decision tree">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Classification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-of-decision-surface" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation of decision surface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overfitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regression" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regression
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Regression">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-of-decision-surface_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Visualisation of decision surface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#overfitting_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overfitting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lab7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Lab 7: Clustering (Cluster Analysis with ML)
     
   </span>
   
@@ -357,270 +647,276 @@
 
 
 
-<h1 id="lab-6-linear-regression">Lab 6: Linear Regression</h1>
-<h2 id="objectives">Objectives</h2>
+<h1 id="lab-6-decision-tree">Lab 6: Decision Tree</h1>
+<h2 id="objective">Objective</h2>
 <ol>
-<li>
-<p>To develop the script to perform gradient descent on linear regression model with least squares method using Python.</p>
-</li>
-<li>
-<p>To train a linear regression model with least squares method using the <code>scikit-learn</code> Python library.</p>
-</li>
+<li>To perform CART decision tree learning algorithm using the <code>scikit-learn</code> Python library.</li>
 </ol>
-<h2 id="dataset">Dataset</h2>
-<p>Throughout this lab we will be using the data for 442 diabetes patients. The data can be import from the <code>sklearn</code> library.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
-<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
-</code></pre></div>
-<p><code>diabetes</code> contains the keys of <code>data</code>, <code>target</code>, <code>DESCR</code>, <code>feature_names</code>, <code>data_filename</code>, and <code>target_filename</code>. The description of the diabetes dataset is given by</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
-</code></pre></div>
-<p><strong>Task</strong>: What are the keys for the input data and the output/target data?</p>
-<h2 id="gradient-descent-on-linear-regression-model-with-least-squares-method">Gradient descent on linear regression model with least squares method</h2>
+<h2 id="datasets">Datasets</h2>
+<p>The same iris and diabetes datasets used in Lab 7 are used here. Load the datasets and split them into 80-20 train-test proportion.</p>
+<h2 id="decision-tree">Decision tree</h2>
+<p>Decision tree models and algorithms are provided by the <code>scikit-learn</code> as the class <code>sklearn.tree.DecisionTreeClassifier</code> for classification, and <code>sklearn.tree.DecisionTreeRegressor</code> for regression.</p>
+<h3 id="classification">Classification</h3>
 <ol>
 <li>
-<p>Load the dataset as described in the <a href="#dataset">Dataset</a> Section.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">datasets</span>
-<span class="n">diabetes</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">()</span>
-</code></pre></div>
+<p>Import the class for decision tree classifier.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>Convert the dataset into a pandas DataFrame.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="n">dt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
-</code></pre></div>
+<p>Instantiate an object of <code>DecisionTreeClassifier</code> class with gini impurity as the split criterion.
+    <div class="highlight"><pre><span></span><code><span class="n">dtc</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;gini&#39;</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>In machine learning, the common practice is to split the dataset into training data and testing data (some also include the validation data). The testing data is not used during the training phase, but only after training to evaluate the model.</p>
-<p>The split is normally done such that the training data has a larger portion than the testing data. In this case, let's use a 80-20 split for the training data and testing data.</p>
-<p><code>sklearn</code> provides a function to split the train-test data given a percentage.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
-</code></pre></div>
-<p><strong>Task</strong>: How do you use <code>train_test_split</code> to split the data and target into 80-20 proportion? (Define the training features as <code>X_train</code>, training target as <code>y_train</code>, testing features as <code>X_test</code>, testing target as <code>y_test</code>.)</p>
+<p>Train the classifier with the training data. We will use all the input attributes.
+    <div class="highlight"><pre><span></span><code><span class="n">dtc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>Before we train the data, a few functions need to be defined. We will start with defining the model of a simple regression line, i.e. <span class="arithmatex">\(y = mx + c\)</span>. Define the function name as <code>model</code> with 3 inputs <code>x</code>, <code>m</code>, and <code>c</code>. The function should return the value of <code>y</code>.</p>
+<p><code>.predict</code> function is used to predict the species of the testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">predicts</span> <span class="o">=</span> <span class="n">dtc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">])</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>The next function to define is the cost function, i.e. </p>
-<div class="arithmatex">\[J = \frac{1}{n}\sum_{i=1}^{n} (y_i - \hat{y}_i)^2\]</div>
-<p>Name the function as <code>cost</code> with 2 inputs <code>y</code> as the array of target values and <code>yh</code> as the array of predicted target values. The function returns a scalar value of the cost. Assume the arrays are pandas Series.</p>
+<p>Comparing the predicted value and the target value of the test data.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">,</span><span class="n">predicts</span><span class="p">)),</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>We also need to define the function to calculate the derivatives of the cost with respect to each parameter. Name the function as <code>derivatives</code> with 3 inputs <code>x</code> as the array of input values, <code>y</code> as the array of of target values, and <code>yh</code> as the array of predicted target values. The function returns a dict object with keys <code>m</code> to hold the value of <span class="arithmatex">\(\frac{\partial J}{\partial m}\)</span> and <code>c</code> the value of <span class="arithmatex">\(\frac{\partial J}{\partial c}\)</span>. Assume the arrays are pandas Series.</p>
-<div class="arithmatex">\[\frac{\partial J}{\partial m} = -\frac{2}{n} \sum_{i=1}^{n} x_i (y_i - \hat{y}_i)\]</div>
-<div class="arithmatex">\[\frac{\partial J}{\partial c} = -\frac{2}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)\]</div>
+<p>Calculate the accuracy of the predicted value.
+    <div class="highlight"><pre><span></span><code><span class="n">accuracy</span> <span class="o">=</span> <span class="n">dtc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>We will use <code>bmi</code> as our input feature. </p>
-</li>
-<li>
-<p>Define the initial values for the parameters.</p>
-<div class="highlight"><pre><span></span><code><span class="n">learningrate</span> <span class="o">=</span> <span class="mf">0.1</span>
-<span class="n">m</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">c</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">J</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="n">m</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">c</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">J</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))))</span>
-</code></pre></div>
-</li>
-<li>
-<p>Define the termination conditions.</p>
-<div class="highlight"><pre><span></span><code><span class="n">J_min</span> <span class="o">=</span> <span class="mf">0.01</span>
-<span class="n">del_J_min</span> <span class="o">=</span> <span class="mf">0.0001</span>
-<span class="n">max_iter</span> <span class="o">=</span> <span class="mi">10000</span>
-</code></pre></div>
-<table>
-<thead>
-<tr>
-<th style="text-align: right;">Variable</th>
-<th style="text-align: left;">Termination condition</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: right;"><code>J_min</code></td>
-<td style="text-align: left;">The algorithm terminates when the cost is less than this value.</td>
-</tr>
-<tr>
-<td style="text-align: right;"><code>del_J_min</code></td>
-<td style="text-align: left;">The algorithm terminates when the proportion of change in cost to the current cost is less than this value.</td>
-</tr>
-<tr>
-<td style="text-align: right;"><code>max_iter</code></td>
-<td style="text-align: left;">The algorithm terminates when the number of iteration exceeds this value.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p>Now develop the code to perform gradient descent. </p>
-<ol>
-<li>Check termination conditions, if any condition fulfilled, the algorithm is terminated.</li>
-<li>Calculate derivatives.</li>
-<li>Update <span class="arithmatex">\(m\)</span> and <span class="arithmatex">\(c\)</span>; append the new values to the arrays <code>m</code> and <code>c</code>.</li>
-<li>Calculate <span class="arithmatex">\(J\)</span>; append the value to the array <code>J</code>. Repeat from the beginning.</li>
-</ol>
-</li>
-<li>
-<p>To provide feedback during each iteration, <code>import sys</code>, and add the following lines as the last lines in the loop.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
-</code></pre></div>
-</li>
-<li>
-<p>To provide visual display for each iteration, <code>import matplotlib.pyplot as plt</code>. Add these lines before the loop.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training data&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
-<span class="n">line</span> <span class="o">=</span> <span class="kc">None</span>
-</code></pre></div>
-<p>Add the following lines as the last lines in the loop.</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="n">line</span><span class="p">:</span>
-  <span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-<span class="n">line</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">pause</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Outside of the loop, add the following lines to display the results.</p>
-<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Algorithm terminated with&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">J</span><span class="p">)</span><span class="si">}</span><span class="s1"> iterations,&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  m </span><span class="si">{</span><span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  c </span><span class="si">{</span><span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  training cost </span><span class="si">{</span><span class="n">J</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">testcost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  testing cost </span><span class="si">{</span><span class="n">testcost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Test the result on the testing data.</p>
-<div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> \
-         <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">model</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">m</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])),</span> \
-         <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Testing data&#39;</span><span class="p">)</span>
-</code></pre></div>
-</li>
-</ol>
-<h2 id="learning-on-linear-regression-model-using-scikit-learn">Learning on linear regression model using scikit-learn</h2>
+<p>Decision tree visualisation</p>
 <ol>
 <li>
-<p><code>scikit-learn</code> provides model and functions to perform linear regression easily.</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn</span><span class="w"> </span><span class="kn">import</span> <span class="n">linear_model</span>
-</code></pre></div>
+<p>Import the <code>matplotlib.pyplot</code> library and the function to visualise the tree.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_tree</span>
+</code></pre></div></p>
 </li>
 <li>
-<p>Create a linear regression model.</p>
-<div class="highlight"><pre><span></span><code><span class="n">regrmodel</span> <span class="o">=</span> <span class="n">linear_model</span><span class="o">.</span><span class="n">LinearRegression</span><span class="p">()</span>
-</code></pre></div>
-</li>
-<li>
-<p>Train the model with the training data.</p>
-<div class="highlight"><pre><span></span><code><span class="n">regrmodel</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
-</code></pre></div>
-</li>
-<li>
-<p><code>regrmodel</code> is now a trained model. To get the predicted <span class="arithmatex">\(y\)</span> given a set of <span class="arithmatex">\(x\)</span> values,</p>
-<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">regrmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]])</span>
-<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">regrmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">[[</span><span class="s1">&#39;bmi&#39;</span><span class="p">]])</span>
-</code></pre></div>
-</li>
-<li>
-<p>As we are using pandas data structures, we need to convert the predicted value to Series and align the indices with the target Series.</p>
-<div class="highlight"><pre><span></span><code><span class="n">y_train_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y_train_pred</span><span class="p">)</span>
-<span class="n">y_train_pred</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">index</span>
-
-<span class="n">y_test_pred</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">y_test_pred</span><span class="p">)</span>
-<span class="n">y_test_pred</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">index</span>
-</code></pre></div>
-</li>
-<li>
-<p>Display the information of the fitted model.</p>
-<div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sklearn&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  m </span><span class="si">{</span><span class="n">regrmodel</span><span class="o">.</span><span class="n">coef_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  c </span><span class="si">{</span><span class="n">regrmodel</span><span class="o">.</span><span class="n">intercept_</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">traincost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">)</span>
-<span class="n">testcost</span> <span class="o">=</span> <span class="n">cost</span><span class="p">(</span><span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  training cost: </span><span class="si">{</span><span class="n">traincost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;  testing cost: </span><span class="si">{</span><span class="n">testcost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</code></pre></div>
-</li>
-<li>
-<p>Display the result of prediction together with the target values.
-    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Training data (sklearn)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Testing data (sklearn)&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
+<p>Visualise the decision tree model.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">plot_tree</span><span class="p">(</span><span class="n">dtc</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> 
+                 <span class="n">class_names</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;targetNames&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </code></pre></div></p>
 </li>
 </ol>
-<h2 id="multivariate-linear-regression">Multivariate linear regression</h2>
-<ol>
-<li>
-<p>Linear regression can also be applied with multiple inputs. With <span class="arithmatex">\(k\)</span> inputs, the linear regression equation is given as</p>
-<div class="arithmatex">\[\hat{y} = \beta + m_1x_1 + m_2x_2 + \cdots + m_kx_k\]</div>
-</li>
-<li>
-<p>With one input, the resultant function is a line; with two inputs, the resultant function is a plane; with more inputs, it's a hyperplane.</p>
-</li>
-<li>
-<p>Gradient descent for multivariate linear regression is performed with the same approach. </p>
-<ol>
-<li>Check termination conditions, if any condition fulfilled, the algorithm is terminated.</li>
-<li>Calculate derivatives.</li>
-<li>Update <span class="arithmatex">\(m_1\)</span>, <span class="arithmatex">\(m_2\)</span>, ..., <span class="arithmatex">\(m_k\)</span> and <span class="arithmatex">\(\beta\)</span>.</li>
-<li>Calculate <span class="arithmatex">\(J\)</span>. Repeat from the beginning.</li>
-</ol>
-</li>
-<li>
-<p>For multivariate linear regression, the least squares cost is given by
-    <span class="arithmatex">\(<span class="arithmatex">\(J = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2\)</span>\)</span></p>
-<p>The derivative with respect to <span class="arithmatex">\(\beta\)</span> 
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial J}{\partial \beta} = -\frac{2}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)\)</span>\)</span></p>
-<p>The derivatives with respect to <span class="arithmatex">\(m_j\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(\frac{\partial J}{\partial m_j} = -\frac{2}{n} \sum_{i=1}^{n} x_{ji}(y_i - \hat{y}_i)\)</span>\)</span></p>
-</li>
-<li>
-<p>Using <code>scikit-learn</code> functions, multivariate linear regression can be achieved by providing the input features to the function.</p>
-</li>
-<li>
-<p>We will now use the <code>bmi</code> and blood pressure <code>bp</code> as the input features to predict the target. Copy the code block from the previous section and change <code>X_...[['bmi']]</code> to <code>X_...[['bmi','bp']]</code> except for the plotting part.</p>
-</li>
-<li>
-<p>For the graphical visualisation (plotting) part, use the following code to plot 3d graphs:</p>
-<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_train</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_train</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_train_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Blood pressure&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Training data (sklearn multivariate)&#39;</span><span class="p">)</span>
-
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
-<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">111</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_test</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bmi&#39;</span><span class="p">],</span> <span class="n">X_test</span><span class="p">[</span><span class="s1">&#39;bp&#39;</span><span class="p">],</span> <span class="n">y_test_pred</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;BMI&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Blood pressure&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;Testing data (sklearn multivariate)&#39;</span><span class="p">)</span>
-</code></pre></div>
 </li>
 </ol>
+<p>The maximum depth of a decision tree can be defined by adding the <code>max_depth=...</code> argument to the <code>DecisionTreeClassifier(...)</code> object instantiation. To allow unlimited maximum depth, pass <code>max_depth=None</code>.</p>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction with different maximum depths. Use 1, 2, 3, 5, 7, and 20 as the maximum depths. In every iteration, you should calculate both the accuracy on the training data and the accuracy on the testing data. The comparison should be shown in a graph with <code>max_depth</code> as the horizontal axis and accuracy as the vertical axis. Two lines should be displayed on the graph with one line for training accuracy and the other testing accuracy.</p>
+<h4 id="visualisation-of-decision-surface">Visualisation of decision surface</h4>
+<p>This section explains the method to visualise a decision tree on a graph. To do so we will focus on using two input attributes, sepal length and sepal width, i.e. the first two columns.</p>
+<ol>
+<li>
+<p>Instantiate the classifier without defining the maximum depth and train the model.
+    <div class="highlight"><pre><span></span><code><span class="n">dtc</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">input_cols</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">dtc</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">],</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision tree.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">dtc</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">input_cols</span><span class="p">,</span> 
+          <span class="n">class_names</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;targetNames&#39;</span><span class="p">],</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;classificationDecisionTreeWithNoMaxDepth.png&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib.colors</span><span class="w"> </span><span class="kn">import</span> <span class="n">ListedColormap</span>
+<span class="n">colormap</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;tab20&#39;</span><span class="p">)</span>
+<span class="n">cm_dark</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">cm_light</span> <span class="o">=</span> <span class="n">ListedColormap</span><span class="p">(</span><span class="n">colormap</span><span class="o">.</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculating the decision surface.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">dtc</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision surface.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_light</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>   
+            <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span> 
+            <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm_dark</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+            <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
+<span class="n">train_acc</span> <span class="o">=</span> <span class="n">dtc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">],</span> 
+                      <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="n">test_acc</span> <span class="o">=</span> <span class="n">dtc</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">],</span> 
+                    <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">species</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;training: </span><span class="si">{</span><span class="n">train_acc</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">, testing: </span><span class="si">{</span><span class="n">test_acc</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>You may not be able to see anything on one of the graph of the decision tree because the figure size is set to be larger than the screen size. However, the tree is saved to a png file in the same folder as your code.</p>
+<h4 id="overfitting">Overfitting</h4>
+<p>Now, instantiate a decision tree classifier of <code>max_depth=3</code> and train it with the two input attributes used in the previous section, sepal length and sepal width.</p>
+<p>Plot the decision surface for this classifier after the training. Compare the decision surface, training accuracy, and testing accuracy between this model and the model in the previous section. </p>
+<p>The previous model shows a situation of overfitting. Though the training accuracy of this model is lower than that of the previous one, the testing accuracy is higher than the previous one. That shows a higher level of generalisation.</p>
+<h3 id="regression">Regression</h3>
+<ol>
+<li>
+<p>Import the class for decision tree regressor.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">DecisionTreeRegressor</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Instantiate an object of <code>DecisionTreeRegressor</code> class.
+    <div class="highlight"><pre><span></span><code><span class="n">dtr</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Train the classifier with the training data. We will use all the input attributes.
+    <div class="highlight"><pre><span></span><code><span class="n">dtr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><code>.predict</code> function is used to predict the disease progression of the testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">predicts</span> <span class="o">=</span> <span class="n">dtr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">])</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Comparing the predicted value and the target value of the test data.
+    <div class="highlight"><pre><span></span><code><span class="nb">print</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">,</span><span class="n">predicts</span><span class="p">)),</span> 
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted&#39;</span><span class="p">]))</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Calculate the accuracy of the predicted value.
+    <div class="highlight"><pre><span></span><code><span class="n">accuracy</span> <span class="o">=</span> <span class="n">dtr</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">],</span>
+                    <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Accuracy: </span><span class="si">{</span><span class="n">accuracy</span><span class="si">:</span><span class="s1">.4f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Decision tree visualisation</p>
+<ol>
+<li>
+<p>Import the <code>matplotlib.pyplot</code> library and the function to visualise the tree.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.tree</span><span class="w"> </span><span class="kn">import</span> <span class="n">plot_tree</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Visualise the decision tree model.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="n">tree</span> <span class="o">=</span> <span class="n">plot_tree</span><span class="p">(</span><span class="n">dtr</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">(),</span> 
+                <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+</ol>
+</li>
+</ol>
+<p>The maximum depth of a decision tree can be defined by adding the <code>max_depth=...</code> argument to the <code>DecisionTreeRegressor(...)</code> object instantiation. To allow unlimited maximum depth, pass <code>max_depth=None</code>.</p>
+<p><strong>Task</strong>: Create a loop to compare the accuracy of the prediction with different maximum depths. Use 1, 2, 3, 5, 7, and 20 as the maximum depths. In every iteration, you should calculate both the accuracy on the training data and the accuracy on the testing data. The comparison should be shown in a graph with <code>max_depth</code> as the horizontal axis and accuracy as the vertical axis. Two lines should be displayed on the graph with one line for training accuracy and the other testing accuracy.</p>
+<h4 id="visualisation-of-decision-surface_1">Visualisation of decision surface</h4>
+<p>This section explains the method to visualise a decision tree on a graph. To do so we will focus on using two input attributes, <code>age</code> and <code>bmi</code>.</p>
+<ol>
+<li>
+<p>Instantiate the classifier without defining the maximum depth and train the model.
+    <div class="highlight"><pre><span></span><code><span class="n">dtr</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
+<span class="n">input_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;bmi&#39;</span><span class="p">]</span>
+<span class="n">dtr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">],</span> 
+        <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision tree.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">[</span><span class="mi">50</span><span class="p">,</span><span class="mi">50</span><span class="p">])</span>
+<span class="n">plot_tree</span><span class="p">(</span><span class="n">dtr</span><span class="p">,</span> <span class="n">feature_names</span><span class="o">=</span><span class="n">input_cols</span><span class="p">,</span> <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;regressionDecisionTreeWithNoMaxDepth.png&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Prepare the colormaps.
+    <div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">matplotlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">cm</span>
+<span class="n">dia_cm</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;Reds&#39;</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Create the decision surface.
+    <div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">x_range</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">-</span> <span class="n">x_min</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">x_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">x_max</span> <span class="o">=</span> <span class="n">x_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">x_range</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">y_range</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">-</span> <span class="n">y_min</span>
+<span class="n">y_min</span> <span class="o">=</span> <span class="n">y_min</span> <span class="o">-</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">y_max</span> <span class="o">=</span> <span class="n">y_max</span> <span class="o">+</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">y_range</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">x_min</span><span class="p">,</span> <span class="n">x_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">x_range</span><span class="p">),</span> 
+                    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">y_min</span><span class="p">,</span> <span class="n">y_max</span><span class="p">,</span> <span class="mf">.01</span><span class="o">*</span><span class="n">y_range</span><span class="p">))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">dtr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">ravel</span><span class="p">(),</span> <span class="n">yy</span><span class="o">.</span><span class="n">ravel</span><span class="p">())))</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">z</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the decision surface
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">xx</span><span class="p">,</span> <span class="n">yy</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">)</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Plot the training and testing data.
+    <div class="highlight"><pre><span></span><code><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>          
+            <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;train&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Training data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">]],</span>   
+            <span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;attributes&#39;</span><span class="p">][</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> 
+            <span class="n">c</span><span class="o">=</span><span class="n">diabetes</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="s1">&#39;target&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diseaseProgression</span><span class="p">,</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> 
+            <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Testing data&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">dia_cm</span><span class="p">,</span> 
+            <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="o">=</span><span class="mi">150</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="n">input_cols</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</code></pre></div></p>
+</li>
+</ol>
+<h4 id="overfitting_1">Overfitting</h4>
+<p>Now, instantiate a decision tree regressor of <code>max_depth=3</code> and train it with the two input attributes used in the previous section, <code>age</code> and <code>bmi</code>.</p>
+<p>Plot the decision surface for this regressor after the training. Compare the decision surface, training accuracy, and testing accuracy between this model and the model in the previous section. </p>
+<p>The previous model shows a situation of overfitting. Though the training accuracy of this model is lower than that of the previous one, the testing accuracy is higher than the previous one. That shows a higher level of generalisation.</p>
 
 
 

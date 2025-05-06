@@ -1,211 +1,261 @@
-# Lab 5: pandas
-
+# Lab 5: *k* Nearest Neighbours (KNN) (Classification Methods with ML)
+ 
 ## Objective
-1. To learn the basic of the pandas Python library.
 
-## Data structures
-In pandas, there are two types of data structures:
+1. To perform *k* nearest neighbours algorithm with `scikit-learn` Python library for classification and regression.
 
-|Structure    | Description         |
-|-------------|---------------------|
-|*Series*     | 1D labeled homogeneously-typed array |
-|*DataFrame*  | General 2D labeled, size-mutable tabular structure with potentially heterogeneously-typed column |
+## Datasets
+1. The iris dataset will be used for classification, and the diabetes dataset for regression.
 
-## Instruction
-
-For all sections in this lab other than the last section, use the IPython console (located normally at the right bottom corner) to run the codes.
-
-## Imports
-
-1. To import the `pandas` library,
     ```python
+    from sklearn import datasets
     import pandas as pd
+    iris = datasets.load_iris()
+    iris = {
+      'attributes': pd.DataFrame(iris.data, columns=iris.feature_names),
+      'target': pd.DataFrame(iris.target, columns=['species']),
+      'targetNames': iris.target_names
+    }
+    diabetes = datasets.load_diabetes()
+    diabetes = {
+      'attributes': pd.DataFrame(diabetes.data, columns=diabetes.feature_names),
+      'target': pd.DataFrame(diabetes.target, columns=['diseaseProgression'])
+    }
     ```
+  
+2. Split the datasets into 80-20 for train-test proportion.
 
-2. `NumPy` is a dependency of `pandas` and also a powerful Python library for scientific data processing. We may need to use `NumPy` from time to time. To import `Numpy`,
     ```python
-    import numpy as np
+    from sklearn.model_selection import train_test_split
+    for dt in [iris, diabetes]:
+      x_train, x_test, y_train, y_test = train_test_split(dt['attributes'], dt['target'], test_size=0.2, random_state=1)
+      dt['train'] = {
+        'attributes': x_train,
+        'target': y_train
+      }
+      dt['test'] = {
+      'attributes': x_test,
+      'target': y_test
+      }
+    ```
+  
+    *Note*: Be reminded that `random_state` is used to reproduce the same "random" split of the data whenever the function is called. To produce randomly splitted data every time the function is called, remove the `random_state` argument.
+  
+**Task**: How do we access the training input data for the iris dataset?
+  
+## KNN
+  
+KNN algorithms are provided by the `scikit-learn` Python library as the class `sklearn.neighbors.KNeighborsClassifier` for classification, and `sklearn.neighbors.KNeighborsRegressor` for regression.
+  
+### Classification
+  
+1. Import the class for KNN classifier.
+
+    ```python
+    from sklearn.neighbors import KNeighborsClassifier
     ```
 
-3. It's common practice to import `pandas` as `pd` and `numpy` as `np`. You would see this a lot if you tried to search for tutorials or solutions online. However, it's just a convention, it is fine to use other names.
+2. Instantiate an object of `KNeighborsClassifier` class with k = 5.
 
-## Series
+    ```python
+    knc = KNeighborsClassifier(5)
+    ```
 
-1. Creation 
+3. Train the classifier with the training data. We will use the `sepal length (cm)` and `sepal width (cm)` (the first and second columns) as the attributes for now.
 
-    - from list,
+    ```python
+    input_columns = iris['attributes'].columns[:2].tolist()
+    x_train = iris['train']['attributes'][input_columns]
+    y_train = iris['train']['target'].species
+    knc.fit(x_train, y_train)
+    ```
 
-      ```python
-      s1 = pd.Series([1, 3, 5, np.nan, 6, 8])
-      s2 = pd.Series([1, 3, 5, np.nan, 6, 8], index=[1, 2, 3, 4, 5, 'f'])
-      ```
+4. `.predict` function is used to predict the species of the testing data.
 
-      What is the difference between `s1` and `s2`?
+    ```python
+    x_test = iris['test']['attributes'][input_columns]
+    y_test = iris['test']['target'].species
+    y_predict = knc.predict(x_test)
+    ```
 
-    - from dict,
+5. Comparing the predicted value and the target value of the test data.
 
-      ```python
-      d = {'a': 1, 'b': 2, 'c': 3}
-      s3 = pd.Series(d)
-      ```
+    ```python
+    print(pd.DataFrame(list(zip(y_test,y_predict)), columns=['target', 'predicted']))
+    ```
 
-    - from scalar value,
+6. Calculate the accuracy of the predicted value.
 
-      ```python 
-      s4 = pd.Series(5, index=['a', 'b', 'c', 'd', 'e'])
-      ```
+    ```python
+    print(f'Accuracy: {knc.score(x_test,y_test):.4f}')
+    ```
 
-2. Indexing of `Series`
-
-    - try the following code to understand the getting and setting of a series with default indexing.
-
-      ```python
-      s = pd.Series(np.random.randn(5))
-      s[0]
-      s[0] = 1.5
-      s
-      ```
-
-    - if the labels for the indices are specified,
-
-      ```python
-      s = pd.Series(np.random.randn(5), index=['a', 'b', 'c', 'd', 'e'])
-      s['a']
-      s[0]
-      s['b'] = 1.8
-      s
-      s[2] = 2
-      s
-      ```
-
-## DataFrame
-
-1. Creation
-    - from NumPy array
-
-      ```python
-      df = pd.DataFrame(np.random.randn(6,4))
-      ```
+7. Visualisation
     
-      Indices and column names can be provided at creation.
+    1. Import the `matplotlib.pyplot` library and the colormaps from the `matplotlib` library.
+        ```python   
+        import matplotlib.pyplot as plt
+        from matplotlib import cm
+        from matplotlib.colors import ListedColormap
+        ```
 
-      ```python
-      df = pd.DataFrame(np.random.randn(6,4), index=list('abcdef'), columns=list('ABCD'))
-      ```
-
-      - from a dict
-
-      run the following code and understand the functions used.
-
-      ```python
-      df2 = pd.DataFrame({
-        'A': 1,
-        'B': pd.Timestamp('20190930'),
-        'C': pd.date_range('20190930', periods=4),
-        'D': pd.Series(1, index=list(range(4)), dtype='float32'),
-        'E': np.array([3]*4, dtype='int32'),
-        'F': pd.Categorical(['test', 'train', 'test', 'train']),
-        'G': 'foo'
-      })
-      ```
-
-      `dtypes` of a `DataFrame` can be viewed using `df2.dtypes`. In IPython, tab completion is enabled for column names and public attributes.
-
-2. Data display
-    - What do `df.head(0)` and `df.tail()` do? What happens if I use `df.head(3)` and `df.tail(2)`?
-
-    - `df.index` displays the indices of a data frame.
-
-    - `df.columns` displays the columns of a data frame.
-
-    - `df.describe()` shows a quick statistical summary of each column of the data.
-
-3. Direct indexing
-    - to get a column,
-      ```python
-      df['A']
-      df.A
-      ```
-
-      `df[0]` would not work.
-
-    - to select multiple columns,
-      ```python
-      df[['A', 'B']]
-      ```
-
-    - to get a slice of rows
-      ```python
-      df[0:4]
-      df['a':'d']
-      ```
-
-      Is the indexing inclusive or exclusive?
-
-4. Selection by label
-    With the following lines, identify how the function `.loc[...]` works
-
+    2. Prepare the colormaps.
+        ```python
+        colormap = cm.get_cmap('tab20')
+        cm_dark = ListedColormap(colormap.colors[::2])
+        cm_light = ListedColormap(colormap.colors[1::2])
+        ```
+    
+    3. Calculate the decision boundaries.
+        ```python
+        import numpy as np
+        x_min = iris['attributes'][input_columns[0]].min()
+        x_max = iris['attributes'][input_columns[0]].max()
+        x_range = x_max - x_min
+        x_min = x_min - 0.1 * x_range
+        x_max = x_max + 0.1 * x_range
+        y_min = iris['attributes'][input_columns[1]].min()
+        y_max = iris['attributes'][input_columns[1]].max()
+        y_range = y_max - y_min
+        y_min = y_min - 0.1 * y_range
+        y_max = y_max + 0.1 * y_range
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, .01*x_range), 
+                            np.arange(y_min, y_max, .01*y_range))
+        z = knc.predict(list(zip(xx.ravel(), yy.ravel())))
+        z = z.reshape(xx.shape)
+        ```
+    
+    4. Plot the decision boundary.
+        ```python
+        plt.figure(figsize=[12,8])
+        plt.pcolormesh(xx, yy, z, cmap=cm_light)
+        ```
+    
+    5. Plot the training and testing data.
+        ```python
+        plt.scatter(x_train[input_columns[0]], x_train[input_columns[1]], 
+                    c=y_train, label='Training data', cmap=cm_dark, 
+                    edgecolor='black', linewidth=1, s=150)
+        plt.scatter(x_test[input_columns[0]], x_test[input_columns[1]], 
+                    c=y_test, marker='*', label='Testing data', cmap=cm_dark, 
+                    edgecolor='black', linewidth=1, s=150)
+        plt.xlabel(input_columns[0])
+        plt.ylabel(input_columns[1])
+        plt.legend()
+        ```
+  
+**Task**: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.
+  
+### Regression
+  
+1. Import the class for KNN regressor.
     ```python
-    df.loc['a']
-    df.loc['a':'c']
-    df.loc[['a', 'c']]
-    df.loc[:, 'A']
-    df.loc[:, ['A', 'B']]
-    df.loc[:, 'A':'C']
-    df.loc['a':'c', ['A', 'B']]
-    df.loc[['a', 'c'], ['A', 'B']]
-    df.loc[['a', 'c'], 'A':'C']
-    df.loc['a':'c', 'A':'C']
-    df.loc['a', 'A']
-    df.loc['a', 'A':'C']
+    from sklearn.neighbors import KNeighborsRegressor
     ```
 
-    `df.at['a','A']` is equivalent to `df.loc['a','A']` (only to get a scalar value)
-
-    The object returned by a `.loc` is either a series (1-D), data frame (2-D), or scalar (single value).
-
-5. Selection by position
-    `.iloc` and `.iat` work similarly as `.loc` and `.at`. The only difference is that, instead of the label of the row/column, we will use the position of the row/column.
-
-    Find the equivalent usage of `.iloc` that provides the same outputs as the previous lines for `.loc`.
-
-6. Boolean indexing
-    Investigate the differences in the outputs of the following lines:
+2. Instantiate an object of `KNeighborsRegressor` class with k = 5.
     ```python
-    df[df.A > 0]
-    df[df > 0]
+    knr = KNeighborsRegressor(5)
     ```
 
-    Filtering of a column can be done with `.isin`.
+3. Train the regressor with the training data. We will use the `age` and `bmi` as the attributes for now.
     ```python
-    df2 = df.copy()
-    df2['E'] = ['one', 'one', 'two', 'three', 'four', 'three']
-    df2[df2['E'].isin(['two', 'four'])]
+    input_columns = ['age', 'bmi']
+    x_train = diabetes['train']['attributes'][input_columns]
+    y_train = diabetes['train']['target'].diseaseProgression
+    knr.fit(x_train, y_train)
     ```
 
-## Data manipulation
-`pandas` library provides a lot of functions to manipulate data.
-
-Go to [UCI datasets](https://archive.ics.uci.edu/ml/datasets/Iris) to download `iris.data` and `iris.names` from the `Data Folder`.
-
-1. Load `iris.data` as a data frame (Hint: `iris.data` is a CSV file)
-
-2. Update the column names based on `iris.names`.
-
-3. Calculate the mean, min, max, and standard deviation of each column.
-
-4. Create a new column called `class value` using the following code:
+4. `.predict` function is used to predict the disease progression of the testing data.
     ```python
-    df['class value'] = pd.factorize(df['class'])[0]
+    x_test = diabetes['test']['attributes'][input_columns]
+    y_test = diabetes['test']['target'].diseaseProgression
+    y_predict = knr.predict(x_test)
     ```
-    Investigate the output of `pd.factorize`.
+    
+5. Comparing the predicted value and the target value of the test data.
+    ```python
+    print(pd.DataFrame(list(zip(y_test,y_predict)), columns=['target', 'predicted']))
+    ```
 
-5. Group the data according to the class. (Hint: `.groupby`)
+6. Calculate the accuracy of the predicted value.
+    ```python
+    print(f'Accuracy: {knr.score(x_test,y_test):.4f}')
+    ```
 
-6. Identify the function to extract each group using the name of the class.
+7. Visualisation
+    
+    1. Import the `matplotlib.pyplot` library and the colormaps from the `matplotlib` library.
+        ```python
+        import matplotlib.pyplot as plt
+        from matplotlib import cm
+        ```
 
-7. Calculate the mean, min, max, and standard deviation of each column in each group.
+    2. Prepare the colormaps.
+        ```python
+        dia_cm = cm.get_cmap('Reds')
+        ```
 
-8. Produce a scatter plot for any two columns using `matplotlib` library.
+    3. Calculate the decision boundaries.
+        ```python
+        import numpy as np
+        x_min = diabetes['attributes'][input_columns[0]].min()
+        x_max = diabetes['attributes'][input_columns[0]].max()
+        x_range = x_max - x_min
+        x_min = x_min - 0.1 * x_range
+        x_max = x_max + 0.1 * x_range
+        y_min = diabetes['attributes'][input_columns[1]].min()
+        y_max = diabetes['attributes'][input_columns[1]].max()
+        y_range = y_max - y_min
+        y_min = y_min - 0.1 * y_range
+        y_max = y_max + 0.1 * y_range
+        xx, yy = np.meshgrid(np.arange(x_min, x_max, .01*x_range), 
+                            np.arange(y_min, y_max, .01*y_range))
+        z = knr.predict(list(zip(xx.ravel(), yy.ravel())))
+        z = z.reshape(xx.shape)
+        ```
+    
+    4. Plot the decision boundary.
+        ```python
+        plt.figure()
+        plt.pcolormesh(xx, yy, z, cmap=dia_cm)
+        ```
 
-9. Identify the methods (at least 2) to loop through a data frame row by row.
+    5. Plot the training and testing data.
+        ```python
+        plt.scatter(x_train[input_columns[0]], x_train[input_columns[1]], 
+                    c=y_train, label='Training data', cmap=dia_cm, 
+                    edgecolor='black', linewidth=1, s=150)
+        plt.scatter(x_test[input_columns[0]], x_test[input_columns[1]], 
+                    c=y_test, marker='*', label='Testing data', cmap=dia_cm,
+                    edgecolor='black', linewidth=1, s=150)
+        plt.xlabel(input_columns[0])
+        plt.ylabel(input_columns[1])
+        plt.legend()
+        plt.colorbar()
+        ```
+
+**Task**: Create a loop to compare the accuracy of the prediction at different value of k. The comparison should be shown in a graph with k as the horizontal axis and accuracy as the vertical axis.
+
+---
+
+# Bonus Opportunity: Classification Methods with Machine Learning
+
+To deepen your understanding of classification tasks in machine learning, you are encouraged to complete the **Classification Methods with Machine Learning** course offered by MathWorks.
+
+- **Estimated Time:** ~4 hours  
+- **Platform:** Online (browser-based)  
+- **Outcome:** Digital Certificate of Completion from MathWorks
+
+**Action Steps:**
+1. Access the course here: [Classification Methods with Machine Learning – MathWorks Academy](https://matlabacademy.mathworks.com/details/classification-methods-with-machine-learning/otmlcmml)
+2. Complete all course modules and activities.
+3. Download your Certificate of Completion.
+4. Submit the certificate along with your Lab X submission on LMS.
+
+**Bonus Recognition:**
+- Completing and submitting this course will earn bonus recognition later in the semester.
+- This activity is **optional** and has **no impact** on your Lab X grade.
+
+---
+
