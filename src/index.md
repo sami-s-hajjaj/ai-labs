@@ -36,16 +36,20 @@ The labs are designed to follow the schedule of the lectures, therefore you will
         <div class="content"><a href="./lab2">Lab 2: Python - Data Handling <strong>(Statistics Onramp)</strong></a></div>
     </div>
     <div class="container right">
-        <div class="date">Week 5</div>
-        <div class="content"><a href="./lab3">Lab 3: Search <strong>(Machine Learning Onramp)</strong></a></div>
+        <div class="date">WEEK 5</div>
+        <div class="content"><a href="./lab3">Lab 3 (Part I): Search <strong>(Machine Learning Onramp)</strong></a></div>
     </div>
+     <div class="container right">
+        <div class="date">WEEK 6</div>
+        <div class="content"><a href="./lab3">Lab 3 (Part II): Search <strong>(Machine Learning Onramp)</strong></a></div>
+    </div>   
     <div class="container right">
         <div class="date">Week 9</div>
         <div class="content"><a href="./lab4">Lab 4: Regression <strong>(Regression Methods with ML)</strong></a></div>
     </div>
     <div class="container right">
         <div class="date">Week 10</div>
-        <div class="content"><a href="./lab5">Lab 5: K Nearest Neighbours <strong>(Classification Methods with ML)</strong></a></div>
+        <div class="content"><a href="./lab5">Lab 5: K Nearest Neighbours <br><strong>(Classification Methods with ML)</strong></a></div>
     </div>
     <div class="container right">
         <div class="date">Week 11</div>
