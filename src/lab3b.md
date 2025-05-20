@@ -1,10 +1,10 @@
 # Lab 3 (Part II): Search Algorithms (Machine Learning Onramp)
 
-# PART II - Uniform-Cost (UC) Search Algorithm 
+# PART II - Uniform-Cost Search (UCS) Algorithm 
 
 ## Objective
 
-To create Python script to execute uniform cost search algorithm.
+To create Python script to execute Uniform Cost Search (UCS) algorithm.
 
 ## Problem to be solved
 
@@ -108,7 +108,9 @@ We will revisit Nick’s route-finding problem in Romania, starting in Arad to r
 <script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
 </div>
 
-Uniform cost search changes the sorting of the frontier by ordering it with its path cost up to the leaf node and expanding the leaf node with the lowest cost.
+<strong>Continue work from Part I</strong>
+
+Uniform Cost Search (UCS) changes the sorting of the frontier by ordering it with its path cost up to the leaf node and expanding the leaf node with the lowest cost.
   
 1. Based on the code from Part I, add the code to sort the frontier following the path cost up to the leaf node.
 

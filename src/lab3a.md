@@ -5,7 +5,7 @@
 ## Lab learning outcomes
 After completing this lab, you will be able to  
 
-- create Python script to execute breadth-first search algorithm to solve a search problem.
+- create Python script to execute <strong>Breadth-First Search (BFS)</strong> algorithm to solve a search problem.
 
 ## Nick's route-finding problem in Romania
 
@@ -109,7 +109,13 @@ The first search problem we are focusing on is Nick’s route-finding problem in
 <script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
 </div>
 
-To solve the problem, we need to define the representation of the state, determine the transition model, and the execution of the search algorithm.
+As we discussed in the class, in order to execute a Search Algorithm, we need to define four items: 
+
+- The State representation
+- The State Space 
+- The Transition Model 
+
+Furthermore, you will need your code to be more robust to be able to implement other Search Algorithms without drastic changes. More on that later. 
 
 ### State representation
 
@@ -122,7 +128,7 @@ initial_state = "Arad"
 goal_state = "Bucharest"
 ```
 
-### Transition model and state space
+### The State space
 
 The transition model provides the way to identify the child of a node in a search tree given a specific action. In this problem, we need to translate the whole state space from the geographical network into the program together with the step costs between the connected states.
 
@@ -141,10 +147,15 @@ state_space = [
 ]
 ```
 
-In this problem, the actions are to travel to connected cities from the current city Nick is in. The transition model is directly defined by the action. Therefore, create a function to search through the state space to find the children of a node, which would suffice as actions and transition model.
+<strong>Task 1: Complete the list of cities and distances in the variable `state_space` </strong>
 
-This function loops through the `state_space` variable to check for connections linked to the current node. The state on the connection becomes the child of the node in the search tree. We define a new function called `expandAndReturnChildren`.
 
+### The Transition model 
+
+In this problem, the transition model is defined by the action of traveling between connected cities from the current city Nick is in. To represent this, we can create a function that searches through the state space to find the children of the current node, which effectively represents the available actions and transitions.
+
+This function iterates through the `state_space` variable, checking for connections linked to the current node. Each city connected to the current node becomes a child in the search tree. We define a new function called `expandAndReturnChildren` to handle this process.
+ 
 ```python
 def expandAndReturnChildren(state_space, node):
   children = []
@@ -158,9 +169,15 @@ def expandAndReturnChildren(state_space, node):
 
 The function will provide a list of the children of the `node`.
 
-### Node in the search tree
 
-We can use a class to represent each node in the search tree. The important information for each node includes the state and the parent of the node.
+<strong>Task 2: Implement `expandAndReturnChildren` and test its validity</strong>
+
+
+### Using CLASS & Objects 
+
+Although we can proceed with this code to implement BFS, it will become more complex as we go deeper. To make the code more manageable and flexible for future search algorithms, we can represent each node in the search tree using a class. This approach will not only simplify the code but also make it more robust and adaptable to other search strategies.
+
+To achieve this, we define each city as a <strong>Node</strong>. Key information for each node includes the <strong>state</strong> (representing the city) and the <strong>parent</strong> (the preceding city in the search path).
 
 ```python
 class Node:
@@ -188,6 +205,8 @@ def expandAndReturnChildren(state_space, node):
       children.append(childnode)
   return children
 ```
+
+<strong>Task 3: Discuss the changes to `expandAndReturnChildren` and the impact of these chagnes on the code functionality </strong>
 
 !!! tip "Quick check"
     Your current code should look like
@@ -222,16 +241,21 @@ def expandAndReturnChildren(state_space, node):
 
 ### Breadth-first search algorithm
 
-Next we will create a function to execute the search algorithm. The first algorithm we will use is the breadth-first search (BFS).
+<strong>Problem definition vs. Algoritm Definition</strong> 
     
-We will separate the problem definition from the algorithm definition, the algorithm function will have the inputs of the state space, initial state and goal state. 
+Next, we will separate the problem definition from the algorithm definition. The algorithm function will take the state space, initial state, and goal state as inputs.
 
 ```python
 def bfs(state_space, initial_state, goal_state):
 ```
 
 !!! note "Separation of definitions for problem and algorithm"
-    The separation of problem definition and the algorithm definition allows us to re-use the algorithm easily for other problems and also re-use the problem definition with other algorithms
+    The separation of problem definition from algorithm definition provides significant flexibility and reusability. By isolating the problem setup (such as the state space, initial state, and goal state) from the algorithm, we can easily reuse the algorithm for different problems. For example, the same algorithm can be applied to solve different scenarios by simply changing the problem definition without altering the algorithm itself.
+    
+    Additionally, this separation allows for the problem definition to be used with different algorithms. Whether we choose <strong>BFS</strong>, <strong>Uniform Cost Search (UCS)</strong>, or <strong>A*</strong>, the same state space, initial state, and goal state can be plugged into various search algorithms, allowing us to experiment with and compare different approaches. This modularity not only simplifies the development process but also promotes cleaner, more maintainable code that can be adapted to new challenges with minimal changes.
+    
+    
+<strong>Implementing the BFS search function</strong> 
     
 In this function, we need two empty arrays to store the frontier and the explored states.
 
@@ -352,7 +376,16 @@ To run a script to execute the `bfs` function, we can have the script file struc
     print('Solution: ' + str(bfs(state_space, initial_state, goal_state)))
     ```
     
-Beware that in Python, a `.py` file can also be used to define a Python library/module. To prevent the commands outside the function to be executed when the file is used as a library instead of a script, we can implement an extra condition check.
+    
+<strong>Task 4: Run and test your BFS Search Algorithm </strong>
+
+## Preparation for next week (Part II)
+    
+Reusing code is one of the most valuable skills a programmer can develop.
+
+A great way to reuse the code for other search algorithms is to encapsulate it into a library or module, which you can then import and call in future Python programs.
+
+In fact, any `.py` file can be used to define a Python library or module. However, to prevent code outside the functions from executing when the file is imported as a library (instead of being run as a script), we can add an extra condition check.
 
 ```python
 class Node:
@@ -381,7 +414,8 @@ This part is essentially the `main` function in other programming languages like
     
 Execute the script and resolve any error.
 
-## Preparation for next week (Part II)
+<strong>Prep work for Part II</strong>
+
 1. Fully understand the code as you will have to modify the code for other problem/search algorithms in future labs.
 
 2. How would you modify the code to run other uninformed search algorithms such as uniform-cost search, depth-first search, etc.? Which part(s) of the code do you need to modify? Think about it before you work on that in next part of this lab

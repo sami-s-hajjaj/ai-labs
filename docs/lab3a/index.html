@@ -544,7 +544,7 @@
 <h2 id="lab-learning-outcomes">Lab learning outcomes</h2>
 <p>After completing this lab, you will be able to  </p>
 <ul>
-<li>create Python script to execute breadth-first search algorithm to solve a search problem.</li>
+<li>create Python script to execute <strong>Breadth-First Search (BFS)</strong> algorithm to solve a search problem.</li>
 </ul>
 <h2 id="nicks-route-finding-problem-in-romania">Nick's route-finding problem in Romania</h2>
 <p>The first search problem we are focusing on is Nick’s route-finding problem in Romania, starting in Arad to reach Bucharest. The road map of Romania, which is the state space of the problem is given as follows:</p>
@@ -646,14 +646,20 @@
 <script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
 </div>
 
-<p>To solve the problem, we need to define the representation of the state, determine the transition model, and the execution of the search algorithm.</p>
+<p>As we discussed in the class, in order to execute a Search Algorithm, we need to define four items: </p>
+<ul>
+<li>The State representation</li>
+<li>The State Space </li>
+<li>The Transition Model </li>
+</ul>
+<p>Furthermore, you will need your code to be more robust to be able to implement other Search Algorithms without drastic changes. More on that later. </p>
 <h3 id="state-representation">State representation</h3>
 <p>In this problem the only state we need to consider is the location of Nick. Therefore we can use the names of the cities as the state.</p>
 <p>Since Nick is starting in Arad, going to Bucharest, we can define the initial state and goal state as</p>
 <div class="highlight"><pre><span></span><code><span class="n">initial_state</span> <span class="o">=</span> <span class="s2">&quot;Arad&quot;</span>
 <span class="n">goal_state</span> <span class="o">=</span> <span class="s2">&quot;Bucharest&quot;</span>
 </code></pre></div>
-<h3 id="transition-model-and-state-space">Transition model and state space</h3>
+<h3 id="the-state-space">The State space</h3>
 <p>The transition model provides the way to identify the child of a node in a search tree given a specific action. In this problem, we need to translate the whole state space from the geographical network into the program together with the step costs between the connected states.</p>
 <p>The important information from the state space is the connections between states and the step costs between connected states. Notice that in this problem the connections are reversible. Therefore in our state space the connection from Arad to Zerind and the connection from Zerind to Arad are identical, hence only one instance of that connection is needed.</p>
 <p>The most straightforward way of defining the state space is by using a nested array, in which each inner array consists of the two connected states and its cost. </p>
@@ -665,8 +671,10 @@
   <span class="o">...</span>
 <span class="p">]</span>
 </code></pre></div>
-<p>In this problem, the actions are to travel to connected cities from the current city Nick is in. The transition model is directly defined by the action. Therefore, create a function to search through the state space to find the children of a node, which would suffice as actions and transition model.</p>
-<p>This function loops through the <code>state_space</code> variable to check for connections linked to the current node. The state on the connection becomes the child of the node in the search tree. We define a new function called <code>expandAndReturnChildren</code>.</p>
+<p><strong>Task 1: Complete the list of cities and distances in the variable <code>state_space</code> </strong></p>
+<h3 id="the-transition-model">The Transition model</h3>
+<p>In this problem, the transition model is defined by the action of traveling between connected cities from the current city Nick is in. To represent this, we can create a function that searches through the state space to find the children of the current node, which effectively represents the available actions and transitions.</p>
+<p>This function iterates through the <code>state_space</code> variable, checking for connections linked to the current node. Each city connected to the current node becomes a child in the search tree. We define a new function called <code>expandAndReturnChildren</code> to handle this process.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">node</span><span class="p">):</span>
   <span class="n">children</span> <span class="o">=</span> <span class="p">[]</span>
   <span class="k">for</span> <span class="p">[</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="n">c</span><span class="p">]</span> <span class="ow">in</span> <span class="n">state_space</span><span class="p">:</span>
@@ -677,8 +685,10 @@
   <span class="k">return</span> <span class="n">children</span>
 </code></pre></div>
 <p>The function will provide a list of the children of the <code>node</code>.</p>
-<h3 id="node-in-the-search-tree">Node in the search tree</h3>
-<p>We can use a class to represent each node in the search tree. The important information for each node includes the state and the parent of the node.</p>
+<p><strong>Task 2: Implement <code>expandAndReturnChildren</code> and test its validity</strong></p>
+<h3 id="using-class-objects">Using CLASS &amp; Objects</h3>
+<p>Although we can proceed with this code to implement BFS, it will become more complex as we go deeper. To make the code more manageable and flexible for future search algorithms, we can represent each node in the search tree using a class. This approach will not only simplify the code but also make it more robust and adaptable to other search strategies.</p>
+<p>To achieve this, we define each city as a <strong>Node</strong>. Key information for each node includes the <strong>state</strong> (representing the city) and the <strong>parent</strong> (the preceding city in the search path).</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
   <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">state</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">parent</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">state</span> <span class="o">=</span> <span class="n">state</span>
@@ -701,6 +711,7 @@
       <span class="n">children</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">childnode</span><span class="p">)</span>
   <span class="k">return</span> <span class="n">children</span>
 </code></pre></div>
+<p><strong>Task 3: Discuss the changes to <code>expandAndReturnChildren</code> and the impact of these chagnes on the code functionality </strong></p>
 <div class="admonition tip">
 <p class="admonition-title">Quick check</p>
 <p>Your current code should look like</p>
@@ -732,14 +743,16 @@
 </code></pre></div>
 </div>
 <h3 id="breadth-first-search-algorithm">Breadth-first search algorithm</h3>
-<p>Next we will create a function to execute the search algorithm. The first algorithm we will use is the breadth-first search (BFS).</p>
-<p>We will separate the problem definition from the algorithm definition, the algorithm function will have the inputs of the state space, initial state and goal state. </p>
+<p><strong>Problem definition vs. Algoritm Definition</strong> </p>
+<p>Next, we will separate the problem definition from the algorithm definition. The algorithm function will take the state space, initial state, and goal state as inputs.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
 </code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">Separation of definitions for problem and algorithm</p>
-<p>The separation of problem definition and the algorithm definition allows us to re-use the algorithm easily for other problems and also re-use the problem definition with other algorithms</p>
+<p>The separation of problem definition from algorithm definition provides significant flexibility and reusability. By isolating the problem setup (such as the state space, initial state, and goal state) from the algorithm, we can easily reuse the algorithm for different problems. For example, the same algorithm can be applied to solve different scenarios by simply changing the problem definition without altering the algorithm itself.</p>
+<p>Additionally, this separation allows for the problem definition to be used with different algorithms. Whether we choose <strong>BFS</strong>, <strong>Uniform Cost Search (UCS)</strong>, or <strong>A*</strong>, the same state space, initial state, and goal state can be plugged into various search algorithms, allowing us to experiment with and compare different approaches. This modularity not only simplifies the development process but also promotes cleaner, more maintainable code that can be adapted to new challenges with minimal changes.</p>
 </div>
+<p><strong>Implementing the BFS search function</strong> </p>
 <p>In this function, we need two empty arrays to store the frontier and the explored states.</p>
 <div class="highlight"><pre><span></span><code><span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">):</span>
   <span class="n">frontier</span> <span class="o">=</span> <span class="p">[]</span>
@@ -834,7 +847,11 @@ def bfs(...):
 print(&#39;Solution: &#39; + str(bfs(state_space, initial_state, goal_state)))
 ```
 </code></pre></div>
-<p>Beware that in Python, a <code>.py</code> file can also be used to define a Python library/module. To prevent the commands outside the function to be executed when the file is used as a library instead of a script, we can implement an extra condition check.</p>
+<p><strong>Task 4: Run and test your BFS Search Algorithm </strong></p>
+<h2 id="preparation-for-next-week-part-ii">Preparation for next week (Part II)</h2>
+<p>Reusing code is one of the most valuable skills a programmer can develop.</p>
+<p>A great way to reuse the code for other search algorithms is to encapsulate it into a library or module, which you can then import and call in future Python programs.</p>
+<p>In fact, any <code>.py</code> file can be used to define a Python library or module. However, to prevent code outside the functions from executing when the file is imported as a library (instead of being run as a script), we can add an extra condition check.</p>
 <div class="highlight"><pre><span></span><code><span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
   <span class="o">...</span>
 
@@ -857,7 +874,7 @@ print(&#39;Solution: &#39; + str(bfs(state_space, initial_state, goal_state)))
 <p><code>__name__</code> is a special variable in Python that evaluates to the name of the current module. This variable has the value of <code>'__main__'</code> if it's called as the main program rather than a module or library.</p>
 <p>This part is essentially the <code>main</code> function in other programming languages like C++ and Java.</p>
 <p>Execute the script and resolve any error.</p>
-<h2 id="preparation-for-next-week-part-ii">Preparation for next week (Part II)</h2>
+<p><strong>Prep work for Part II</strong></p>
 <ol>
 <li>
 <p>Fully understand the code as you will have to modify the code for other problem/search algorithms in future labs.</p>
