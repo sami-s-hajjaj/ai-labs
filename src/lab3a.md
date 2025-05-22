@@ -492,12 +492,10 @@ Next, the final step, is the determine the cost of this solution path. At this p
 
 **Discussion:** 
 - Read the code of each step and understand its inner workings 
-- try to understand how the cost of the solution path is calculated
 - what is += and why is it used here ? 
-
+- In your opinion, is this an efficient way to calculate path cost? is there a better way?
 
 ### Running the algorithm
-
 
 Now we have two functions `expandAndReturnChildren` and `bfs`, alongside with the variables `state_space`, `initial_state`, and `goal_state`.
     
