@@ -108,11 +108,11 @@ We will revisit Nick’s route-finding problem in Romania, starting in Arad to r
 <script>new Vue({ el: "#romania", data: { circleradius: 10 } });</script>
 </div>
 
-<strong>Continue work from Part I</strong>
+### Continue work from Part I
 
 Uniform Cost Search (UCS) changes the sorting of the frontier by ordering it with its path cost up to the leaf node and expanding the leaf node with the lowest cost.
   
-1. Based on the code from Part I, add the code to sort the frontier following the path cost up to the leaf node.
+1. Upcate the code from Part I to be able to sort the frontier following the path cost up to the leaf node.
 
 2. If a latter-found node has the same state as a previous node and the previous node has been expanded, what should be done?
 
