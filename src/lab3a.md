@@ -501,7 +501,7 @@ Now we have two functions `expandAndReturnChildren` and `bfs`, alongside with th
     
 To run a script to execute the `bfs` function, we can have the script file structured as such:
 
-    ```python
+```python
     initial_state = 'Arad'
     goal_state = 'Bucharest'
     
@@ -519,7 +519,7 @@ To run a script to execute the `bfs` function, we can have the script file struc
       ...
 
     print('Solution: ' + str(bfs(state_space, initial_state, goal_state)))
-    ```
+```
     
 **Discussion:** 
 - what if we want to run this code to test two other cities ? 

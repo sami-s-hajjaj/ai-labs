@@ -125,6 +125,122 @@ Execute the program and investigate if the program is working correctly.
 
 ---
 
+### 1. The updated Node Class definition
+
+```python
+class Node:
+  def __init__(self, state=None, parent=None, cost=0):
+    self.state = state
+    self.parent = parent
+    self.children = []
+    self.cost = cost 	
+    
+  def addChildren(self, children):
+    self.children.extend(children)
+```
+
+**Discussion:** take a note of how the cost is now part of the node definition
+
+### 2. The updated ExpandAndReturnChildren function
+
+```python
+def expandAndReturnChildren(state_space, node):
+  children = []
+  for [m,n,c] in state_space:
+	# if a match is found, add the other as a child & accumulate costs
+    if m == node.state:
+      children.append(Node(n, node.state, node.cost+c)) 
+    elif n == node.state:
+      children.append(Node(m, node.state, node.cost+c))
+  return children
+```
+
+**Discussion:** What is the difference between cost and c ? 
+
+### 3. The AppendAndSort (Frontier) function (new)
+
+```python
+def appendAndSort(frontier, node):
+  duplicated = False
+  removed = False
+  for i, f in enumerate(frontier):
+    if f.state == node.state:
+      duplicated = True
+      if f.cost > node.cost:
+        del frontier[i]
+        removed = True
+        break    
+  if (not duplicated) or removed:
+    insert_index = len(frontier)
+    for i, f in enumerate(frontier):
+      if f.cost > node.cost:
+        insert_index = i
+        break
+    frontier.insert(insert_index, node)
+  return frontier
+```
+
+**Discussion:** similarly to how we did it in BFS, run through the loops and evaluate this function
+
+### 4. The UCS Algorithm (incomplete)
+
+```python
+# The UCS Algorithm 
+def ucs(state_space, initial_state, goal_state):
+
+  # Step 1 - Initiate variables & conditions
+  
+  # Step 2 - Search Loops 
+  while not found_goal:
+
+    # 2.1 goal test 
+     
+	# 2.2 Manage the Frontier & Explored Lists 
+
+	# 2.3 Progress Update
+
+  
+  # Step 3 Solution & Cost   
+  
+  return solution, path_cost
+
+```
+
+**Discussion:** Complete & run this based on the work we did in BFS & definitions above
+
+
+### 5. All together now 
+
+Your complete Program show now look like this
+
+```python
+class Node:
+  ...
+
+def expandAndReturnChildren(...):
+  ...
+
+def appendAndSort(...):
+  ...
+
+def ucs(...):
+  ...
+
+if __name__ == '__main__':
+  state_space = [
+  ...
+  ]
+  
+  initial_state = 'Arad'
+  goal_state = 'Bucharest'
+  
+  print('Solution: ' + str(ucs(state_space, initial_state, goal_state)))
+```
+
+
+---
+
+
 # Bonus Opportunity: Machine Learning Onramp Certificate
 
 To complement your learning in this lab and explore applied machine learning techniques, you are encouraged to complete the **Machine Learning Onramp** course by MathWorks.

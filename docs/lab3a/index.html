@@ -1096,25 +1096,23 @@
 <h3 id="running-the-algorithm">Running the algorithm</h3>
 <p>Now we have two functions <code>expandAndReturnChildren</code> and <code>bfs</code>, alongside with the variables <code>state_space</code>, <code>initial_state</code>, and <code>goal_state</code>.</p>
 <p>To run a script to execute the <code>bfs</code> function, we can have the script file structured as such:</p>
-<div class="highlight"><pre><span></span><code>```python
-initial_state = &#39;Arad&#39;
-goal_state = &#39;Bucharest&#39;
+<div class="highlight"><pre><span></span><code>    <span class="n">initial_state</span> <span class="o">=</span> <span class="s1">&#39;Arad&#39;</span>
+    <span class="n">goal_state</span> <span class="o">=</span> <span class="s1">&#39;Bucharest&#39;</span>
 
-state_space = [
-  ...
-]
+    <span class="n">state_space</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="o">...</span>
+    <span class="p">]</span>
 
-class Node:
-  ...
+    <span class="k">class</span><span class="w"> </span><span class="nc">Node</span><span class="p">:</span>
+      <span class="o">...</span>
 
-def expandAndReturnChildren(...):
-  ...
+    <span class="k">def</span><span class="w"> </span><span class="nf">expandAndReturnChildren</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+      <span class="o">...</span>
 
-def bfs(...):
-  ...
+    <span class="k">def</span><span class="w"> </span><span class="nf">bfs</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+      <span class="o">...</span>
 
-print(&#39;Solution: &#39; + str(bfs(state_space, initial_state, goal_state)))
-```
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Solution: &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">bfs</span><span class="p">(</span><span class="n">state_space</span><span class="p">,</span> <span class="n">initial_state</span><span class="p">,</span> <span class="n">goal_state</span><span class="p">)))</span>
 </code></pre></div>
 <p><strong>Discussion:</strong> 
 - what if we want to run this code to test two other cities ? 
