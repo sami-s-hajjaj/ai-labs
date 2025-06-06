@@ -41,7 +41,7 @@ The labs are designed to follow the schedule of the lectures, therefore you will
     </div>
      <div class="container right">
         <div class="date">WEEK 6</div>
-        <div class="content"><a href="./lab3b">Lab 3 (Part II): Search <strong>(Machine Learning Onramp)</strong></a></div>
+        <div class="content"><a href="./lab3b">Lab 3 (Part II): Search <strong>(Curve Fitting Onramp)</strong></a></div>
     </div>   
     <div class="container right">
         <div class="date">Week 8</div>

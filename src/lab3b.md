@@ -1,4 +1,4 @@
-# Lab 3 (Part II): Search Algorithms (Machine Learning Onramp)
+# Lab 3 (Part II): Search Algorithms (Curve Fitting Onramp)
 
 # PART II - Uniform-Cost Search (UCS) Algorithm 
 
@@ -239,18 +239,16 @@ if __name__ == '__main__':
 
 
 ---
+# Bonus Opportunity: Curve Fitting Onramp Certificate
 
-
-# Bonus Opportunity: Machine Learning Onramp Certificate
-
-To complement your learning in this lab and explore applied machine learning techniques, you are encouraged to complete the **Machine Learning Onramp** course by MathWorks.
+To complement your learning in this lab and explore data modeling techniques, you are encouraged to complete the **Curve Fitting Onramp** course by MathWorks.
 
 - **Estimated Time:** ~2 hours  
 - **Platform:** Online (browser-based)  
 - **Outcome:** Digital Certificate of Completion from MathWorks
 
 **Action Steps:**
-1. Access the course here: [Machine Learning Onramp – MathWorks Academy](https://matlabacademy.mathworks.com/details/machine-learning-onramp/machinelearning)
+1. Access the course here: [Curve Fitting Onramp – MathWorks Academy](https://matlabacademy.mathworks.com/details/curve-fitting-onramp/orcf)
 2. Go through all the lessons and complete the interactive activities.
 3. Download your Certificate of Completion.
 4. Upload your certificate along with your Lab X submission on LMS.
@@ -258,7 +256,6 @@ To complement your learning in this lab and explore applied machine learning tec
 **Bonus Recognition:**
 - Students who complete and submit this certificate will be acknowledged later in the semester.
 - This is **optional** and will **not** impact your Lab X grade.
-
 ---
 
 
